@@ -3,5 +3,7 @@
   <app-sidebar *ngIf="isShow"></app-sidebar>
   <router-outlet (activate)="showHideNav($event)">
   </router-outlet>
-
+  <ngx-spinner type="ball-scale-multiple">
+    <p class="loading">Please wait...</p>
+  </ngx-spinner>
 </div>

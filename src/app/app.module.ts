@@ -18,6 +18,9 @@ import { PayslipComponent } from './payslip/payslip.component';
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ActivitiesComponent } from './activities/activities.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {NgxSpinnerModule} from "ngx-spinner";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -39,8 +42,12 @@ import { ActivitiesComponent } from './activities/activities.component';
     ActivitiesComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgxSpinnerModule,
+    FormsModule,
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }
