@@ -10,6 +10,7 @@ export class ConstantsService {
   api = {
     login:
       this.serviceUrl + '/adminLogin',
-    getDashBoardData: this.serviceUrl+'/api/webApi/Sidebar/getDashBoardDataMain'
+    getDashBoardData: this.serviceUrl+'/api/webApi/Sidebar/getDashBoardDataMain',
+    getAllEmpList: this.serviceUrl+'/api/webApi/Sidebar/getAllEmpList'
   };
 }
