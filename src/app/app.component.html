@@ -1,0 +1,7 @@
+<div class="main-wrapper">
+  <app-header *ngIf="isShow"></app-header>
+  <app-sidebar *ngIf="isShow"></app-sidebar>
+  <router-outlet (activate)="showHideNav($event)">
+  </router-outlet>
+
+</div>
