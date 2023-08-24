@@ -13,7 +13,7 @@ import {DatePipe} from "@angular/common";
 })
 export class EmployeesListComponent implements OnInit{
   allEmpList: any;
-  curentEmployee: any;
+  currentEmployee: any;
   designations: any[]=[];
   constructor(
     private apiService: ApiCallingServiceService,
@@ -59,8 +59,8 @@ export class EmployeesListComponent implements OnInit{
     });
   }
 
-  currentEmployee(emp: any) {
-    this.curentEmployee=emp;
+  currentEmployeeMethod(emp: any) {
+    this.currentEmployee=emp;
   }
 
   private getAllDesignation() {
