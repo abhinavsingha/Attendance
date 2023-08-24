@@ -31,6 +31,7 @@ export class EmployeesListComponent implements OnInit{
   }
 
   private getAllEmployee() {
+    this.SpinnerService.show();
     this.apiService.getApiWithToken(this.cons.api.getAllEmpList).subscribe({
       next: (v: object) => {
         this.SpinnerService.hide();
@@ -40,11 +41,13 @@ export class EmployeesListComponent implements OnInit{
           this.allEmpList=result['response'];
           for(let emp of this.allEmpList){
             if(emp.employeeSubDetails!=undefined){
-              emp.employeeSubDetails.dateOfJoining = this.datePipe.transform(new Date(Number(emp.employeeSubDetails.dateOfJoining)), 'dd-MM-yyyy');
+              emp.employeeSubDetails.dateOfJoining = this.datePipe.transform(new Date(Number(emp.employeeSubDetails.dateOfJoining)), 'MM/dd/yyyy');
             }
           }
         } else {
+          this.SpinnerService.hide();
           this.common.faliureAlert('Please try later', result['message'], '');
+
         }
       },
       error: (e) => {
@@ -58,7 +61,6 @@ export class EmployeesListComponent implements OnInit{
 
   currentEmployee(emp: any) {
     this.curentEmployee=emp;
-    debugger;
   }
 
   private getAllDesignation() {
@@ -81,5 +83,11 @@ export class EmployeesListComponent implements OnInit{
       },
       complete: () => console.info('complete'),
     });
+  }
+  parseDate(dateString: string): Date {
+    if (dateString) {
+      return new Date(dateString);
+    }
+    return new Date();
   }
 }

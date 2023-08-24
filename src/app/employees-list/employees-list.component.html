@@ -436,7 +436,7 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="col-form-label">Joining Date <span class="text-danger">*</span></label>
-												<div class="cal-icon"><input class="form-control datetimepicker" type="date" [ngModelOptions]="{standalone: true}" [ngModel]="curentEmployee.dateOfJoining"></div>
+												<div class="cal-icon"><input class="form-control" type="date" [value]="curentEmployee.employeeSubDetails.dateOfJoining | date:'yyyy-MM-dd'" (input)="curentEmployee.employeeSubDetails.dateOfJoining=parseDate(curentEmployee.employeeSubDetails.dateOfJoining)"></div>
 											</div>
 										</div>
 										<div class="col-sm-6">

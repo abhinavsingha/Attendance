@@ -33,7 +33,7 @@ export class AllEmployeesComponent implements OnInit{
         this.SpinnerService.hide();
         let result: { [key: string]: any } = v;
 
-        if (result['message'] == 'success') {
+        if (result['message'] == 'Success') {
           this.allEmpList=result['response'];
 
         } else {
