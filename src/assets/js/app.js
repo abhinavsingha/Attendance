@@ -132,7 +132,7 @@ $(document).ready(function() {
 
 	if($('.datetimepicker').length > 0) {
 		$('.datetimepicker').datetimepicker({
-			format: 'DD/MM/YYYY',
+			format: 'DD-MM-YYYY',
 			icons: {
 				up: "fa fa-angle-up",
 				down: "fa fa-angle-down",
@@ -142,15 +142,15 @@ $(document).ready(function() {
 		});
 	}
 
-	// Datatable
-  //
+	//Datatable
+
 	// if($('.datatable').length > 0) {
 	// 	$('.datatable').DataTable({
 	// 		"bFilter": false,
 	// 	});
 	// }
 
-	// Tooltip
+  // Tooltip
 
 	if($('[data-toggle="tooltip"]').length > 0) {
 		$('[data-toggle="tooltip"]').tooltip();

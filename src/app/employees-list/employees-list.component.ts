@@ -13,7 +13,7 @@ import {DatePipe} from "@angular/common";
 })
 export class EmployeesListComponent implements OnInit{
   allEmpList: any;
-  curentEmployee: any;
+  currentEmployee: any;
   designations: any[]=[];
   constructor(
     private apiService: ApiCallingServiceService,
@@ -40,7 +40,9 @@ export class EmployeesListComponent implements OnInit{
           this.allEmpList=result['response'];
           for(let emp of this.allEmpList){
             if(emp.employeeSubDetails!=undefined){
-              emp.employeeSubDetails.dateOfJoining = this.datePipe.transform(new Date(Number(emp.employeeSubDetails.dateOfJoining)), 'dd-MM-yyyy');
+                emp.employeeSubDetails.dateOfJoining = this.datePipe
+                  .transform(new Date(Number(emp.employeeSubDetails.dateOfJoining)),
+                    'MM/dd/yyyy');
             }
           }
         } else {
@@ -56,9 +58,15 @@ export class EmployeesListComponent implements OnInit{
     });
   }
 
-  currentEmployee(emp: any) {
-    this.curentEmployee=emp;
-    debugger;
+  currentEmployeeMethod(emp: any) {
+    this.currentEmployee=emp;
+  }
+
+  parseDate(dateString: string) : Date{
+    if(dateString)
+      return new Date(dateString);
+    else
+      return new Date();
   }
 
   private getAllDesignation() {
