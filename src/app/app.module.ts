@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {DatePipe, HashLocationStrategy, LocationStrategy, NgOptimizedImage} from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,6 +21,7 @@ import { ActivitiesComponent } from './activities/activities.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {NgxSpinnerModule} from "ngx-spinner";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgSelectModule} from "@ng-select/ng-select";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     PayslipComponent,
     EmployeesListComponent,
     ProfileComponent,
-    ActivitiesComponent
+    ActivitiesComponent,
+
   ],
   imports: [
     ReactiveFormsModule,
@@ -48,8 +50,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     NgxSpinnerModule,
     FormsModule,
+    NgSelectModule,
+    NgOptimizedImage,
   ],
   providers: [
+    DatePipe,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
 
   ],
