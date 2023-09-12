@@ -21,6 +21,7 @@ export class AdminDashboardComponent  implements OnInit{
   ) {}
   ngOnInit(): void {
     this.getDashboardData();
+    $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/chart.js');
     $.getScript('../../assets/js/select2.min.js');
 
