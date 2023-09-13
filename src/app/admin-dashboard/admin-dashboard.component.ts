@@ -12,6 +12,7 @@ import {Router} from "@angular/router";
 })
 export class AdminDashboardComponent  implements OnInit{
   dashboardData: any;
+  name: any;
   constructor(
     private apiService: ApiCallingServiceService,
     private cons: ConstantsService,
@@ -20,6 +21,7 @@ export class AdminDashboardComponent  implements OnInit{
     private router: Router,
   ) {}
   ngOnInit(): void {
+    this.name=localStorage.getItem('empName');
     this.getDashboardData();
     $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/chart.js');
