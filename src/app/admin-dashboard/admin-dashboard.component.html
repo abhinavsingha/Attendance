@@ -7,7 +7,7 @@
 					<div class="page-header">
 						<div class="row">
 							<div class="col-sm-12">
-								<h3 class="page-title">Welcome Admin!</h3>
+								<h3 class="page-title">Welcome {{name}}!</h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item active">Dashboard</li>
 								</ul>
@@ -33,7 +33,7 @@
 								<div class="card-body">
 									<span class="dash-widget-icon"><i class="fa fa-user-times"></i></span>
 									<div class="dash-widget-info">
-										<h3>NULL</h3>
+										<h3>{{dashboardData.absentEmp}}</h3>
 										<span>Absent Today</span>
 									</div>
 								</div>
@@ -55,7 +55,7 @@
 								<div class="card-body">
 									<span class="dash-widget-icon"><i class="fa fa-user"></i></span>
 									<div class="dash-widget-info">
-										<h3>NULL</h3>
+										<h3>{{dashboardData.totalEmp}}</h3>
 										<span>Total Employees</span>
 									</div>
 								</div>

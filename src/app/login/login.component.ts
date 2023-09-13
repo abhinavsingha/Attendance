@@ -42,15 +42,20 @@ export class LoginComponent implements OnInit {
 
         if (result['message'] == 'Success') {
           localStorage.setItem('token',result['token']);
+          debugger;
           localStorage.setItem('detail',result['details']);
+          localStorage.setItem('empName',result['details'].empName);
+          localStorage.setItem('role',result['details'].masterEmpRole.roleDescr);
+          localStorage.setItem('photo',result['details'].photo);
           if(result['details'].masterEmpRole.empRoleId=='300')
           this.router.navigate(['/admin-dashboard']);
         } else {
           this.common.faliureAlert('Please try later', result['message'], '');
+          this.SpinnerService.hide();
         }
       },
       error: (e) => {
-        // this.SpinnerService.hide();
+        this.SpinnerService.hide();
         console.error(e);
         this.common.faliureAlert('Error', e['error']['message'], 'error');
       },
