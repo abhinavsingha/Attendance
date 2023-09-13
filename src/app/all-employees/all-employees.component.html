@@ -83,7 +83,7 @@
 
 				<!-- Add Employee Modal -->
 				<div id="add_employee" class="modal custom-modal fade" role="dialog">
-					<div class="modal-dialog modal-dialog-centered modal-lg">
+					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title">Add Employee</h5>
@@ -149,18 +149,18 @@
 											</div>
 										</div>
 										<div class="col-sm-6">
-											<div class="form-group">
-												<label class="col-form-label">Company</label>
-												<select class="select">
+											<div class="form-group form-group form-focus select-focus">
+												<label>Company <span class="text-danger">*</span></label>
+												<select class="select floating">
 													<option value="">Global Technologies</option>
 													<option value="1">Delta Infotech</option>
 												</select>
 											</div>
 										</div>
 										<div class="col-md-6">
-											<div class="form-group">
+											<div class="form-group form-group form-focus select-focus">
 												<label>Department <span class="text-danger">*</span></label>
-												<select class="select">
+												<select class="select floating">
 													<option>Select Department</option>
 													<option>Web Development</option>
 													<option>IT Management</option>
@@ -169,14 +169,69 @@
 											</div>
 										</div>
 										<div class="col-md-6">
-											<div class="form-group">
+											<div class="form-group form-focus select-focus">
 												<label>Designation <span class="text-danger">*</span></label>
-												<select class="select">
+												<select class="select floating">
 													<option>Select Designation</option>
 													<option>Web Designer</option>
 													<option>Web Developer</option>
 													<option>Android Developer</option>
 												</select>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Date of Birth<span class="text-danger">*</span></label>
+												<div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+											</div>
+										</div>
+										
+										
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Address <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Gender <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group form-focus select-focus">
+												<label>Status <span class="text-danger">*</span></label>
+												<select class="select floating">
+													<option>Select Status</option>
+													<option>Verified</option>
+													<option>Rejected</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Pan No. <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Bank Account No. <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">EPF Account No. <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">UAN No. <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
 											</div>
 										</div>
 									</div>
@@ -391,43 +446,43 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="col-form-label">First Name <span class="text-danger">*</span></label>
-												<input class="form-control" value="John" type="text">
+												<input class="form-control" type="text">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="col-form-label">Last Name</label>
-												<input class="form-control" value="Doe" type="text">
+												<input class="form-control" type="text">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="col-form-label">Username <span class="text-danger">*</span></label>
-												<input class="form-control" value="johndoe" type="text">
+												<input class="form-control" type="text">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="col-form-label">Email <span class="text-danger">*</span></label>
-												<input class="form-control" value="johndoe@example.com" type="email">
+												<input class="form-control" type="email">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="col-form-label">Password</label>
-												<input class="form-control" value="johndoe" type="password">
+												<input class="form-control" type="password">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="col-form-label">Confirm Password</label>
-												<input class="form-control" value="johndoe" type="password">
+												<input class="form-control" type="password">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="col-form-label">Employee ID <span class="text-danger">*</span></label>
-												<input type="text" value="FT-0001" readonly="" class="form-control floating">
+												<input type="text" class="form-control">
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -439,23 +494,22 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label class="col-form-label">Phone </label>
-												<input class="form-control" value="9876543210" type="text">
+												<input class="form-control" type="text">
 											</div>
 										</div>
 										<div class="col-sm-6">
-											<div class="form-group">
-												<label class="col-form-label">Company</label>
-												<select class="select">
-													<option>Global Technologies</option>
-													<option>Delta Infotech</option>
-													<option selected="">International Software Inc</option>
+											<div class="form-group form-group form-focus select-focus">
+												<label>Company <span class="text-danger">*</span></label>
+												<select class="select floating">
+													<option value="">Global Technologies</option>
+													<option value="1">Delta Infotech</option>
 												</select>
 											</div>
 										</div>
 										<div class="col-md-6">
-											<div class="form-group">
+											<div class="form-group form-group form-focus select-focus">
 												<label>Department <span class="text-danger">*</span></label>
-												<select class="select">
+												<select class="select floating">
 													<option>Select Department</option>
 													<option>Web Development</option>
 													<option>IT Management</option>
@@ -464,14 +518,69 @@
 											</div>
 										</div>
 										<div class="col-md-6">
-											<div class="form-group">
+											<div class="form-group form-focus select-focus">
 												<label>Designation <span class="text-danger">*</span></label>
-												<select class="select">
+												<select class="select floating">
 													<option>Select Designation</option>
 													<option>Web Designer</option>
 													<option>Web Developer</option>
 													<option>Android Developer</option>
 												</select>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Date of Birth<span class="text-danger">*</span></label>
+												<div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+											</div>
+										</div>
+										
+										
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Address <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Gender <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group form-focus select-focus">
+												<label>Status <span class="text-danger">*</span></label>
+												<select class="select floating">
+													<option>Select Status</option>
+													<option>Verified</option>
+													<option>Rejected</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Pan No. <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Bank Account No. <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">EPF Account No. <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">UAN No. <span class="text-danger">*</span></label>
+												<input class="form-control" type="text">
 											</div>
 										</div>
 									</div>
@@ -661,7 +770,7 @@
 										</table>
 									</div>
 									<div class="submit-section">
-										<button class="btn btn-primary submit-btn">Save</button>
+										<button class="btn btn-primary submit-btn">Submit</button>
 									</div>
 								</form>
 							</div>

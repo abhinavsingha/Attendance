@@ -21,7 +21,7 @@ export class AllEmployeesComponent implements OnInit{
     private router: Router,
   ) {}
   ngOnInit(): void {
-    $.getScript('../../assets/js/app.js');
+    // $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/select2.min.js');
     this.getAllEmployee()
   }
