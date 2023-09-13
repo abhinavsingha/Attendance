@@ -24,7 +24,7 @@ export class EmployeesListComponent implements OnInit{
     private datePipe: DatePipe
   ) {}
   ngOnInit(): void {
-    // $.getScript('../../assets/js/app.js');
+    $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/select2.min.js');
     this.getAllEmployee();
     this.getAllDesignation();
