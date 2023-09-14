@@ -18,21 +18,77 @@
 								<span>Employees</span>
 							</li>
 							<li class="submenu">
-								<a href="#" class="noti-dot"><i class="la la-user"></i> <span> Employees</span> <span class="menu-arrow"></span></a>
+								<a href="#" class="noti-dot"><i class="fas fa-user"></i> <span> Employees</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['all-employee']" [routerLinkActive]="['active']">All Employees</a></li>
-									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['attendence-admin']" [routerLinkActive]="['active']">Attendance (Admin)</a></li>
 									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['attendence-employee']" [routerLinkActive]="['active']">Attendance (Employee)</a></li>
-									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['leaves-admin']" [routerLinkActive]="['active']">Leaves (Admin) <span class="badge badge-pill bg-primary float-right">1</span></a></li>
 									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Leaves (Employee)</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Performance</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Expenses</a></li>
+
+
 
 								</ul>
 							</li>
-							<li class="submenu" *ngIf="userRole=='Payrol'">
-								<a href="#"><i class="la la-money"></i> <span> Payroll </span> <span class="menu-arrow"></span></a>
+							<li class="menu-title">
+								<span>Admin</span>
+							</li>
+							<li class="submenu">
+								<a href="#" class="noti-dot"><i class="la fas fa-user-tie"></i> <span> Admin</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['all-employee']" [routerLinkActive]="['active']">All Employees</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['attendence-admin']" [routerLinkActive]="['active']">Attendance (Admin)</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['leaves-admin']" [routerLinkActive]="['active']">Leaves (Admin) <span class="badge badge-pill bg-primary float-right">1</span></a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Performance</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Expenses</a></li>
+								</ul>
+							</li>
+							<li class="menu-title">
+								<span>Notification</span>
+							</li>
+							<li class="submenu">
+								<a href="#" class="noti-dot"><i class="fas fa-inbox"></i> <span> Inbox</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Notification</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Pending Task</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Archive</a></li>
+
+								</ul>
+							</li>
+							<li class="menu-title">
+								<span>My Team</span>
+							</li>
+							<li class="submenu">
+								<a href="#" class="noti-dot"><i class="fas fa-users"></i> <span> My Team</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Under Your Team</a></li>
+								</ul>
+							</li>
+							<li class="menu-title">
+								<span>Org</span>
+							</li>
+							<li class="submenu">
+								<a href="#" class="noti-dot"><i class="fas fa-file-alt"></i> <span> Document</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Personal Document</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Company Document</a></li>
+
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#" class="noti-dot"><i class="fas fa-address-book"></i> <span> Directory</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Employee Directory</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Organisation Directory</a></li>
+
+								</ul>
+							</li>
+							<li class="submenu" *ngIf="userRole=='Admin'">
+								<a href="#"><i class="la la-money"></i> <span> PayRoll </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;" >
-									<li *ngIf="userRole=='Payrol'"><a [routerLink]="['empolyee-salary']" [routerLinkActive]="['active']"> Employee Salary </a></li>
-									<li *ngIf="userRole=='Payrol'"><a [routerLink]="['payslip']" [routerLinkActive]="['active']"> Payslip </a></li>
+									<li *ngIf="userRole=='Admin'"><a [routerLink]="['empolyee-salary']" [routerLinkActive]="['active']"> Employee Salary </a></li>
+									<li *ngIf="userRole=='Admin'"><a [routerLink]="['payslip']" [routerLinkActive]="['active']"> Payslip </a></li>
+									<li *ngIf="userRole=='Admin'"><a [routerLink]="['payslip']" [routerLinkActive]="['active']"> Tax Declaration </a></li>
 								</ul>
 							</li>
 						</ul>
