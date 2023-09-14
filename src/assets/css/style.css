@@ -1104,7 +1104,7 @@ table.dataTable thead > tr > td.sorting {
 .header .dropdown-toggle::after {
 	display: none;
 }
-.header .has-arrow .dropdown-toggle:after {
+.header .has-arrow .dropdown-toggle:before {
 	border-top: 0;
 	border-left: 0;
 	border-bottom: 2px solid #fff;
@@ -1174,9 +1174,13 @@ table.dataTable thead > tr > td.sorting {
 	display: inline-block;
 	position: relative;
 }
+.nav-item .pname{
+	margin: 0 5px 0 10px;
+}
 .main-drop .user-img img {
 	border-radius: 50%;
-    width: 30px;
+    width: 50px;
+	height: 50px;
 }
 .user-img .status {
 	border: 2px solid #fff;
