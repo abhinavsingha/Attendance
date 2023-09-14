@@ -48,7 +48,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('role',result['details'].masterEmpRole.roleDescr);
           localStorage.setItem('photo',result['details'].photo);
           if(result['details'].masterEmpRole.empRoleId=='300')
-          this.router.navigate(['/admin-dashboard']);
+            this.router.navigate(['/admin-dashboard']);
+          else if(result['details'].masterEmpRole.empRoleId=='200')
+            this.router.navigate(['/employee-dashboard']);
         } else {
           this.common.faliureAlert('Please try later', result['message'], '');
           this.SpinnerService.hide();

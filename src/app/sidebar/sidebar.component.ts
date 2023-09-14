@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit{
+  userRole: any;
 
   ngOnInit(): void {
+    this.userRole=localStorage.getItem('role');
     $(document).ready(function() {
 
     // Variables declarations

@@ -9,8 +9,8 @@
 							<li class="submenu">
 								<a href="#"><i class="la la-dashboard"></i> <span> Dashboard</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a [routerLink]="['admin-dashboard']" [routerLinkActive]="['active']" >Admin Dashboard</a></li>
-									<li><a [routerLink]="['employee-dashboard']" [routerLinkActive]="['active']">Employee Dashboard</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Viewer'"><a [routerLink]="['admin-dashboard']" [routerLinkActive]="['active']" >Admin Dashboard</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['employee-dashboard']" [routerLinkActive]="['active']">Employee Dashboard</a></li>
 								</ul>
 							</li>
 
@@ -20,19 +20,19 @@
 							<li class="submenu">
 								<a href="#" class="noti-dot"><i class="la la-user"></i> <span> Employees</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a [routerLink]="['all-employee']" [routerLinkActive]="['active']">All Employees</a></li>
-									<li><a [routerLink]="['attendence-admin']" [routerLinkActive]="['active']">Attendance (Admin)</a></li>
-									<li><a [routerLink]="['attendence-employee']" [routerLinkActive]="['active']">Attendance (Employee)</a></li>
-									<li><a [routerLink]="['leaves-admin']" [routerLinkActive]="['active']">Leaves (Admin) <span class="badge badge-pill bg-primary float-right">1</span></a></li>
-									<li><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Leaves (Employee)</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['all-employee']" [routerLinkActive]="['active']">All Employees</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['attendence-admin']" [routerLinkActive]="['active']">Attendance (Admin)</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['attendence-employee']" [routerLinkActive]="['active']">Attendance (Employee)</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['leaves-admin']" [routerLinkActive]="['active']">Leaves (Admin) <span class="badge badge-pill bg-primary float-right">1</span></a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Leaves (Employee)</a></li>
 
 								</ul>
 							</li>
-							<li class="submenu">
+							<li class="submenu" *ngIf="userRole=='Payrol'">
 								<a href="#"><i class="la la-money"></i> <span> Payroll </span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a [routerLink]="['empolyee-salary']" [routerLinkActive]="['active']"> Employee Salary </a></li>
-									<li><a [routerLink]="['payslip']" [routerLinkActive]="['active']"> Payslip </a></li>
+								<ul style="display: none;" >
+									<li *ngIf="userRole=='Payrol'"><a [routerLink]="['empolyee-salary']" [routerLinkActive]="['active']"> Employee Salary </a></li>
+									<li *ngIf="userRole=='Payrol'"><a [routerLink]="['payslip']" [routerLinkActive]="['active']"> Payslip </a></li>
 								</ul>
 							</li>
 						</ul>
