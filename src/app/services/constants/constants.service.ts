@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ConstantsService {
   constructor() {}
 
-  serviceUrl = 'http://192.168.137.200:8080/'; //UAT server
+  serviceUrl = 'http://192.168.137.27:8080/'; //UAT server
   api = {
     login:
       this.serviceUrl + 'api/adminLogin',
