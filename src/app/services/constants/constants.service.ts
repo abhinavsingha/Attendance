@@ -12,6 +12,8 @@ export class ConstantsService {
       this.serviceUrl + 'api/adminLogin',
     getDashBoardData: this.serviceUrl+'/api/webApi/Sidebar/getDashBoardDataMain',
     getAllEmpList: this.serviceUrl+'/api/webApi/Sidebar/getAllEmpList',
-    getAllDesignation: this.serviceUrl+'api/empRegistration/getAllDesignation'
+    getAllDesignation: this.serviceUrl+'api/empRegistration/getAllDesignation',
+    getMobileDashBoardData: this.serviceUrl+'api/dashboard/getMobileDashBoardData',
+    getProfileComplete: this.serviceUrl+'api/UpdateInfoController/getProfileComplete'
   };
 }

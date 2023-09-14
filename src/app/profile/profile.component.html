@@ -1,9 +1,9 @@
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
-			
+
 				<!-- Page Content -->
                 <div class="content container-fluid">
-				
+
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
@@ -17,11 +17,11 @@
 						</div>
 					</div>
 					<!-- /Page Header -->
-					
-					
-					
-					
-					
+
+
+
+
+
 					<div class="card mb-0">
 						<div class="card-body">
 							<div class="row">
@@ -29,17 +29,17 @@
 									<div class="profile-view">
 										<div class="profile-img-wrap">
 											<div class="profile-img">
-												<a href="#"><img alt="" src="assets/img/profiles/avatar-02.jpg"></a>
+												<a><img alt="" src="{{profileData.photo}}"></a>
 											</div>
 										</div>
 										<div class="profile-basic">
 											<div class="row">
 												<div class="col-md-5">
 													<div class="profile-info-left">
-														<h3 class="user-name m-t-0 mb-0">Soumyadip Chowdhury</h3>
-														<h6 class="text-muted">Information Technology</h6>
-														<small class="text-muted">Software Engineer</small>
-														<div class="staff-id">Employee ID : HOI-084</div>
+														<h3 class="user-name m-t-0 mb-0">{{profileData.empName}}</h3>
+<!--														<h6 class="text-muted">Information Technology</h6>-->
+														<small class="text-muted">{{profileData.empDesignation.empDesignationName}}</small>
+														<div class="staff-id">Employee ID : {{profileData.empId}}</div>
 														<div class="small doj text-muted">Date of Join : 1st Jan 2013</div>
 														<div class="staff-msg"><a class="btn btn-custom" >Send Mail</a></div>
 													</div>
@@ -48,20 +48,20 @@
 													<ul class="personal-info">
 														<li>
 															<div class="title">Phone:</div>
-															<div class="text"><a href="">9876543210</a></div>
+															<div class="text"><a href="tel:{{profileData.mobileNo}}">{{profileData.mobileNo}}</a></div>
 														</li>
 														<li>
 															<div class="title">Email:</div>
-															<div class="text"><a href="">soumyadip.note@gmail.com</a></div>
+															<div class="text"><a href="mailto:{{profileData.emailId}}">{{profileData.emailId}}</a></div>
 														</li>
 														<li>
 															<div class="title">Birthday:</div>
-															<div class="text">24th July</div>
+															<div class="text">NULL</div>
 														</li>
-														
+
 														<li>
 															<div class="title">Gender:</div>
-															<div class="text">Male</div>
+															<div class="text">NULL</div>
 														</li>
 														<li>
 															<div class="title">Reports to:</div>
@@ -86,7 +86,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="card tab-box">
 						<div class="row user-tabs">
 							<div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
@@ -97,9 +97,9 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="tab-content">
-					
+
 						<!-- Profile Info Tab -->
 						<div id="emp_profile" class="pro-overview tab-pane fade show active">
 							<div class="row">
@@ -128,7 +128,7 @@
 													<div class="title">Region Name:</div>
 													<div class="text"> Demo</div>
 												</li>
-																																										
+
 										      	<li>
 													<div class="title">Permanent Address:</div>
 													<div class="text"> Demo</div>
@@ -145,7 +145,7 @@
 													<div class="title">Current Pincode:</div>
 													<div class="text"> Demo</div>
 												</li>
-																							
+
 												<hr>
 												<li>
 													<div class="title">Birthday Celebration:</div>
@@ -188,7 +188,7 @@
 									<div class="card profile-box flex-fill">
 										<div class="card-body">
 											<h3 class="card-title">Office Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#emergency_contact_modal"><i class="fa fa-pencil"></i></a></h3>
-							
+
 											<ul class="personal-info">
 												<li>
 													<div class="title">Staff Id:</div>
@@ -226,7 +226,7 @@
 													<div class="title">Confirmation Date (Probitional):</div>
 													<div class="text">Demo</div>
 												</li>
-												
+
 												<li>
 													<div class="title">Shift:</div>
 													<div class="text">Demo</div>
@@ -235,9 +235,9 @@
 													<div class="title">Attendence Type:</div>
 													<div class="text">Demo</div>
 												</li>
-											
-												
-													
+
+
+
 											<hr>
 												<li>
 													<div class="title">Notice Period:</div>
@@ -273,7 +273,7 @@
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-6 d-flex">
 									<div class="card profile-box flex-fill">
@@ -330,13 +330,13 @@
 													<div class="title">ESI Applied From:</div>
 													<div class="text"> Demo</div>
 												</li>
-												
+
 												<li>
 													<div class="title">Increment From:</div>
 													<div class="text"> Demo</div>
 												</li>
 												<hr>
-												
+
 												<li>
 													<div class="title">Cost Center:</div>
 													<div class="text"> Demo</div>
@@ -345,7 +345,7 @@
 													<div class="title">Working City:</div>
 													<div class="text"> Demo</div>
 												</li>
-												
+
 											</ul>
 										</div>
 									</div>
@@ -354,14 +354,14 @@
 									<div class="card profile-box flex-fill">
 										<div class="card-body">
 											<h3 class="card-title">Others Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#emergency_contact_modal"><i class="fa fa-pencil"></i></a></h3>
-										
+
 											<ul class="personal-info">
-													
+
 													<li>
 													<div class="title">Contract Type:</div>
 													<div class="text"> Demo</div>
 												</li>
-											
+
 												<li>
 													<div class="title">Contract Date:</div>
 													<div class="text">Demo</div>
@@ -392,20 +392,20 @@
 													<div class="title">Pan Number:</div>
 													<div class="text">Demo</div>
 												</li>
-												
-												
+
+
 												<li>
 													<div class="title">Social Security No.:</div>
 													<div class="text">Demo</div>
 												</li>
-													
+
 											<hr>
 												<li>
 													<div class="title">Hiring Aggrement Name:</div>
 													<div class="text">Demo</div>
 												</li>
-											
-												
+
+
 												<li>
 													<div class="title">Hiring Activity Owner:</div>
 													<div class="text">Demo</div>
@@ -432,12 +432,12 @@
 									</div>
 								</div>
 							</div>
-							
+
 						</div>
 						<!-- /Profile Info Tab -->
-						
-						
-						
+
+
+
 						<!-- Bank Statutory Tab -->
 						<div class="tab-pane fade" id="bank_statutory">
 							<div class="card">
@@ -578,7 +578,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<hr>
 										<h3 class="card-title"> ESI Information</h3>
 										<div class="row">
@@ -640,7 +640,7 @@
 												</div>
 											</div>
 									   </div>
-										
+
 										<div class="submit-section">
 											<button class="btn btn-primary submit-btn" type="submit">Save</button>
 										</div>
@@ -649,7 +649,7 @@
 							</div>
 						</div>
 						<!-- /Bank Statutory Tab -->
-						
+
 					</div>
                 </div>
 				<!-- /Page Content -->
@@ -780,7 +780,7 @@
 					</div>
 				</div>
 				<!-- /Profile Modal -->
-				
+
 				<!-- Personal Info Modal -->
 				<div id="personal_info_modal" class="modal custom-modal fade" role="dialog">
 					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -858,7 +858,7 @@
 					</div>
 				</div>
 				<!-- /Personal Info Modal -->
-				
+
 				<!-- Family Info Modal -->
 				<div id="family_info_modal" class="modal custom-modal fade" role="dialog">
 					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -902,7 +902,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="card">
 											<div class="card-body">
 												<h3 class="card-title">Education Informations <a href="javascript:void(0);" class="delete-icon"><i class="fa fa-trash-o"></i></a></h3>
@@ -946,7 +946,7 @@
 					</div>
 				</div>
 				<!-- /Family Info Modal -->
-				
+
 				<!-- Emergency Contact Modal -->
 				<div id="emergency_contact_modal" class="modal custom-modal fade" role="dialog">
 					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -989,7 +989,7 @@
 											</div>
 										</div>
 									</div>
-									
+
 									<div class="card">
 										<div class="card-body">
 											<h3 class="card-title">Primary Contact</h3>
@@ -1029,7 +1029,7 @@
 					</div>
 				</div>
 				<!-- /Emergency Contact Modal -->
-				
+
 				<!-- Education Modal -->
 				<div id="education_info" class="modal custom-modal fade" role="dialog">
 					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1090,7 +1090,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="card">
 											<div class="card-body">
 												<h3 class="card-title">Education Informations <a href="javascript:void(0);" class="delete-icon"><i class="fa fa-trash-o"></i></a></h3>
@@ -1151,7 +1151,7 @@
 					</div>
 				</div>
 				<!-- /Education Modal -->
-				
+
 				<!-- Experience Modal -->
 				<div id="experience_info" class="modal custom-modal fade" role="dialog">
 					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -1206,7 +1206,7 @@
 												</div>
 											</div>
 										</div>
-										
+
 										<div class="card">
 											<div class="card-body">
 												<h3 class="card-title">Experience Informations <a href="javascript:void(0);" class="delete-icon"><i class="fa fa-trash-o"></i></a></h3>
