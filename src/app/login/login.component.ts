@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
           if(result['details'].masterEmpRole.empRoleId=='300')
             this.router.navigate(['/admin-dashboard']);
           else if(result['details'].masterEmpRole.empRoleId=='200')
+            debugger;
             this.router.navigate(['/employee-dashboard']);
         } else {
           this.common.faliureAlert('Please try later', result['message'], '');

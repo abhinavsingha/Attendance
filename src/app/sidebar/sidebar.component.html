@@ -23,14 +23,14 @@
 									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['all-employee']" [routerLinkActive]="['active']">All Employees</a></li>
 									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['attendence-employee']" [routerLinkActive]="['active']">Attendance (Employee)</a></li>
 									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Leaves (Employee)</a></li>
-									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Performance</a></li>
-									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Expenses</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Performance</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Expenses</a></li>
 
 
 
 								</ul>
 							</li>
-							<li class="menu-title">
+							<li class="menu-title"  *ngIf="userRole=='Admin'||userRole=='Super Admin'">
 								<span>Admin</span>
 							</li>
 							<li class="submenu">

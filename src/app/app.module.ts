@@ -22,9 +22,13 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {NgxSpinnerModule} from "ngx-spinner";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgSelectModule} from "@ng-select/ng-select";
+import {ChunkPipe} from "./services/common/chunk.pipe";
+import {EpochToDatePipe} from "./services/common/epochToDate.pipe";
 
 @NgModule({
   declarations: [
+    ChunkPipe,
+    EpochToDatePipe,
     AppComponent,
     HeaderComponent,
     SidebarComponent,

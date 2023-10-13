@@ -19,10 +19,12 @@
 					<!-- /Page Header -->
 
 
+                  <select [(ngModel)]="selectedOption">
+                    <option *ngFor="let option of dynamicOptions" [ngValue]="option">{{ option.label }}</option>
+                  </select>
 
 
-
-					<div class="card mb-0">
+					<div class="card mb-0" *ngIf="profileData!=undefined">
 						<div class="card-body">
 							<div class="row">
 								<div class="col-md-12">
@@ -80,7 +82,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="pro-edit"><a data-target="#profile_info" data-toggle="modal" class="edit-icon" href="#"><i class="fa fa-pencil"></i></a></div>
+										<div class="pro-edit" (click)="updateBasicInfo()"><a data-target="#profile_info" data-toggle="modal" class="edit-icon" href="#"><i class="fa fa-pencil"></i></a></div>
 									</div>
 								</div>
 							</div>
@@ -653,7 +655,7 @@
 					</div>
                 </div>
 				<!-- /Page Content -->
-				<form action="google.com">
+				<form action="google.com" [formGroup]="formDataBasic" *ngIf="profileData!=undefined">
 				<!-- Profile Modal -->
 				<div id="profile_info" class="modal custom-modal fade" role="dialog">
 					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -677,65 +679,61 @@
 											<div class="row">
 												<div class="col-md-6">
 													<div class="form-group">
-														<label>First Name</label>
-														<input type="text" class="form-control" value="John">
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="form-group">
-														<label>Last Name</label>
-														<input type="text" class="form-control" value="Doe">
+														<label>Name</label>
+														<input type="text" class="form-control" [(ngModel)]="profileData.empName" formControlName="name" readonly>
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="form-group">
 														<label>Birth Date</label>
 														<div class="cal-icon">
-															<input class="form-control datetimepicker" type="text" value="05/06/1985">
+															<input class="form-control datetimepicker" type="text" formControlName="dob">
 														</div>
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="form-group">
 														<label>Gender</label>
-														<select class="select form-control">
-															<option value="male selected">Male</option>
-															<option value="female">Female</option>
-														</select>
+<!--                            <ng-select class="select form-control" style="width: 100%" [items]="gender"-->
+<!--                                       bindLabel="genderDesc" placeholder="Select Gender" formControlName="gender">-->
+<!--                            </ng-select>-->
+                            <select class="select form-control">
+                              <option *ngFor="let option of gender" [value]="option">{{ option.genderDesc }}</option>
+                            </select>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-md-12">
-											<div class="form-group">
-												<label>Address</label>
-												<input type="text" class="form-control" value="4487 Snowbird Lane">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>State</label>
-												<input type="text" class="form-control" value="New York">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Country</label>
-												<input type="text" class="form-control" value="United States">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Pin Code</label>
-												<input type="text" class="form-control" value="10523">
-											</div>
-										</div>
+<!--										<div class="col-md-12">-->
+<!--											<div class="form-group">-->
+<!--												<label>Permanent Address</label>-->
+<!--												<input type="text" class="form-control" value="4487 Snowbird Lane">-->
+<!--											</div>-->
+<!--										</div>-->
+<!--										<div class="col-md-6">-->
+<!--											<div class="form-group">-->
+<!--												<label>State</label>-->
+<!--												<input type="text" class="form-control" value="New York">-->
+<!--											</div>-->
+<!--										</div>-->
+<!--										<div class="col-md-6">-->
+<!--											<div class="form-group">-->
+<!--												<label>Country</label>-->
+<!--												<input type="text" class="form-control" value="United States">-->
+<!--											</div>-->
+<!--										</div>-->
+<!--										<div class="col-md-6">-->
+<!--											<div class="form-group">-->
+<!--												<label>Pin Code</label>-->
+<!--												<input type="text" class="form-control" value="10523">-->
+<!--											</div>-->
+<!--										</div>-->
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Phone Number</label>
-												<input type="text" class="form-control" value="631-889-3206">
+												<input type="text" class="form-control" formControlName="phone" [(ngModel)]="profileData.mobileNo" readonly>
 											</div>
 										</div>
 										<div class="col-md-6">
@@ -752,14 +750,17 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Designation <span class="text-danger">*</span></label>
-												<select class="select">
-													<option>Select Designation</option>
-													<option>Web Designer</option>
-													<option>Web Developer</option>
-													<option>Android Developer</option>
-												</select>
+                        <select class="select form-control" formControlName="designation" [(ngModel)]="userDesignation" >
+                          <option *ngFor="let option of designation" [ngValue]="option">{{option.empDesignationName}}</option>
+                        </select>
 											</div>
 										</div>
+<!--                    <div class="col-md-6">-->
+<!--                      <div class="form-group">-->
+<!--                        <label>Designation <span class="text-danger">*</span></label>-->
+<!--                        <ng-select [items]="designation" [(ngModel)]="profileData.empDesignation"></ng-select>-->
+<!--                      </div>-->
+<!--                    </div>-->
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Reports To <span class="text-danger">*</span></label>
