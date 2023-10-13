@@ -692,7 +692,7 @@
 													</div>
 												</div>
 												<div class="col-md-6">
-													<div class="form-group">
+													<div class="form-group form-focus select-focus">
 														<label>Gender</label>
 <!--                            <ng-select class="select form-control" style="width: 100%" [items]="gender"-->
 <!--                                       bindLabel="genderDesc" placeholder="Select Gender" formControlName="gender">-->
@@ -737,9 +737,9 @@
 											</div>
 										</div>
 										<div class="col-md-6">
-											<div class="form-group">
+											<div class="form-group form-focus select-focus">
 												<label>Department <span class="text-danger">*</span></label>
-												<select class="select">
+												<select class="select floating">
 													<option>Select Department</option>
 													<option>Web Development</option>
 													<option>IT Management</option>
@@ -748,8 +748,14 @@
 											</div>
 										</div>
 										<div class="col-md-6">
-											<div class="form-group">
+											<div class="form-group form-focus select-focus">
 												<label>Designation <span class="text-danger">*</span></label>
+<!--												<select class="select floating">-->
+<!--													<option>Select Designation</option>-->
+<!--													<option>Web Designer</option>-->
+<!--													<option>Web Developer</option>-->
+<!--													<option>Android Developer</option>-->
+<!--												</select>-->
                         <select class="select form-control" formControlName="designation" [(ngModel)]="userDesignation" >
                           <option *ngFor="let option of designation" [ngValue]="option">{{option.empDesignationName}}</option>
                         </select>
@@ -762,10 +768,10 @@
 <!--                      </div>-->
 <!--                    </div>-->
 										<div class="col-md-6">
-											<div class="form-group">
+											<div class="form-group form-focus select-focus">
 												<label>Reports To <span class="text-danger">*</span></label>
-												<select class="select">
-													<option>-</option>
+												<select class="select floating">
+													<option>Select Report Person</option>
 													<option>Wilmer Deluna</option>
 													<option>Lesley Grauer</option>
 													<option>Jeffery Lalor</option>
