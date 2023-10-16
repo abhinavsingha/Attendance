@@ -32,8 +32,16 @@ export class LeavesEmployeeComponent implements OnInit{
     empLeaveToDate: new FormControl(),
     leaveReason: new FormControl(),
   });
-  selectedLeaveType: any;
+  // selectedLeaveType: string|null=null;\
+  selectedLeaveType: string="";
   allLeaves: any;
+  languages = [
+    {id: 1, name: "Angular"},
+    {id: 2, name: "Typescript"},
+    {id: 3, name: "Javascript"},
+    {id: 4, name: "Java"},
+    {id: 5, name: "DotNet"}
+  ]
   constructor(
     private apiService: ApiCallingServiceService,
     private cons: ConstantsService,
@@ -76,7 +84,7 @@ export class LeavesEmployeeComponent implements OnInit{
 
   applyLeave(formData: any) {
     let json= {
-      'leaveTypeId': this.selectedLeaveType,
+      'leaveTypeId': formData.leaveType,
       'empLeaveFromDate': formData.empLeaveFromDate,
       'empLeaveToDate': formData.empLeaveToDate,
       'leaveReason': formData.leaveReason
@@ -126,4 +134,13 @@ export class LeavesEmployeeComponent implements OnInit{
       complete: () => console.info('complete'),
     });
   }
+
+  onLeaveTypeSelect(selectedValue: any) {
+    this.selectedLeaveType = selectedValue; // Set the selected value to the variable
+    console.log('Selected Leave Type:', this.selectedLeaveType); // You can remove this line; it's for demonstration purposes
+  }
+  trackByLeaveTypeId(index: number, option: any): string {
+    return option.leaveTypeId;
+  }
+
 }
