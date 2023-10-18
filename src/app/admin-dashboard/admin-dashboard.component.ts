@@ -22,35 +22,13 @@ export class AdminDashboardComponent  implements OnInit{
   ) {}
   ngOnInit(): void {
     this.name=localStorage.getItem('empName');
-    this.getDashboardData();
+    this.common.getDashboardData();
+    debugger;
+    debugger;
     $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/chart.js');
     $.getScript('../../assets/js/select2.min.js');
 
-  }
-
-
-  private getDashboardData() {
-    this.apiService.getApiWithToken(this.cons.api.getDashBoardData).subscribe({
-        next: (v: object) => {
-          this.SpinnerService.hide();
-          let result: { [key: string]: any } = v;
-
-          if (result['message'] == 'Success') {
-            this.dashboardData=result['response'];
-
-          } else {
-            this.common.faliureAlert('Please try later', result['message'], '');
-          }
-        },
-        error: (e) => {
-          // this.SpinnerService.hide();
-          console.error(e);
-          this.common.faliureAlert('Error', e['error']['message'], 'error');
-        },
-        complete: () => console.info('complete'),
-      }
-    );
   }
 }
 

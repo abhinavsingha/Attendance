@@ -91,6 +91,21 @@
 									<li *ngIf="userRole=='Admin'"><a [routerLink]="['payslip']" [routerLinkActive]="['active']"> Tax Declaration </a></li>
 								</ul>
 							</li>
+              <li class="menu-title" *ngIf="userRole=='Admin'||userRole=='Super Admin'">
+                <span>Master</span>
+              </li>
+              <li class="submenu">
+                <a href="#" class="noti-dot"><i class="fas fa-inbox"></i> <span> Change Master Data</span> <span class="menu-arrow"></span></a>
+                <ul style="display: none;">
+                  <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['department']" [routerLinkActive]="['active']">Add/Update Department</a></li>
+                  <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['designation']" [routerLinkActive]="['active']">Add/Update Designation</a></li>
+                  <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['gender']" [routerLinkActive]="['active']">Add/Update Gender</a></li>
+                  <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['marital-status']" [routerLinkActive]="['active']">Add/Update Marital Status</a></li>
+                  <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['relation']" [routerLinkActive]="['active']">Add/Update Relation</a></li>
+                  <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['blood-group']" [routerLinkActive]="['active']">Add/Update Blood Group</a></li>
+
+                </ul>
+              </li>
 						</ul>
 					</div>
                 </div>

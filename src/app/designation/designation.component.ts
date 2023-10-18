@@ -1,40 +1,22 @@
-import { Component,OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiCallingServiceService} from "../services/api-calling/api-calling-service.service";
 import {ConstantsService} from "../services/constants/constants.service";
 import {CommonService} from "../services/common/common.service";
 import {NgxSpinnerService} from "ngx-spinner";
 import {Router} from "@angular/router";
+import * as $ from "jquery";
 import {FormControl, FormGroup} from "@angular/forms";
-class leaveRequest{
-  leaveTypeId: any;
-  empLeaveFromDate: any;
-  empLeaveToDate: any;
-  leaveReason: any;
-}
 
 @Component({
-  selector: 'app-leaves-employee',
-  templateUrl: './leaves-employee.component.html',
-  styleUrls: ['./leaves-employee.component.scss']
+  selector: 'app-designation',
+  templateUrl: './designation.component.html',
+  styleUrls: ['./designation.component.scss']
 })
-export class LeavesEmployeeComponent implements OnInit{
-  leaveList: any;
-  leaveBal:number=0;
-  req:leaveRequest= {
-    leaveTypeId: undefined,
-    empLeaveFromDate: undefined,
-    empLeaveToDate: undefined,
-    leaveReason: undefined
-  }
+export class DesignationComponent implements OnInit{
   formData = new FormGroup({
-    leaveType: new FormControl(),
-    empLeaveFromDate: new FormControl(),
-    empLeaveToDate: new FormControl(),
-    leaveReason: new FormControl(),
-  });
-  // selectedLeaveType: string|null=null;\
-  selectedLeaveType: string="";
-  allLeaves: any;
+    designation: new FormControl(),
+    outside: new FormControl()});
+  private currentDesignation: any;
   constructor(
     private apiService: ApiCallingServiceService,
     private cons: ConstantsService,
@@ -43,59 +25,61 @@ export class LeavesEmployeeComponent implements OnInit{
     private router: Router,
   ) {}
   ngOnInit(): void {
-    this.getLeaveType();
-    this.getAllLeaves();
-    this.leaveBal=Number(localStorage.getItem('leaves'))
     $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/select2.min.js');
+    this.common.getAllDesignation();
 
   }
 
-  private getLeaveType() {
-
-    this.apiService.getApiWithToken(this.cons.api.getAllLeaveType).subscribe({
-      next: (v: object) => {
-        this.SpinnerService.hide();
-        let result: { [key: string]: any } = v;
-
-        if (result['message'] == 'Successfully Fetch') {
-        this.leaveList=result['object'];
-        } else {
-          this.common.faliureAlert('Please try later', result['message'], '');
-        }
-      },
-      error: (e) => {
-        // this.SpinnerService.hide();
-        console.error(e);
-        this.common.faliureAlert('Error', e['error']['message'], 'error');
-      },
-      complete: () => console.info('complete'),
-    });
-
-  }
-
-
-  applyLeave(formData: any) {
-    let json= {
-      'leaveTypeId': formData.leaveType,
-      'empLeaveFromDate': this.common.convertDateToEpoch(formData.empLeaveFromDate),
-      'empLeaveToDate': this.common.convertDateToEpoch(formData.empLeaveToDate),
-      'leaveReason': formData.leaveReason
+  saveDesignation(value:any) {
+    let json={
+      empDesignationName:value.designation,
+      empOutSideAttendance:value.outside,
+      isFlag: 1
     }
-    debugger;
-    this.apiService.postApiWithToken(this.cons.api.createOrUpdate,json).subscribe({
+    this.apiService.postApiWithToken(this.cons.api.designationcreateOrUpdate,json).subscribe({
       next: (v: object) => {
         this.SpinnerService.hide();
         let result: { [key: string]: any } = v;
 
-        if (result['message'] == 'Successfully Created') {
+        if (result['message'] == 'CREATED') {
+          this.common.successAlert('Saved', result['message'], '');
 
         } else {
           this.common.faliureAlert('Please try later', result['message'], '');
         }
       },
       error: (e) => {
-        // this.SpinnerService.hide();
+        this.SpinnerService.hide();
+        console.error(e);
+        this.common.faliureAlert('Error', e['error']['message'], 'error');
+      },
+      complete: () => console.info('complete'),
+    });
+
+  }
+
+  updateDesignation(value:any) {
+    let json={
+      empDesignationName:value.designation,
+      empOutSideAttendance:value.outside,
+      isFlag: 1,
+      empDesignationId: this.currentDesignation.empDesignationId,
+    }
+    this.apiService.postApiWithToken(this.cons.api.designationcreateOrUpdate,json).subscribe({
+      next: (v: object) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = v;
+
+        if (result['message'] == 'CREATED') {
+          this.common.successAlert('Updated', result['message'], '');
+
+        } else {
+          this.common.faliureAlert('Please try later', result['message'], '');
+        }
+      },
+      error: (e) => {
+        this.SpinnerService.hide();
         console.error(e);
         this.common.faliureAlert('Error', e['error']['message'], 'error');
       },
@@ -103,29 +87,35 @@ export class LeavesEmployeeComponent implements OnInit{
     });
   }
 
-  private getAllLeaves() {
-    this.apiService.getApiWithToken(this.cons.api.getAll).subscribe({
+  current(designation: any) {
+    this.currentDesignation=designation;
+  }
+
+  delete(designation: any) {
+    let json={
+      empDesignationName:designation.empDesignationName,
+      empOutSideAttendance:designation.empOutSideAttendance,
+      isFlag: 0,
+      empDesignationId: designation.empDesignationId,
+    }
+    this.apiService.postApiWithToken(this.cons.api.designationcreateOrUpdate,json).subscribe({
       next: (v: object) => {
         this.SpinnerService.hide();
         let result: { [key: string]: any } = v;
 
-        if (result['httpStatus'] == 'OK') {
-          this.allLeaves=result['object'].employeeLeaveDTO;
-          for(let leave of this.allLeaves){
-            if(leave.leaveVerifyByEmpId==undefined)
-              leave.leaveStatus='Pending';
-          }
+        if (result['message'] == 'CREATED') {
+          this.common.successAlert('Updated', result['message'], '');
+
         } else {
           this.common.faliureAlert('Please try later', result['message'], '');
         }
       },
       error: (e) => {
-        // this.SpinnerService.hide();
+        this.SpinnerService.hide();
         console.error(e);
         this.common.faliureAlert('Error', e['error']['message'], 'error');
       },
       complete: () => console.info('complete'),
     });
   }
-
 }
