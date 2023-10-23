@@ -111,12 +111,19 @@
 <!--                      <option *ngFor="let option of leaveList" [ngValue]="option.leaveTypeId">{{option.leaveTypeDescr}}</option>-->
 <!--                    </select>-->
 <!--									</div>-->
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label>Leave Type <span class="text-danger">*</span></label>
                     <select class="select" formControlName="leaveType" [(ngModel)]="selectedLeaveType">
                       <option *ngFor="let option of leaveList" [ngValue]="option.leaveTypeId">{{ option.leaveTypeDescr }}</option>
                     </select>
-                  </div>
+                  </div> -->
+				  <div class="form-group form-group form-focus select-focus">
+					<label>Leave Type <span class="text-danger">*</span></label>
+					<select class="form-control" formControlName="leaveType" [(ngModel)]="selectedLeaveType" id="mySelect2">
+						<option *ngFor="let option of leaveList" [ngValue]="option.leaveTypeId">{{ option.leaveTypeDescr }}</option>
+					</select>
+		
+				</div>
 									<div class="form-group">
 										<label>From <span class="text-danger">*</span></label>
 										<div class="cal-icon">
@@ -172,8 +179,8 @@
 									</div>
 									<div class="form-group">
 										<label>From <span class="text-danger">*</span></label>
-										<div class="cal-icon">
-											<input class="form-control datetimepicker" value="01-01-2019" type="text">
+										<div>
+											<input class="form-control" value="01-01-2019" type="date">
 										</div>
 									</div>
 									<div class="form-group">

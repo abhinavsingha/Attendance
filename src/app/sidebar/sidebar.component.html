@@ -70,8 +70,8 @@
 							<li class="submenu">
 								<a href="#" class="noti-dot"><i class="fas fa-file-alt"></i> <span> Document</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Personal Document</a></li>
-									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Company Document</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['personal-document']" [routerLinkActive]="['active']">Personal Document</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['company-document']" [routerLinkActive]="['active']">Company Document</a></li>
 
 								</ul>
 							</li>

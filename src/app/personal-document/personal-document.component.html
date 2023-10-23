@@ -1,0 +1,79 @@
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+
+				<!-- Page Content -->
+                <div class="content container-fluid">
+
+					<!-- Page Header -->
+					<div class="page-header">
+						<div class="row align-items-center">
+							<div class="col">
+								<h3 class="page-title">Personal Document</h3>
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+									<li class="breadcrumb-item active">Personal Document</li>
+								</ul>
+							</div>
+						
+						</div>
+					</div>
+					<!-- /Page Header -->
+
+					<!-- Leave Statistics -->
+					<div class="row">
+                        <div class="container mt-4">
+                            <div
+                              id="drop-area"
+                              class="text-center"
+                              (dragover)="onDragOver($event)"
+                              (dragleave)="onDragLeave($event)"
+                              (drop)="onDrop($event)"
+                            >
+                              <p>Drag and drop a file here or</p>
+                              <label for="file-input" class="file-label btn btn-primary">Browse for a file</label>
+                              <input
+                                type="file"
+                                id="file-input"
+                                (change)="onFileSelected($event)"
+                              />
+                            </div>
+                            <div id="file-list">
+                              <p>Uploaded files:</p>
+                              <ul>
+                                <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size | filesize }}</li>
+                              </ul>
+                            </div>
+                          </div>
+                          
+					</div>
+					<!-- /Leave Statistics -->
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="table-responsive">
+								<table class="table table-striped custom-table mb-0 datatable">
+									<thead>
+										<tr>
+											<th>Leave Type</th>
+											<th>From</th>
+											<th>To</th>
+<!--											<th>No of Days</th>-->
+											<th>Reason</th>
+											<th class="text-center">Status</th>
+											<th>Approved by</th>
+											<th class="text-right">Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+						
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+                </div>
+				<!-- /Page Content -->
+
+		
+            </div>
+			<!-- /Page Wrapper -->

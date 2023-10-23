@@ -24,6 +24,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgSelectModule} from "@ng-select/ng-select";
 import {ChunkPipe} from "./services/common/chunk.pipe";
 import {EpochToDatePipe} from "./services/common/epochToDate.pipe";
+import { PersonalDocumentComponent } from './personal-document/personal-document.component';
+import { CompanyDocumentComponent } from './company-document/company-document.component';
+import { FilesizePipe } from './filesize.pipe';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import {EpochToDatePipe} from "./services/common/epochToDate.pipe";
     EmployeesListComponent,
     ProfileComponent,
     ActivitiesComponent,
+    PersonalDocumentComponent,
+    CompanyDocumentComponent,
+    FilesizePipe,
 
   ],
   imports: [

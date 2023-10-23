@@ -33,6 +33,9 @@ export class EmployeeDashboardComponent implements OnInit{
     debugger;
   $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/select2.min.js');
+    $.getScript('../../assets/js/jquery-ui.min.js');
+    $.getScript('../../assets/js/fullcalendar.min.js');
+    $.getScript('../../assets/js/jquery.fullcalendar.js');
    this.getMobileDashBoardData();
  }
 

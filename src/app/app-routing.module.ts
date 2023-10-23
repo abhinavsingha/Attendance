@@ -13,7 +13,8 @@ import { PayslipComponent } from './payslip/payslip.component';
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ActivitiesComponent } from './activities/activities.component';
-
+import { PersonalDocumentComponent } from './personal-document/personal-document.component';
+import { CompanyDocumentComponent } from './company-document/company-document.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'employees-list', component: EmployeesListComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'activities', component: ActivitiesComponent },
-  
+  { path: 'personal-document', component: PersonalDocumentComponent },
+  { path: 'company-document', component: CompanyDocumentComponent },
 ];
 
 @NgModule({
