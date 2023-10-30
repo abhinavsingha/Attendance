@@ -1,0 +1,14 @@
+.login-bg{
+    background: url('../../assets/img/img-01.jpg') no-repeat;
+    background-size:cover ;
+    background-position: center center;
+
+}
+.log-height{
+    height: 100vh;
+}
+@media screen and (max-width:767px){
+    .login-bg{
+        display: none;
+    }
+}
