@@ -11,16 +11,26 @@ export class ConstantsService {
   api = {
     login:
       this.serviceUrl + 'api/adminLogin',
-    getDashBoardData: this.serviceUrl+'/api/webApi/Sidebar/getDashBoardDataMain',
-    getAllEmpList: this.serviceUrl+'/api/webApi/Sidebar/getAllEmpList',
-    getAllDesignation: this.serviceUrl+'/api/designation/getAllDesignation',
+    getDashBoardData: this.serviceUrl+'api/webApi/Sidebar/getDashBoardDataMain',
+    getAllEmpList: this.serviceUrl+'api/webApi/Sidebar/getAllEmpList',
+    getAllDesignation: this.serviceUrl+'api/designation/getAllDesignation',
     getMobileDashBoardData: this.serviceUrl+'api/dashboard/getMobileDashBoardData',
     getProfileComplete: this.serviceUrl+'api/UpdateInfoController/getProfileComplete',
-    getAllGender: this.serviceUrl+'/api/gender/getAllGender',
-    getAllDependent: this.serviceUrl+'/api/empDependent/getAllDependent',
-    getAllDepartment: undefined,
+    getAllGender: this.serviceUrl+'api/gender/getAllGender',
+    getAllDependent: this.serviceUrl+'api/empDependent/getAllDependent',
+    getAllDepartment: this.serviceUrl+'api/department/getAllDepartment',
     getAllLeaveType: this.serviceUrl+'api/empLeave/getAllLeaveType',
     createOrUpdate: this.serviceUrl+'api/empLeave/createOrUpdate',
-    getAll: this.serviceUrl+'api/empLeave/getAll'
+    getAll: this.serviceUrl+'api/empLeave/getAll',
+    createOrUpdateEmployee: this.serviceUrl+'/api/empRegistrationWeb/createOrUpdateEmployee',
+    getAllRole: this.serviceUrl+'api/role/getAllRole',
+    designationcreateOrUpdate: this.serviceUrl+'api/designation/createOrUpdate',
+    departmentCreateOrUpdate: this.serviceUrl+'api/department/createOrUpdate',
+    getAllBloodGroup: this.serviceUrl+'api/bloodGroup/getAllBloodGroup',
+    bloodCreateOrUpdate: this.serviceUrl+'api/bloodGroup/createOrUpdate',
+    genderCreateOrUpdate: this.serviceUrl+'api/gender/createOrUpdate',
+    maritalStatusCreateOrUpdate: this.serviceUrl+'api/maritalStatus/createOrUpdate',
+    getAllRelation: this.serviceUrl+'api/relation/getAllRelation',
+    relationCreateOrUpdate: this.serviceUrl+'api/relation/createOrUpdate'
   };
 }

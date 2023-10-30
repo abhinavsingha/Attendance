@@ -27,7 +27,7 @@ export class EmployeesListComponent implements OnInit{
     $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/select2.min.js');
     this.getAllEmployee();
-    this.getAllDesignation();
+    this.common.getAllDesignation();
   }
 
   private getAllEmployee() {
@@ -63,27 +63,27 @@ export class EmployeesListComponent implements OnInit{
     this.currentEmployee=emp;
   }
 
-  private getAllDesignation() {
-    this.apiService.getApiWithToken(this.cons.api.getAllDesignation).subscribe({
-      next: (v: object) => {
-        this.SpinnerService.hide();
-        let result: { [key: string]: any } = v;
-
-        if (result['message'] == 'Success') {
-          this.designations=result['object'];
-
-        } else {
-          this.common.faliureAlert('Please try later', result['message'], '');
-        }
-      },
-      error: (e) => {
-        this.SpinnerService.hide();
-        console.error(e);
-        this.common.faliureAlert('Error', e['error']['message'], 'error');
-      },
-      complete: () => console.info('complete'),
-    });
-  }
+  // private getAllDesignation() {
+  //   this.apiService.getApiWithToken(this.cons.api.getAllDesignation).subscribe({
+  //     next: (v: object) => {
+  //       this.SpinnerService.hide();
+  //       let result: { [key: string]: any } = v;
+  //
+  //       if (result['message'] == 'CREATED') {
+  //         this.designations=result['object'];
+  //
+  //       } else {
+  //         this.common.faliureAlert('Please try later', result['message'], '');
+  //       }
+  //     },
+  //     error: (e) => {
+  //       this.SpinnerService.hide();
+  //       console.error(e);
+  //       this.common.faliureAlert('Error', e['error']['message'], 'error');
+  //     },
+  //     complete: () => console.info('complete'),
+  //   });
+  // }
   parseDate(dateString: string): Date {
     if (dateString) {
       return new Date(dateString);

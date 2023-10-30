@@ -24,9 +24,18 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgSelectModule} from "@ng-select/ng-select";
 import {ChunkPipe} from "./services/common/chunk.pipe";
 import {EpochToDatePipe} from "./services/common/epochToDate.pipe";
+<<<<<<< HEAD
 import { PersonalDocumentComponent } from './personal-document/personal-document.component';
 import { CompanyDocumentComponent } from './company-document/company-document.component';
 import { FilesizePipe } from './filesize.pipe';
+=======
+import { DesignationComponent } from './designation/designation.component';
+import { DepartmentComponent } from './department/department.component';
+import { GenderComponent } from './gender/gender.component';
+import { MaritalStatusComponent } from './marital-status/marital-status.component';
+import { RelationComponent } from './relation/relation.component';
+import { BloodGroupComponent } from './blood-group/blood-group.component';
+>>>>>>> 6f80e97a175eadc57895c8944cf408f1de5d1582
 
 @NgModule({
   declarations: [
@@ -48,9 +57,18 @@ import { FilesizePipe } from './filesize.pipe';
     EmployeesListComponent,
     ProfileComponent,
     ActivitiesComponent,
+<<<<<<< HEAD
     PersonalDocumentComponent,
     CompanyDocumentComponent,
     FilesizePipe,
+=======
+    DesignationComponent,
+    DepartmentComponent,
+    GenderComponent,
+    MaritalStatusComponent,
+    RelationComponent,
+    BloodGroupComponent,
+>>>>>>> 6f80e97a175eadc57895c8944cf408f1de5d1582
 
   ],
   imports: [
@@ -64,6 +82,7 @@ import { FilesizePipe } from './filesize.pipe';
     NgOptimizedImage,
   ],
   providers: [
+    AllEmployeesComponent,
     DatePipe,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
 

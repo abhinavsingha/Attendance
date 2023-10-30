@@ -13,8 +13,17 @@ import { PayslipComponent } from './payslip/payslip.component';
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ActivitiesComponent } from './activities/activities.component';
+<<<<<<< HEAD
 import { PersonalDocumentComponent } from './personal-document/personal-document.component';
 import { CompanyDocumentComponent } from './company-document/company-document.component';
+=======
+import {DesignationComponent} from "./designation/designation.component";
+import {DepartmentComponent} from "./department/department.component";
+import {BloodGroupComponent} from "./blood-group/blood-group.component";
+import {GenderComponent} from "./gender/gender.component";
+import {RelationComponent} from "./relation/relation.component";
+
+>>>>>>> 6f80e97a175eadc57895c8944cf408f1de5d1582
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
@@ -29,8 +38,17 @@ const routes: Routes = [
   { path: 'employees-list', component: EmployeesListComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'activities', component: ActivitiesComponent },
+<<<<<<< HEAD
   { path: 'personal-document', component: PersonalDocumentComponent },
   { path: 'company-document', component: CompanyDocumentComponent },
+=======
+  {path:'designation', component:DesignationComponent},
+  {path:'department', component:DepartmentComponent},
+  {path:'blood-group', component:BloodGroupComponent},
+  {path:'gender', component:GenderComponent},
+  {path:'relation', component:RelationComponent}
+
+>>>>>>> 6f80e97a175eadc57895c8944cf408f1de5d1582
 ];
 
 @NgModule({
