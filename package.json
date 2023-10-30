@@ -22,6 +22,7 @@
     "angular-font-awesome": "^3.1.2",
     "jquery": "^3.6.4",
     "ngx-spinner": "^15.0.1",
+    "parse-json": "^7.1.0",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.6.13",
     "tslib": "^2.3.0",

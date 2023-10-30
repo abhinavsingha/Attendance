@@ -33,6 +33,8 @@ import { GenderComponent } from './gender/gender.component';
 import { MaritalStatusComponent } from './marital-status/marital-status.component';
 import { RelationComponent } from './relation/relation.component';
 import { BloodGroupComponent } from './blood-group/blood-group.component';
+import {UploadAttendanceComponent} from "./upload-attendance/upload-attendance.component";
+import {SalaryComponent} from "./salary/salary.component";
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { BloodGroupComponent } from './blood-group/blood-group.component';
     MaritalStatusComponent,
     RelationComponent,
     BloodGroupComponent,
+    UploadAttendanceComponent,
+    SalaryComponent
 
   ],
   imports: [

@@ -1,0 +1,56 @@
+<p>upload-attendance works!</p>
+
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+
+  <!-- Page Content -->
+  <div class="content container-fluid">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="row align-items-center">
+        <div class="col">
+          <h3 class="page-title">Attendance Upload</h3>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Attendance Upload</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label for="invoice">Attendance Upload</label>
+        <div class="input-group">
+          <div class="custom-file">
+            <input #invoiceFileInput class="custom-file-input"  id="invoice"
+                   type="file" (change)="debug()">
+            <label *ngIf="filename!=undefined" class="custom-file-label" for="invoice" >{{filename}}</label>
+            <label *ngIf="filename==undefined"class="custom-file-label" for="invoice" >Choose file</label>
+          </div>
+          <div class="input-group-append">
+            <span (click)="upload()" class="input-group-text" style="cursor: pointer">Upload</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="attendance!=undefined">
+<ng-container *ngFor="let key of getobjectKeys(attendance);let i = index">
+    <div class="collapsible1" (click)="toggleTable(i)">{{key}}</div>
+    <div *ngIf="isTableVisible[i]">
+      <table class="table table-striped custom-table table-nowrap mb-0">
+        <tr>
+          <th>Date</th>
+          <th>In Time</th>
+          <th>Out Time</th>
+        </tr>
+        <tr *ngFor="let key1 of getobjectKeys(this.attendance[key])">
+          <td>{{this.attendance[key][key1][0].date}}</td>
+          <td>{{this.attendance[key][key1][0].punchIn}}</td>
+          <td>{{this.attendance[key][key1][0].punchOut}}</td>
+        </tr>
+      </table>
+    </div>
+</ng-container>
+  </div>
+  </div>
+</div>

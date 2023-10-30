@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ConstantsService {
   constructor() {}
 
-  serviceUrl = 'http://192.168.137.99:8080/'; //UAT server
+  serviceUrl = 'http://192.168.2.2:8080/'; //UAT server
   // serviceUrl = 'http://petregistration.mynoida.co.in/NaprWeb/'; //UAT server
   api = {
     login:
@@ -31,6 +31,9 @@ export class ConstantsService {
     genderCreateOrUpdate: this.serviceUrl+'api/gender/createOrUpdate',
     maritalStatusCreateOrUpdate: this.serviceUrl+'api/maritalStatus/createOrUpdate',
     getAllRelation: this.serviceUrl+'api/relation/getAllRelation',
-    relationCreateOrUpdate: this.serviceUrl+'api/relation/createOrUpdate'
+    relationCreateOrUpdate: this.serviceUrl+'api/relation/createOrUpdate',
+    getAllMaritalStatus: undefined,
+    attendanceFileUpload: this.serviceUrl+'/api/fileUpload/uploadAttendance',
+    uploadSalary: this.serviceUrl+'api/fileUpload/uploadSalary'
   };
 }

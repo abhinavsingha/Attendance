@@ -1,0 +1,168 @@
+<p>upload-attendance works!</p>
+
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+
+  <!-- Page Content -->
+  <div class="content container-fluid">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="row align-items-center">
+        <div class="col">
+          <h3 class="page-title">Salary Upload</h3>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Salary Upload</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /Page Header -->
+
+    <!-- Leave Statistics -->
+    <!-- /Leave Statistics -->
+
+    <div class="row">
+      <div class="form-group">
+        <label for="invoice">Salary Upload</label>
+        <div class="input-group">
+          <div class="custom-file">
+            <input #invoiceFileInput class="custom-file-input" formControlName="file" id="invoice"
+                   type="file" (change)="debug()">
+            <label *ngIf="filename!=undefined" class="custom-file-label" for="invoice" >{{filename}}</label>
+            <label *ngIf="filename==undefined"class="custom-file-label" for="invoice" >Choose file</label>
+          </div>
+          <div class="input-group-append">
+            <span (click)="upload('invoice')" class="input-group-text" style="cursor: pointer">Upload</span>
+          </div>
+
+          <!--      <div class="input-group-append" *ngIf="invoice!=undefined">-->
+          <!--        <span class="input-group-text" (click)="viewFile(invoice)">View</span>-->
+          <!--      </div>-->
+        </div>
+      </div>
+    </div>
+  <div style="overflow-x: auto;">
+    <table class="table table-striped custom-table table-nowrap mb-0" *ngIf="attendance!=undefined">
+      <thead>
+
+      </thead>
+      <tbody >
+      <tr *ngFor="let key of objectKeys" >
+
+          <td *ngFor="let item of attendance[key]">{{item}}</td>
+
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+
+
+
+
+<!--    <div class="row">-->
+<!--      <div class="col-md-12">-->
+<!--        <div class="table-responsive">-->
+<!--          <table class="table table-striped custom-table mb-0 datatable">-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--              <th>Relation</th>-->
+<!--              <th>Updated On</th>-->
+<!--              <th>Action</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--&lt;!&ndash;            <tr *ngFor="let relation of this.common.relation">&ndash;&gt;-->
+<!--&lt;!&ndash;              <td >{{relation.relationDesc}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;              <td>{{this.common.epochtoDateTime(relation.updatedOn)}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;              <td class="text-right">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="dropdown dropdown-action">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <div class="dropdown-menu dropdown-menu-right">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_leave" (click)="current(relation)"><i class="fa fa-pencil m-r-5"></i> Edit</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <a class="dropdown-item" href="#" (click)="delete(relation)"><i class="fa fa-trash-o m-r-5"></i> Delete</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              </td>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+<!--            </tbody>-->
+<!--          </table>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  -->
+
+
+
+
+
+
+
+
+
+<!-- /Page Content -->
+
+<!-- Add Leave Modal -->
+<!--  <div id="add_leave" class="modal custom-modal fade" role="dialog">-->
+<!--    <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--      <div class="modal-content">-->
+<!--        <div class="modal-header">-->
+<!--          <h5 class="modal-title">Add relation</h5>-->
+<!--          <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--            <span aria-hidden="true">&times;</span>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--        <div class="modal-body">-->
+<!--          <form [formGroup]="formData">-->
+
+<!--            <div class="form-group">-->
+<!--              <label>Relation Name <span class="text-danger">*</span></label>-->
+<!--              <div class="cal-icon">-->
+<!--                <input class="form-control" formControlName="relation" placeholder="relation Name" type="text">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="submit-section">-->
+<!--              <button class="btn btn-primary submit-btn" (click)="saveRelation(formData.value)">Save</button>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  &lt;!&ndash; /Add Leave Modal &ndash;&gt;-->
+
+<!--  &lt;!&ndash; Edit Leave Modal &ndash;&gt;-->
+<!--  <div id="edit_leave" class="modal custom-modal fade" role="dialog">-->
+<!--    <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--      <div class="modal-content">-->
+<!--        <div class="modal-header">-->
+<!--          <h5 class="modal-title">Edit relation</h5>-->
+<!--          <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--            <span aria-hidden="true">&times;</span>-->
+<!--          </button>-->
+<!--        </div>-->
+<!--        <div class="modal-body">-->
+<!--          <form [formGroup]="formData">-->
+
+<!--            <div class="form-group">-->
+<!--              <label>Relation Name <span class="text-danger">*</span></label>-->
+<!--              <div class="cal-icon">-->
+<!--                <input class="form-control" formControlName="relation" placeholder="relation Name" type="text">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="submit-section">-->
+<!--              <button class="btn btn-primary submit-btn" (click)="updateRelation(formData.value)">Update</button>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!-- /Edit Leave Modal -->
+<!--</div>-->
+<!-- Page Wrapper -->

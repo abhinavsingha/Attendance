@@ -20,6 +20,9 @@ import {DepartmentComponent} from "./department/department.component";
 import {BloodGroupComponent} from "./blood-group/blood-group.component";
 import {GenderComponent} from "./gender/gender.component";
 import {RelationComponent} from "./relation/relation.component";
+import {MaritalStatusComponent} from "./marital-status/marital-status.component";
+import {UploadAttendanceComponent} from "./upload-attendance/upload-attendance.component";
+import {SalaryComponent} from "./salary/salary.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -35,14 +38,16 @@ const routes: Routes = [
   { path: 'employees-list', component: EmployeesListComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'activities', component: ActivitiesComponent },
-
   { path: 'personal-document', component: PersonalDocumentComponent },
   { path: 'company-document', component: CompanyDocumentComponent },
   {path:'designation', component:DesignationComponent},
   {path:'department', component:DepartmentComponent},
   {path:'blood-group', component:BloodGroupComponent},
   {path:'gender', component:GenderComponent},
-  {path:'relation', component:RelationComponent}
+  {path:'relation', component:RelationComponent},
+  {path:'marital-status', component:MaritalStatusComponent},
+  {path:'upload-attendance', component:UploadAttendanceComponent},
+  {path:'upload-salary', component:SalaryComponent},
 
 ];
 
