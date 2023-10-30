@@ -88,7 +88,7 @@ export class LeavesEmployeeComponent implements OnInit{
         this.SpinnerService.hide();
         let result: { [key: string]: any } = v;
 
-        if (result['message'] == 'Successfully Created') {
+        if (result['httpStatus'] == 'CREATED') {
 
         } else {
           this.common.faliureAlert('Please try later', result['message'], '');

@@ -20,6 +20,8 @@ export class CommonService {
   public bloodGroup: any;
   public maritalStatus: any;
   public relation: any;
+  public allLeaveStatus: any;
+  public allLeaves1: any;
   constructor(
     private apiService: ApiCallingServiceService,
     private cons: ConstantsService,
@@ -209,6 +211,10 @@ export class CommonService {
     const date = new Date(epoch); // JavaScript uses milliseconds, so multiply by 1000
     return date.toLocaleString(); // You can customize the date format as per your requirements
   }
+  epochtoDate(epoch: string): string {
+    const date = new Date(epoch); // JavaScript uses milliseconds, so multiply by 1000
+    return date.toLocaleDateString(); // You can customize the date format as per your requirements
+  }
 
   getMaritalStatus() {
     this.apiService.getApiWithToken(this.cons.api.getAllBloodGroup).subscribe({
@@ -251,5 +257,48 @@ export class CommonService {
         complete: () => console.info('complete'),
       }
     );
+  }
+  getAllLeaveStatus() {
+
+    this.apiService.getApiWithToken(this.cons.api.getAllLeaveStatus).subscribe({
+        next: (v: object) => {
+          this.SpinnerService.hide();
+          let result: { [key: string]: any } = v;
+          if (result['message'] == 'CREATED') {
+            this.allLeaveStatus=result['object'];
+          } else {
+            this.faliureAlert('Please try later', result['message'], '');
+          }
+        },
+        error: (e) => {
+          this.SpinnerService.hide();
+          console.error(e);
+          this.faliureAlert('Error', e['error']['message'], 'error');
+        },
+        complete: () => console.info('complete'),
+      }
+    );
+  }
+
+  public getAllLeaves() {
+    debugger;
+    this.apiService.getApiWithToken(this.cons.api.getAllLeaveType).subscribe({
+      next: (v: object) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = v;
+
+        if (result['httpStatus'] == 'CREATED') {
+          this.allLeaves1=result['object'];
+        } else {
+          this.faliureAlert('Please try later', result['message'], '');
+        }
+      },
+      error: (e) => {
+        // this.SpinnerService.hide();
+        console.error(e);
+        this.faliureAlert('Error', e['error']['message'], 'error');
+      },
+      complete: () => console.info(this.allLeaves1),
+    });
   }
 }

@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class ConstantsService {
   constructor() {}
 
-  // serviceUrl = 'http://192.168.2.2:8080/'; //UAT server
-  serviceUrl = 'http://petregistration.mynoida.co.in/NaprWeb/'; //UAT server
+  serviceUrl = 'http://192.168.2.2:8080/'; //UAT server
+  // serviceUrl = 'http://petregistration.mynoida.co.in/NaprWeb/'; //UAT server
   api = {
     login:
       this.serviceUrl + 'api/adminLogin',
@@ -19,7 +19,7 @@ export class ConstantsService {
     getAllGender: this.serviceUrl+'api/gender/getAllGender',
     getAllDependent: this.serviceUrl+'api/empDependent/getAllDependent',
     getAllDepartment: this.serviceUrl+'api/department/getAllDepartment',
-    getAllLeaveType: this.serviceUrl+'api/empLeave/getAllLeaveType',
+    getAllLeaveType: this.serviceUrl+'api/leaveType/getAllLeaveType',
     createOrUpdate: this.serviceUrl+'api/empLeave/createOrUpdate',
     getAll: this.serviceUrl+'api/empLeave/getAll',
     createOrUpdateEmployee: this.serviceUrl+'/api/empRegistrationWeb/createOrUpdateEmployee',
@@ -34,6 +34,9 @@ export class ConstantsService {
     relationCreateOrUpdate: this.serviceUrl+'api/relation/createOrUpdate',
     getAllMaritalStatus: undefined,
     attendanceFileUpload: this.serviceUrl+'/api/fileUpload/uploadAttendance',
-    uploadSalary: this.serviceUrl+'api/fileUpload/uploadSalary'
+    uploadSalary: this.serviceUrl+'api/fileUpload/uploadSalary',
+    getAllLeaveWebForAdmin: this.serviceUrl+'api/empLeave/getAllLeaveWebForAdmin',
+    approvedOrRejectLeave: this.serviceUrl+'api/empLeave/approvedOrRejectLeave',
+    getAllLeaveStatus: this.serviceUrl+'api/leaveStatus/getAllLeaveStatus'
   };
 }
