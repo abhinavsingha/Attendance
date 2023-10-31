@@ -31,10 +31,10 @@
 								</ul>
 							</li>
 							<li class="menu-title"  *ngIf="userRole=='Admin'||userRole=='Super Admin'">
-								<span>Admin</span>
+								<span *ngIf="userRole=='Admin'||userRole=='Super Admin'">Admin</span>
 							</li>
 							<li class="submenu">
-								<a href="#" class="noti-dot"><i class="la fas fa-user-tie"></i> <span> Admin</span> <span class="menu-arrow"></span></a>
+								<a href="#" class="noti-dot" *ngIf="userRole=='Admin'||userRole=='Super Admin'"><i class="la fas fa-user-tie"></i> <span> Admin</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['all-employee']" [routerLinkActive]="['active']">All Employees</a></li>
 									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['attendence-admin']" [routerLinkActive]="['active']">Attendance (Admin)</a></li>

@@ -16,7 +16,9 @@ export class ApiCallingServiceService {
     );
   }
   postApiWithToken(url: any, jsonPayload: any) {
+    this.token=localStorage.getItem('token');
     if(this.token!=null){
+      debugger;
       const headers = new HttpHeaders({
         'Authorization': this.token
       });
@@ -26,6 +28,8 @@ export class ApiCallingServiceService {
       );
     }
     else{
+      debugger;
+      console.log(localStorage.getItem('token'));
       return this.http.post(url, jsonPayload).pipe(
         map((results) => results),
         catchError(this.handleError));
@@ -40,6 +44,7 @@ export class ApiCallingServiceService {
   }
 
   getApiWithToken(url: any) {
+    this.token=localStorage.getItem('token');
     if(this.token!=null){
       const headers = new HttpHeaders({
         'Authorization': this.token
@@ -50,6 +55,7 @@ export class ApiCallingServiceService {
       );
     }
     else{
+      console.log(localStorage.getItem('token'));
       return this.http.get(url).pipe(
         map((results) => results),
         catchError(this.handleError)

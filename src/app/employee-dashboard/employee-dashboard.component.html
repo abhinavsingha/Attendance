@@ -31,10 +31,11 @@
 										<div _ngcontent-xcq-c4="" class="fc-toolbar fc-header-toolbar">
 											<div _ngcontent-xcq-c4="" class="fc-left">
 												<div _ngcontent-xcq-c4="" class="fc-button-group"><button
-														_ngcontent-xcq-c4="" type="button"
+														_ngcontent-xcq-c4="" type="button" (click)="getFifteenthOfPreviousMonth()"
 														class="fc-prev-button fc-button fc-state-default fc-corner-left"><span
 															_ngcontent-xcq-c4=""
-															class="fc-icon fc-icon-left-single-arrow"></span></button><button
+															class="fc-icon fc-icon-left-single-arrow" ></span></button>
+                          <button (click)="getNextMonthDate()"
 														_ngcontent-xcq-c4="" type="button"
 														class="fc-next-button fc-button fc-state-default fc-corner-right"><span
 															_ngcontent-xcq-c4=""
@@ -53,7 +54,7 @@
 												</div>
 											</div>
 											<div _ngcontent-xcq-c4="" class="fc-center">
-												<h2 _ngcontent-xcq-c4="">October 2023</h2>
+												<h2 _ngcontent-xcq-c4="">{{formattedMonth}} {{currentDate.getFullYear()}}</h2>
 											</div>
 											<div _ngcontent-xcq-c4="" class="fc-clear"></div>
 										</div>
@@ -69,13 +70,13 @@
 												</tr>
 											</thead>
 											<tbody class="fc-body">
-												<tr *ngFor="let week of daysInMonth | chunk: 7">
+												<tr *ngFor="let week of cal | chunk: 7">
 													<td *ngFor="let day of week"
-														class="fc-day fc-widget-content fc-sun fc-past fc-day-number text-right">
-														{{ day }}
-														<div class="timestamps">
-															<div class="timestamp">In Time:</div>
-															<div class="timestamp">Out Time:</div>
+														class="fc-day fc-widget-content fc-sun fc-past fc-day-number text-right" [ngStyle]="{'color': day.isColour}">
+														{{ day.day }}
+														<div class="timestamps" *ngIf="day.day!=undefined">
+															<div class="timestamp">In Time:{{day.punchIn}}</div>
+															<div class="timestamp">Out Time:{{day.punchOut}}</div>
 														</div>
 													</td>
 												</tr>

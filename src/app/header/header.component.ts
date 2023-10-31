@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit{
 
 
   deleteToken() {
-    localStorage.removeItem('token')
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    localStorage.removeItem('photo');
   }
 }
