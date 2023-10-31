@@ -1,142 +1,180 @@
-			<!-- Page Wrapper -->
-            <div class="page-wrapper">
+<!-- Page Wrapper -->
+<div class="page-wrapper">
 
-				<!-- Page Content -->
-                <div class="content container-fluid">
+	<!-- Page Content -->
+	<div class="content container-fluid">
 
-					<div class="row" *ngIf="dashboardData!=undefined">
-						<div class="col-md-12">
-							<div class="welcome-box">
-								<div class="welcome-img">
-									<img alt="" src="{{dashboardData.empDetails.photo}}">
-								</div>
-								<div class="welcome-det">
-									<h3>Welcome, {{dashboardData.empDetails.empName}}</h3>
-									<p>{{dashboardData.empDetails.emailId}}</p>
-								</div>
-							</div>
-						</div>
+		<div class="row" *ngIf="dashboardData!=undefined">
+			<div class="col-md-12">
+				<div class="welcome-box">
+					<div class="welcome-img">
+						<img alt="" src="{{dashboardData.empDetails.photo}}">
 					</div>
-
-					<div class="row" *ngIf="dashboardData!=undefined">
-						<div class="col-lg-8 col-md-8">
-							<div class="card mb-0">
-								<div class="card-body">
-									<div class="row">
-										<div class="col-md-12">
-
-											<!-- Calendar -->
-											<div id="calendar">
-
-                        <div class="dash-card-content">
-                          <table>
-                            <tr>
-                              <th *ngFor="let day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']">{{ day }}</th>
-                            </tr>
-                            <tr *ngFor="let week of daysInMonth | chunk: 7">
-                              <td *ngFor="let day of week">
-                                {{ day }}
-                                <div class="timestamps">
-                                  <div class="timestamp">In Time:</div>
-                                  <div class="timestamp">Out Time:</div>
-                                </div>
-                              </td>
-                            </tr>
-                          </table>
-
-
-
-                        </div>
-
-
-                      </div>
-											<!-- /Calendar -->
-
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-4">
-							<div class="dash-sidebar" *ngIf="dashboardData!=undefined">
-								<section>
-									<h5 class="dash-title">Attendance</h5>
-									<div class="card">
-										<div class="card-body">
-											<div class="time-list">
-												<div class="dash-stats-list">
-													<h4>{{dashboardData.totalWorkingDat}}</h4>
-													<p>Total Working Days</p>
-												</div>
-												<div class="dash-stats-list">
-													<h4>{{dashboardData.totalPresent}}</h4>
-													<p>Days Present</p>
-												</div>
-											</div>
-											<div class="request-btn">
-												<div class="dash-stats-list">
-													<h4>{{dashboardData.lateEmp}}</h4>
-													<p>Days Late</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</section>
-								<section>
-									<h5 class="dash-title">Your Leave</h5>
-									<div class="card">
-										<div class="card-body">
-											<div class="time-list">
-												<div class="dash-stats-list">
-													<h4>{{dashboardData.totalLeaveEmp}}</h4>
-													<p>Leave Taken</p>
-												</div>
-												<div class="dash-stats-list">
-													<h4>{{dashboardData.employeeLeaveBalance.empTotalLeaveBalance}}</h4>
-													<p>Remaining</p>
-												</div>
-											</div>
-											<div class="request-btn">
-												<a class="btn btn-primary" (click)="redirectToLeave()">Apply Leave</a>
-											</div>
-										</div>
-									</div>
-								</section>
-								<section>
-									<h5 class="dash-title">In/Out Time</h5>
-									<div class="card">
-										<div class="card-body">
-											<div class="time-list">
-												<div class="dash-stats-list">
-													<h4>{{todayInTime}} Hours</h4>
-													<p>In Time</p>
-												</div>
-												<div class="dash-stats-list">
-													<h4>{{todayOutTime}}</h4>
-													<p>Out Time</p>
-												</div>
-											</div>
-<!--											<div class="request-btn">-->
-<!--												<a class="btn btn-primary" href="#">Apply Time Off</a>-->
-<!--											</div>-->
-										</div>
-									</div>
-								</section>
-								<section>
-									<h5 class="dash-title">Upcoming Holiday</h5>
-									<div class="card">
-										<div class="card-body text-center">
-											<h4 class="holiday-title mb-0">Mon 20 May 2019 - Ramzan</h4>
-										</div>
-									</div>
-								</section>
-							</div>
-						</div>
+					<div class="welcome-det">
+						<h3>Welcome, {{dashboardData.empDetails.empName}}</h3>
+						<p>{{dashboardData.empDetails.emailId}}</p>
 					</div>
-
 				</div>
-				<!-- /Page Content -->
+			</div>
+		</div>
 
-            </div>
-			<!-- /Page Wrapper -->
+		<div class="row" *ngIf="dashboardData!=undefined">
+			<div class="col-lg-8 col-md-8">
+				<div class="card mb-0">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-12">
+								<!-- Calendar -->
+								<div id="calendar">
+
+									<div class="fc fc-unthemed fc-ltr">
+										<div _ngcontent-xcq-c4="" class="fc-toolbar fc-header-toolbar">
+											<div _ngcontent-xcq-c4="" class="fc-left">
+												<div _ngcontent-xcq-c4="" class="fc-button-group"><button
+														_ngcontent-xcq-c4="" type="button"
+														class="fc-prev-button fc-button fc-state-default fc-corner-left"><span
+															_ngcontent-xcq-c4=""
+															class="fc-icon fc-icon-left-single-arrow"></span></button><button
+														_ngcontent-xcq-c4="" type="button"
+														class="fc-next-button fc-button fc-state-default fc-corner-right"><span
+															_ngcontent-xcq-c4=""
+															class="fc-icon fc-icon-right-single-arrow"></span></button>
+												</div><button _ngcontent-xcq-c4="" type="button" disabled=""
+													class="fc-today-button fc-button fc-state-default fc-corner-left fc-corner-right fc-state-disabled">today</button>
+											</div>
+											<div _ngcontent-xcq-c4="" class="fc-right">
+												<div _ngcontent-xcq-c4="" class="fc-button-group"><button
+														_ngcontent-xcq-c4="" type="button"
+														class="fc-month-button fc-button fc-state-default fc-corner-left fc-state-active">month</button><button
+														_ngcontent-xcq-c4="" type="button"
+														class="fc-agendaWeek-button fc-button fc-state-default">week</button><button
+														_ngcontent-xcq-c4="" type="button"
+														class="fc-agendaDay-button fc-button fc-state-default fc-corner-right">day</button>
+												</div>
+											</div>
+											<div _ngcontent-xcq-c4="" class="fc-center">
+												<h2 _ngcontent-xcq-c4="">October 2023</h2>
+											</div>
+											<div _ngcontent-xcq-c4="" class="fc-clear"></div>
+										</div>
+
+										<div class="fc-view-container">
+										<div class="fc-view fc-month-view fc-basic-view">
+										<table class="fc-content-skeleton">
+											<thead>
+												<tr>
+													<th class="fc-day-header fc-widget-header fc-sun"
+														*ngFor="let day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']">
+														{{ day }}</th>
+												</tr>
+											</thead>
+											<tbody class="fc-body">
+												<tr *ngFor="let week of daysInMonth | chunk: 7">
+													<td *ngFor="let day of week"
+														class="fc-day fc-widget-content fc-sun fc-past fc-day-number text-right">
+														{{ day }}
+														<div class="timestamps">
+															<div class="timestamp">In Time:</div>
+															<div class="timestamp">Out Time:</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+                                        </div>
+									    </div>
+									</div>
+
+
+								</div>
+								<!-- /Calendar -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-4">
+				<div class="dash-sidebar" *ngIf="dashboardData!=undefined">
+					<section>
+						<h5 class="dash-title">Attendance</h5>
+						<div class="card">
+							<div class="card-body">
+								<div class="time-list">
+									<div class="dash-stats-list">
+										<h4>{{dashboardData.totalWorkingDat}}</h4>
+										<p>Total Working Days</p>
+									</div>
+									<div class="dash-stats-list">
+										<h4>{{dashboardData.totalPresent}}</h4>
+										<p>Days Present</p>
+									</div>
+								</div>
+								<div class="request-btn">
+									<div class="dash-stats-list">
+										<h4>{{dashboardData.lateEmp}}</h4>
+										<p>Days Late</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h5 class="dash-title">Your Leave</h5>
+						<div class="card">
+							<div class="card-body">
+								<div class="time-list">
+									<div class="dash-stats-list">
+										<h4>{{dashboardData.totalLeaveEmp}}</h4>
+										<p>Leave Taken</p>
+									</div>
+									<div class="dash-stats-list">
+										<h4>{{dashboardData.employeeLeaveBalance.empTotalLeaveBalance}}</h4>
+										<p>Remaining</p>
+									</div>
+								</div>
+								<div class="request-btn">
+									<a class="btn btn-primary" (click)="redirectToLeave()">Apply Leave</a>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h5 class="dash-title">In/Out Time</h5>
+						<div class="card">
+							<div class="card-body">
+								<div class="time-list">
+									<div class="dash-stats-list">
+										<h4>{{todayInTime}} Hours</h4>
+										<p>In Time</p>
+									</div>
+									<div class="dash-stats-list">
+										<h4>{{todayOutTime}}</h4>
+										<p>Out Time</p>
+									</div>
+								</div>
+								<!--											<div class="request-btn">-->
+								<!--												<a class="btn btn-primary" href="#">Apply Time Off</a>-->
+								<!--											</div>-->
+							</div>
+						</div>
+					</section>
+					<section>
+						<h5 class="dash-title">Upcoming Holiday</h5>
+						<div class="card">
+							<div class="card-body text-center">
+								<h4 class="holiday-title mb-0">Mon 20 May 2019 - Ramzan</h4>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- /Page Content -->
+
+</div>
+<!-- /Page Wrapper -->
