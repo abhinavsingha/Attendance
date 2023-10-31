@@ -24,11 +24,34 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col-md-12">
-										
+
 											<!-- Calendar -->
-											<div id="calendar"></div>
+											<div id="calendar">
+
+                        <div class="dash-card-content">
+                          <table>
+                            <tr>
+                              <th *ngFor="let day of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']">{{ day }}</th>
+                            </tr>
+                            <tr *ngFor="let week of daysInMonth | chunk: 7">
+                              <td *ngFor="let day of week">
+                                {{ day }}
+                                <div class="timestamps">
+                                  <div class="timestamp">In Time:</div>
+                                  <div class="timestamp">Out Time:</div>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+
+
+
+                        </div>
+
+
+                      </div>
 											<!-- /Calendar -->
-											
+
 										</div>
 									</div>
 								</div>
