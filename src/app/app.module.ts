@@ -35,6 +35,7 @@ import { RelationComponent } from './relation/relation.component';
 import { BloodGroupComponent } from './blood-group/blood-group.component';
 import {UploadAttendanceComponent} from "./upload-attendance/upload-attendance.component";
 import {SalaryComponent} from "./salary/salary.component";
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import {SalaryComponent} from "./salary/salary.component";
     RelationComponent,
     BloodGroupComponent,
     UploadAttendanceComponent,
-    SalaryComponent
+    SalaryComponent,
+    ReportComponent
 
   ],
   imports: [

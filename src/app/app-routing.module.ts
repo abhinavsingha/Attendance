@@ -23,6 +23,7 @@ import {RelationComponent} from "./relation/relation.component";
 import {MaritalStatusComponent} from "./marital-status/marital-status.component";
 import {UploadAttendanceComponent} from "./upload-attendance/upload-attendance.component";
 import {SalaryComponent} from "./salary/salary.component";
+import { ReportComponent } from './report/report.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -48,7 +49,7 @@ const routes: Routes = [
   {path:'marital-status', component:MaritalStatusComponent},
   {path:'upload-attendance', component:UploadAttendanceComponent},
   {path:'upload-salary', component:SalaryComponent},
-
+  {path:'report', component:ReportComponent},
 ];
 
 @NgModule({

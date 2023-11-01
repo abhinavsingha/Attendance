@@ -75,6 +75,7 @@
 
 								</ul>
 							</li>
+							
 							<li class="submenu">
 								<a href="#" class="noti-dot"><i class="fas fa-address-book"></i> <span> Directory</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
@@ -89,13 +90,15 @@
 									<li *ngIf="userRole=='Admin'"><a [routerLink]="['empolyee-salary']" [routerLinkActive]="['active']"> Employee Salary </a></li>
 									<li *ngIf="userRole=='Admin'"><a [routerLink]="['payslip']" [routerLinkActive]="['active']"> Payslip </a></li>
 									<li *ngIf="userRole=='Admin'"><a [routerLink]="['payslip']" [routerLinkActive]="['active']"> Tax Declaration </a></li>
+									<li *ngIf="userRole=='Admin'"><a [routerLink]="['report']" [routerLinkActive]="['active']"> Attendance Report</a></li>
+
 								</ul>
 							</li>
               <li class="menu-title" *ngIf="userRole=='Admin'||userRole=='Super Admin'">
                 <span>Master</span>
               </li>
               <li class="submenu">
-                <a href="#" class="noti-dot"><i class="fas fa-inbox"></i> <span> Change Master Data</span> <span class="menu-arrow"></span></a>
+                <a href="#" class="noti-dot"><i class="fas fa-inbox"></i> <span> Master Data</span> <span class="menu-arrow"></span></a>
                 <ul style="display: none;">
                   <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['department']" [routerLinkActive]="['active']">Add/Update Department</a></li>
                   <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['designation']" [routerLinkActive]="['active']">Add/Update Designation</a></li>
