@@ -58,7 +58,7 @@ export class LeavesEmployeeComponent implements OnInit{
         this.SpinnerService.hide();
         let result: { [key: string]: any } = v;
 
-        if (result['message'] == 'Successfully Fetch') {
+        if (result['httpStatus'] == 'CREATED') {
         this.leaveList=result['object'];
         } else {
           this.common.faliureAlert('Please try later', result['message'], '');
@@ -110,11 +110,15 @@ export class LeavesEmployeeComponent implements OnInit{
         let result: { [key: string]: any } = v;
 
         if (result['httpStatus'] == 'OK') {
+
           this.allLeaves=result['object'].employeeLeaveDTO;
-          for(let leave of this.allLeaves){
-            if(leave.leaveVerifyByEmpId==undefined)
-              leave.leaveStatus='Pending';
+          if(this.allLeaves!=undefined){
+            for(let leave of this.allLeaves){
+              if(leave.leaveVerifyByEmpId==undefined)
+                leave.leaveStatus='Pending';
+            }
           }
+
         } else {
           this.common.faliureAlert('Please try later', result['message'], '');
         }
