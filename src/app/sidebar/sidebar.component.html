@@ -84,13 +84,13 @@
 
 								</ul>
 							</li>
-							<li class="submenu" *ngIf="userRole=='Admin'">
+							<li class="submenu">
 								<a href="#"><i class="la la-money"></i> <span> PayRoll </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;" >
 									<li *ngIf="userRole=='Admin'"><a [routerLink]="['empolyee-salary']" [routerLinkActive]="['active']"> Employee Salary </a></li>
 									<li *ngIf="userRole=='Admin'"><a [routerLink]="['payslip']" [routerLinkActive]="['active']"> Payslip </a></li>
 									<li *ngIf="userRole=='Admin'"><a [routerLink]="['payslip']" [routerLinkActive]="['active']"> Tax Declaration </a></li>
-									<li *ngIf="userRole=='Admin'"><a [routerLink]="['report']" [routerLinkActive]="['active']"> Attendance Report</a></li>
+									<li><a [routerLink]="['report']" [routerLinkActive]="['active']"> Attendance Report</a></li>
 
 								</ul>
 							</li>

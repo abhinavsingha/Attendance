@@ -32,7 +32,7 @@ export class UploadAttendanceComponent {
       const formData = new FormData();
       // console.log(this.formdata.get('file')?.value);
       formData.append('file', file);
-      this.apiService.postApi(this.cons.api.attendanceFileUpload, formData).subscribe({
+      this.apiService.postApiWithToken(this.cons.api.attendanceFileUpload, formData).subscribe({
         next: (v: object) => {
 
           let result: { [key: string]: any } = v;

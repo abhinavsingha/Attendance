@@ -38,6 +38,7 @@ export class ConstantsService {
     uploadSalary: this.serviceUrl+'api/fileUpload/uploadSalary',
     getAllLeaveWebForAdmin: this.serviceUrl+'api/empLeave/getAllLeaveWebForAdmin',
     approvedOrRejectLeave: this.serviceUrl+'api/empLeave/approvedOrRejectLeave',
-    getAllLeaveStatus: this.serviceUrl+'api/leaveStatus/getAllLeaveStatus'
+    getAllLeaveStatus: this.serviceUrl+'api/leaveStatus/getAllLeaveStatus',
+    getAttendanceReport: this.serviceUrl+'api/report/attendanceReport'
   };
 }

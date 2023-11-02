@@ -19,91 +19,128 @@
 
 <!-- Search Filter -->
 <div class="row filter-row">
-    <div class="col-sm-6 col-md-3"> 
+    <div class="col-sm-6 col-md-3" *ngIf="role=='Admin'">
         <div class="form-group form-focus select-focus">
-            <select class="select floating"> 
+            <select class="form-control floating" [(ngModel)]="employee" [selectedIndex]="0">
                 <option>Select Employee</option>
-                <option>Loren Gatlin</option>
-                <option>Tarah Shropshire</option>
+                <option *ngFor="let option of this.common.allEmpList" [ngValue]="option.mobileNo">{{ option.empName }}</option>
             </select>
             <label class="focus-label">Employee Name</label>
         </div>
     </div>
-    <div class="col-sm-6 col-md-3">  
+    <div class="col-sm-6 col-md-3">
         <div class="form-group form-focus">
-            <div class="cal-icon">
-                <input class="form-control floating datetimepicker" type="text">
+            <div>
+                <input class="form-control floating" [(ngModel)]="fromDate" type="date">
             </div>
-            <label class="focus-label">From</label>
+            <label class="focus-label" >From</label>
         </div>
     </div>
-    <div class="col-sm-6 col-md-3">  
+    <div class="col-sm-6 col-md-3">
         <div class="form-group form-focus">
-            <div class="cal-icon">
-                <input class="form-control floating datetimepicker" type="text">
+            <div>
+                <input class="form-control floating" [(ngModel)]="toDate" type="date">
             </div>
             <label class="focus-label">To</label>
         </div>
     </div>
-    <div class="col-sm-6 col-md-3">  
-        <a href="#" class="btn btn-success btn-block"> Search </a>  
-    </div>     
+    <div class="col-sm-6 col-md-3">
+        <a  class="btn btn-success btn-block" (click)="getAttendanceReport()"> Search </a>
+    </div>
 </div>
 <!-- /Search Filter -->
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="table-responsive">
+
+
+      <div *ngIf="response!=undefined">
+        <ng-container *ngFor="let key of response;let i = index">
+          <div class="collapsible1" (click)="toggleTable(i)">{{key.monthReport}}</div>
+          <div *ngIf="isTableVisible[i]">
             <table class="table table-striped custom-table mb-0 datatable">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Punch In</th>
-                        <th>Punch Out</th>
-                        <th>Working Hours</th>
-                        <th>Remarks</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>10 Mar 2023</td>
-                        <td>10:00 AM</td>
-                        <td>06:00 PM</td>
-                        <td>8 Hours</td>
-                        <td>Deepak Chutiya tha hai rahega</td>
-                    </tr>
-                    <tr>
-                        <td>10 Mar 2023</td>
-                        <td>10:00 AM</td>
-                        <td>06:00 PM</td>
-                        <td>8 Hours</td>
-                        <td>Deepak Chutiya tha hai rahega</td>
-                    </tr>
-                    
-                </tbody>
+              <thead>
+              <tr >
+                <th>Date</th>
+                <th>Punch In</th>
+                <th>Punch Out</th>
+                <th>Working Hours</th>
+                <th>Remarks</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let row of key.dashBoardResponseList">
+                <td>{{row.date}}</td>
+                <td>{{row.punchIn}}</td>
+                <td>{{row.punchOut}}</td>
+                <td>{{row.workingHours}}</td>
+                <td>{{row.remark}}</td>
+              </tr>
+<!--              <tr>-->
+<!--                <td>10 Mar 2023</td>-->
+<!--                <td>10:00 AM</td>-->
+<!--                <td>06:00 PM</td>-->
+<!--                <td>8 Hours</td>-->
+<!--                <td>Deepak Chutiya tha hai rahega</td>-->
+<!--              </tr>-->
+
+              </tbody>
             </table>
-        </div>
-    </div>
+          </div>
+        </ng-container>
+      </div>
+
+
+
+
+
+
+
+
+<div class="row">
+<!--    <div class="col-md-12">-->
+<!--        <div class="table-responsive">-->
+<!--            <table class="table table-striped custom-table mb-0 datatable">-->
+<!--                <thead>-->
+<!--                    <tr>-->
+<!--                        <th>Date</th>-->
+<!--                        <th>Punch In</th>-->
+<!--                        <th>Punch Out</th>-->
+<!--                        <th>Working Hours</th>-->
+<!--                        <th>Remarks</th>-->
+<!--                    </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                    <tr>-->
+<!--                        <td>10 Mar 2023</td>-->
+<!--                        <td>10:00 AM</td>-->
+<!--                        <td>06:00 PM</td>-->
+<!--                        <td>8 Hours</td>-->
+<!--                        <td>Deepak Chutiya tha hai rahega</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>10 Mar 2023</td>-->
+<!--                        <td>10:00 AM</td>-->
+<!--                        <td>06:00 PM</td>-->
+<!--                        <td>8 Hours</td>-->
+<!--                        <td>Deepak Chutiya tha hai rahega</td>-->
+<!--                    </tr>-->
+
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="col-md-12 mt-2">
         <button class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download All</button>
     </div>
-    <div class="col-md-12 mt-4">
+    <div class="col-md-12 mt-4" *ngIf="response!=undefined">
         <h4 class="page-title">Download File Wise</h4>
         <div class="table-responsive">
             <table class="table table-striped custom-table mb-0 datatable">
                 <tbody>
-                    <tr>
+                    <tr *ngFor="let month of response">
                         <td><i class="fas fa-file-pdf"></i></td>
-                        <td>attendance-report-01-march-23-to-01-april-23.pdf</td>
+                        <td>{{month.monthReport}}</td>
                         <td>
-                            <button class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="fas fa-file-pdf"></i></td>
-                        <td>attendance-report-01-march-23-to-01-april-23.pdf</td>
-                        <td>
-                            <button class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</button>
+                            <button class="btn btn-sm btn-primary" (click)="downloadReport(month)"><i class="fas fa-download"></i> Download</button>
                         </td>
                     </tr>
                 </tbody>
