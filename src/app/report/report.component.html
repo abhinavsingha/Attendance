@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="col-sm-6 col-md-3">
-        <a  class="btn btn-success btn-block" (click)="getAttendanceReport()"> Search </a>
+        <a  class="btn btn-success btn-block" (click)="getAttendanceReport()"> Search <span class="menu-arrow"></span></a>
     </div>
 </div>
 <!-- /Search Filter -->
@@ -54,7 +54,7 @@
 
       <div *ngIf="response!=undefined">
         <ng-container *ngFor="let key of response;let i = index">
-          <div class="collapsible1" (click)="toggleTable(i)">{{key.monthReport}}</div>
+          <div class="collapsible1 sidebar-menu" (click)="toggleTable(i)">{{key.monthReport}} <span class="menu-arrow"></span></div>
           <div *ngIf="isTableVisible[i]">
             <table class="table table-striped custom-table mb-0 datatable">
               <thead>
