@@ -2,6 +2,14 @@
 
 $(document).ready(function() {
 
+	$('collapsible1').click(function(){
+		alert('kljdfj')
+		if((this).hasClass('subdrop')){
+			$(this).removeClass('subdrop');
+		}else{
+			$(this).addClass('subdrop');
+		}
+	});
 	// Variables declarations
 
 	var $wrapper = $('.main-wrapper');
@@ -292,4 +300,5 @@ $(document).ready(function() {
 $(window).on ('load', function (){
 	$('#loader').delay(100).fadeOut('slow');
 	$('#loader-wrapper').delay(500).fadeOut('slow');
+	
 });
