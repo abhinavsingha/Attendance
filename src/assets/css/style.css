@@ -8116,3 +8116,7 @@ ul.comment-list li ul.children {
 		min-width: inherit;
 	}
 }
+.collapsed, .collapsible1{
+	transition: all 0.2s ease-in-out 0s;
+
+}
