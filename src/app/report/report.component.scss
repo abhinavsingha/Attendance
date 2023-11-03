@@ -4,16 +4,5 @@
     float: right;
     line-height: 0px;
 }
-.collapsed{
-  display:none;
-  -webkit-transition: -webkit-transform 0.3s;
-  -o-transition: -o-transform 0.3s;
-  transition: transform .3s;
-}
-.show{
-  display: block;
-  -webkit-transition: -webkit-transform 0.3s;
-  -o-transition: -o-transform 0.3s;
-  transition: transform .3s;
-}
+
 
