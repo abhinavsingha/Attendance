@@ -2,14 +2,7 @@
 
 $(document).ready(function() {
 
-	$('collapsible1').click(function(){
-		alert('kljdfj')
-		if((this).hasClass('subdrop')){
-			$(this).removeClass('subdrop');
-		}else{
-			$(this).addClass('subdrop');
-		}
-	});
+	
 	// Variables declarations
 
 	var $wrapper = $('.main-wrapper');

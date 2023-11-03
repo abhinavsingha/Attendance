@@ -3,3 +3,9 @@
     font-size: 13px;
     color: #777;
 }
+.subdrop .menu-arrow {
+    -ms-transform: rotate(90deg) !important;
+    -webkit-transform: rotate(90deg) !important;
+    -o-transform: rotate(90deg) !important;
+    transform: rotate(90deg) !important;
+}

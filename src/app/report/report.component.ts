@@ -35,6 +35,7 @@ ngOnInit(): void {
     $.getScript('../../assets/js/jquery-ui.min.js');
     this.common.getAllEmployee();
     this.role=localStorage.getItem('role');
+
 }
 
 
@@ -90,5 +91,5 @@ ngOnInit(): void {
 
   toggleTable(i: number) {
     this.isTableVisible[i]=!this.isTableVisible[i];
-  }
+      }
 }
