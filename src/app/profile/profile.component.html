@@ -19,11 +19,6 @@
 					<!-- /Page Header -->
 
 
-                  <select [(ngModel)]="selectedOption">
-                    <option *ngFor="let option of dynamicOptions" [ngValue]="option">{{ option.label }}</option>
-                  </select>
-
-
 					<div class="card mb-0" *ngIf="profileData!=undefined">
 						<div class="card-body">
 							<div class="row">
@@ -42,8 +37,9 @@
 <!--														<h6 class="text-muted">Information Technology</h6>-->
 														<small class="text-muted">{{profileData.empDesignation.empDesignationName}}</small>
 														<div class="staff-id">Employee ID : {{profileData.empId}}</div>
-														<div class="small doj text-muted">Date of Join : 1st Jan 2013</div>
-														<div class="staff-msg"><a class="btn btn-custom" >Send Mail</a></div>
+														<div class="small doj text-muted">Date of Join : {{profileData.employeeSubDetails.dateOfJoining|date}}</div>
+														<div class="small doj text-muted">Location : {{profileData.officeAddress.location}}</div>
+<!--														<div class="staff-msg"><a class="btn btn-custom" >Send Mail</a></div>-->
 													</div>
 												</div>
 												<div class="col-md-7">
@@ -58,12 +54,12 @@
 														</li>
 														<li>
 															<div class="title">Birthday:</div>
-															<div class="text">NULL</div>
+															<div class="text">{{profileData.employeeSubDetails.empDob|date}}</div>
 														</li>
 
 														<li>
 															<div class="title">Gender:</div>
-															<div class="text">NULL</div>
+															<div class="text">{{profileData.employeeSubDetails.gender.genderDesc}}</div>
 														</li>
 														<li>
 															<div class="title">Reports to:</div>
@@ -110,64 +106,64 @@
 										<div class="card-body">
 											<h3 class="card-title">Personal Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#personal_info_modal"><i class="fa fa-pencil"></i></a></h3>
 											<ul class="personal-info">
+<!--												<li>-->
+<!--													<div class="title">Salutation:</div>-->
+<!--													<div class="text">Mr.</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Full Name:</div>-->
+<!--													<div class="text">Soumyadip</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Birth-Date:</div>-->
+<!--													<div class="text">Soumyadip</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Location:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 												<li>
-													<div class="title">Salutation:</div>
-													<div class="text">Mr.</div>
-												</li>
-												<li>
-													<div class="title">Full Name:</div>
-													<div class="text">Soumyadip</div>
-												</li>
-												<li>
-													<div class="title">Birth-Date:</div>
-													<div class="text">Soumyadip</div>
-												</li>
-												<li>
-													<div class="title">Location:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Region Name:</div>
-													<div class="text"> Demo</div>
+													<div class="title">Physically Handicapped:</div>
+                          <div class="text"> <span *ngIf="profileData.employeeSubDetails.isHandicap=='0'">No</span><span *ngIf="profileData.employeeSubDetails.isHandicap=='1'">Yes</span></div>
 												</li>
 
-										      	<li>
-													<div class="title">Permanent Address:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<li>
-													<div class="title">Home Address:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<li>
-													<div class="title">Postal Code:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<li>
-													<div class="title">Current Pincode:</div>
-													<div class="text"> Demo</div>
-												</li>
+<!--										      	<li>-->
+<!--													<div class="title">Permanent Address:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Home Address:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Postal Code:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Current Pincode:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
 
-												<hr>
-												<li>
-													<div class="title">Birthday Celebration:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<li>
-													<div class="title">Birth Place:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<li>
-													<div class="title">Birth State:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<li>
-													<div class="title">Birth Country:</div>
-													<div class="text"> Demo</div>
-												</li>
+<!--												<hr>-->
+<!--												<li>-->
+<!--													<div class="title">Birthday Celebration:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Birth Place:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Birth State:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Birth Country:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
 													<li>
 													<div class="title">Marital status  :</div>
-													<div class="text"> Demo</div>
+													<div class="text"> {{profileData.employeeSubDetails.masterMaterialId.maritalDescription}}</div>
 												</li>
 													<li>
 													<div class="title">Marriage Date:</div>
@@ -192,47 +188,47 @@
 											<h3 class="card-title">Office Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#emergency_contact_modal"><i class="fa fa-pencil"></i></a></h3>
 
 											<ul class="personal-info">
-												<li>
-													<div class="title">Staff Id:</div>
-													<div class="text"> Demo</div>
-												</li>
+<!--												<li>-->
+<!--													<div class="title">Staff Id:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
 												<li>
 													<div class="title">Deptartment:</div>
 													<div class="text">Demo</div>
 												</li>
-												<li>
-													<div class="title">Designation:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Reports to:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Category:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Grade:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Joining Date:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Confirmation Date:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Confirmation Date (Probitional):</div>
-													<div class="text">Demo</div>
-												</li>
+<!--												<li>-->
+<!--													<div class="title">Designation:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Reports to:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Category:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Grade:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Joining Date:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Confirmation Date:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Confirmation Date (Probitional):</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 
-												<li>
-													<div class="title">Shift:</div>
-													<div class="text">Demo</div>
-												</li>
+<!--												<li>-->
+<!--													<div class="title">Shift:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 												<li>
 													<div class="title">Attendence Type:</div>
 													<div class="text">Demo</div>
@@ -249,27 +245,27 @@
 													<div class="title">Experience:</div>
 													<div class="text">Demo</div>
 												</li>
-												<li>
-													<div class="title">Working Number:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Working Fax:</div>
-													<div class="text">Demo</div>
-												</li>
-												<hr>
-													<li>
-													<div class="title">Rejoin Status:</div>
-													<div class="text">Demo</div>
-												</li>
-													<li>
-													<div class="title">Previous Position:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Previous ID:</div>
-													<div class="text">Demo</div>
-												</li>
+<!--												<li>-->
+<!--													<div class="title">Working Number:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Working Fax:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<hr>-->
+<!--													<li>-->
+<!--													<div class="title">Rejoin Status:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--													<li>-->
+<!--													<div class="title">Previous Position:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Previous ID:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 											</ul>
 										</div>
 									</div>
@@ -282,69 +278,73 @@
 										<div class="card-body">
 											<h3 class="card-title">Bank Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#personal_info_modal"><i class="fa fa-pencil"></i></a></h3>
 											<ul class="personal-info">
-												<li>
-													<div class="title">Salary Hold:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Pay-Process Status:</div>
-													<div class="text">Demo</div>
-												</li>
-												<hr>
-												<li>
-													<div class="title">PF Applicable:</div>
-													<div class="text">Demo</div>
-												</li>
+<!--												<li>-->
+<!--													<div class="title">Salary Hold:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Pay-Process Status:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<hr>-->
+<!--												<li>-->
+<!--													<div class="title">PF Applicable:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 												<li>
 													<div class="title">PF No.:</div>
 													<div class="text">Demo</div>
 												</li>
+<!--												<li>-->
+<!--													<div class="title">GL Code.:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 												<li>
-													<div class="title">GL Code.:</div>
-													<div class="text">Demo</div>
+													<div class="title">Salary Payment Mode:</div>
+													<div class="text"> Online</div>
 												</li>
-												<li>
-													<div class="title">Payment Mode:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<li>
-													<div class="title">Pay Group:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<li>
-													<div class="title">Professional Tax:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<li>
-													<div class="title">Professional Tax Location:</div>
-													<div class="text"> Demo</div>
-												</li>
+<!--												<li>-->
+<!--													<div class="title">Pay Group:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Professional Tax:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Professional Tax Location:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
 												<hr>
 												<li>
 													<div class="title">ESI Applicable:</div>
-													<div class="text"> Demo</div>
+													<div class="text"> No</div>
 												</li>
+<!--												<li>-->
+<!--													<div class="title">ESI No.:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">ESI Applied From:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
+                        <hr>
 												<li>
-													<div class="title">ESI No.:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<li>
-													<div class="title">ESI Applied From:</div>
+													<div class="title">Bank Name:</div>
 													<div class="text"> Demo</div>
 												</li>
 
-												<li>
-													<div class="title">Increment From:</div>
-													<div class="text"> Demo</div>
-												</li>
-												<hr>
 
 												<li>
-													<div class="title">Cost Center:</div>
+													<div class="title">BANK IFSC Code:</div>
 													<div class="text"> Demo</div>
 												</li>
 												<li>
-													<div class="title">Working City:</div>
+													<div class="title">Bank Account Number:</div>
+													<div class="text"> Demo</div>
+												</li>
+                        <li>
+													<div class="title">Uan Number:</div>
 													<div class="text"> Demo</div>
 												</li>
 
@@ -359,24 +359,24 @@
 
 											<ul class="personal-info">
 
-													<li>
-													<div class="title">Contract Type:</div>
-													<div class="text"> Demo</div>
-												</li>
+<!--													<li>-->
+<!--													<div class="title">Contract Type:</div>-->
+<!--													<div class="text"> Demo</div>-->
+<!--												</li>-->
 
-												<li>
-													<div class="title">Contract Date:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Original Hire-Date:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Through Agency:</div>
-													<div class="text">Demo</div>
-												</li>
-												<hr>
+<!--												<li>-->
+<!--													<div class="title">Contract Date:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Original Hire-Date:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Through Agency:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<hr>-->
 												<li>
 													<div class="title">Relevant Exp Years:</div>
 													<div class="text">Demo</div>
@@ -385,46 +385,46 @@
 													<div class="title">Other Exp Years:</div>
 													<div class="text">Demo</div>
 												</li>
-												<li>
-													<div class="title">Ethnic Race:</div>
-													<div class="text">Demo</div>
-												</li>
+<!--												<li>-->
+<!--													<div class="title">Ethnic Race:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 												<hr>
-												<li>
-													<div class="title">Pan Number:</div>
-													<div class="text">Demo</div>
-												</li>
+<!--												<li>-->
+<!--													<div class="title">Pan Number:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 
 
-												<li>
-													<div class="title">Social Security No.:</div>
-													<div class="text">Demo</div>
-												</li>
+<!--												<li>-->
+<!--													<div class="title">Social Security No.:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 
-											<hr>
-												<li>
-													<div class="title">Hiring Aggrement Name:</div>
-													<div class="text">Demo</div>
-												</li>
+<!--											<hr>-->
+<!--												<li>-->
+<!--													<div class="title">Hiring Aggrement Name:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 
 
-												<li>
-													<div class="title">Hiring Activity Owner:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Hiring Activity Date:</div>
-													<div class="text">Demo</div>
-												</li>
-												<li>
-													<div class="title">Signed Contract:</div>
-													<div class="text">Demo</div>
-												</li>
-												<hr>
-												<li>
-													<div class="title">Bussiness Name:</div>
-													<div class="text">Demo</div>
-												</li>
+<!--												<li>-->
+<!--													<div class="title">Hiring Activity Owner:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Hiring Activity Date:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<li>-->
+<!--													<div class="title">Signed Contract:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
+<!--												<hr>-->
+<!--												<li>-->
+<!--													<div class="title">Bussiness Name:</div>-->
+<!--													<div class="text">Demo</div>-->
+<!--												</li>-->
 													<li>
 													<div class="title">Preferd Email Lang.:</div>
 													<div class="text">Demo</div>

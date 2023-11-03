@@ -54,8 +54,8 @@
 
       <div *ngIf="response!=undefined">
         <ng-container *ngFor="let key of response;let i = index">
-          <div class="collapsible1 sidebar-menu" (click)="toggleTable(i)">{{key.monthReport}} <span class="menu-arrow"></span></div>
-          <div  class="collapsed">
+          <div [ngClass]="isClassApplied[i]"  (click)="toggleTable(i)">{{key.monthReport}} <span class="menu-arrow"></span></div>
+          <div [ngClass]="isTableVisible[i] ? 'show' : 'collapsed'" >
             <table class="table table-striped custom-table mb-0 datatable">
               <thead>
               <tr >
