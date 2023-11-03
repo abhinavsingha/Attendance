@@ -92,10 +92,14 @@ ngOnInit(): void {
 
   toggleTable(i: number) {
     this.isTableVisible[i]=!this.isTableVisible[i];
-    if(this.isClassApplied[i]=='collapsible1 sidebar-menu')
-      this.isClassApplied[i]='collapsible1 sidebar-menu subdrop'
-    else
-      this.isClassApplied[i]='collapsible1 sidebar-menu'
+    if(this.isClassApplied[i]=='collapsible1 sidebar-menu'){
+      this.isClassApplied[i]='collapsible1 sidebar-menu subdrop';
+    }
+
+    else{
+      this.isClassApplied[i]='collapsible1 sidebar-menu';
+    }
+
     for(let j=0;j<this.isClassApplied.length;j++ ){
       if(j==i){
         continue;
@@ -103,6 +107,7 @@ ngOnInit(): void {
       else if(j!=i){
         this.isTableVisible[j]=false;
         this.isClassApplied[j]='collapsible1 sidebar-menu';
+
       }
     }
   }
