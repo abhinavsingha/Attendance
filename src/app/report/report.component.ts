@@ -20,6 +20,7 @@ export class ReportComponent implements OnInit{
   role: any;
   response: any;
   isTableVisible: any[]=[];
+  isClassApplied: any[]=[];
   constructor(
     private http: HttpClient,
     private apiService: ApiCallingServiceService,
@@ -35,7 +36,6 @@ ngOnInit(): void {
     $.getScript('../../assets/js/jquery-ui.min.js');
     this.common.getAllEmployee();
     this.role=localStorage.getItem('role');
-
 }
 
 
@@ -58,6 +58,7 @@ ngOnInit(): void {
             this.response=result['object'];
             for(let i=0;i<this.response.length;i++){
               this.isTableVisible[i]=false;
+              this.isClassApplied[i]='collapsible1 sidebar-menu'
             }
         debugger;
         }
@@ -91,5 +92,18 @@ ngOnInit(): void {
 
   toggleTable(i: number) {
     this.isTableVisible[i]=!this.isTableVisible[i];
+    if(this.isClassApplied[i]=='collapsible1 sidebar-menu')
+      this.isClassApplied[i]='collapsible1 sidebar-menu subdrop'
+    else
+      this.isClassApplied[i]='collapsible1 sidebar-menu'
+    for(let j=0;j<this.isClassApplied.length;j++ ){
+      if(j==i){
+        continue;
       }
+      else if(j!=i){
+        this.isTableVisible[j]=false;
+        this.isClassApplied[j]='collapsible1 sidebar-menu';
+      }
+    }
+  }
 }

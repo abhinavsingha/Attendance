@@ -32,15 +32,7 @@ export class ProfileComponent implements OnInit{
     private SpinnerService: NgxSpinnerService,
     private router: Router,
   ) {}
-  dynamicOptions: any[] = [
-    { value: 'option1', label: 'Option 1' },
-    { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Option 3' },
-    // Add more options as needed.
-  ];
-
-  selectedOption: any = this.dynamicOptions[2];
-  ngOnInit(): void {
+    ngOnInit(): void {
     $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/select2.min.js');
     this.getProfileData();
