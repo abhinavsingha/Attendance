@@ -39,6 +39,10 @@ export class ConstantsService {
     getAllLeaveWebForAdmin: this.serviceUrl+'api/empLeave/getAllLeaveWebForAdmin',
     approvedOrRejectLeave: this.serviceUrl+'api/empLeave/approvedOrRejectLeave',
     getAllLeaveStatus: this.serviceUrl+'api/leaveStatus/getAllLeaveStatus',
-    getAttendanceReport: this.serviceUrl+'api/report/attendanceReport'
+    getAttendanceReport: this.serviceUrl+'api/report/attendanceReport',
+    deleteAccount: this.serviceUrl+'api/empRegistration/deleteAccount/',
+    activeAccount: this.serviceUrl+'api/empRegistration/activeAccount/',
+    deActiveAccount: this.serviceUrl+'api/empRegistration/deActiveAccount/',
+
   };
 }
