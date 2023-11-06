@@ -8117,6 +8117,18 @@ ul.comment-list li ul.children {
 	}
 }
 .collapsed, .collapsible1{
-	transition: all 0.2s ease-in-out 0s;
+	transition: all 0.6s ease-in-out;
 
 }
+.collapsible1{
+	padding-left: 10px;
+}
+.animate__animated.animate__bounce {
+	--animate-duration: 2s;
+  }
+  
+  /* This changes all the animations globally */
+  :root {
+	--animate-duration: 800ms;
+	--animate-delay: 0.9s;
+  }
