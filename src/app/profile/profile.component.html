@@ -33,16 +33,16 @@
 											<div class="row">
 												<div class="col-md-5">
 													<div class="profile-info-left">
-														<h3 class="user-name m-t-0 mb-0">{{profileData.empName}}</h3>
+														<h3 class="user-name m-t-0 mb-0" *ngIf="profileData.empName!=undefined">{{profileData.empName}}</h3>
 <!--														<h6 class="text-muted">Information Technology</h6>-->
-														<small class="text-muted">{{profileData.empDesignation.empDesignationName}}</small>
-														<div class="staff-id">Employee ID : {{profileData.empId}}</div>
-														<div class="small doj text-muted">Date of Join : {{profileData.employeeSubDetails.dateOfJoining|date}}</div>
-														<div class="small doj text-muted">Location : {{profileData.officeAddress.location}}</div>
+														<small class="text-muted"  *ngIf="profileData.empDesignation!=undefined">{{profileData.empDesignation.empDesignationName}}</small>
+														<div class="staff-id" *ngIf="profileData.empId!=undefined">Employee ID : {{profileData.empId}}</div>
+														<div class="small doj text-muted" *ngIf="profileData.employeeSubDetails!=undefined">Date of Join : {{profileData.employeeSubDetails.dateOfJoining|date}}</div>
+														<div class="small doj text-muted" *ngIf="profileData.officeAddress!=undefined">Location : {{profileData.officeAddress.location}}</div>
 <!--														<div class="staff-msg"><a class="btn btn-custom" >Send Mail</a></div>-->
 													</div>
 												</div>
-												<div class="col-md-7">
+												<div class="col-md-7" *ngIf="profileData.employeeSubDetails!=undefined">
 													<ul class="personal-info">
 														<li>
 															<div class="title">Phone:</div>
@@ -85,7 +85,7 @@
 						</div>
 					</div>
 
-					<div class="card tab-box">
+					<div class="card tab-box"  *ngIf="profileData!=undefined">
 						<div class="row user-tabs">
 							<div class="col-lg-12 col-md-12 col-sm-12 line-tabs">
 								<ul class="nav nav-tabs nav-tabs-bottom">
@@ -96,7 +96,7 @@
 						</div>
 					</div>
 
-					<div class="tab-content">
+					<div class="tab-content"  *ngIf="profileData!=undefined">
 
 						<!-- Profile Info Tab -->
 						<div id="emp_profile" class="pro-overview tab-pane fade show active">
@@ -105,7 +105,7 @@
 									<div class="card profile-box flex-fill">
 										<div class="card-body">
 											<h3 class="card-title">Personal Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#personal_info_modal"><i class="fa fa-pencil"></i></a></h3>
-											<ul class="personal-info">
+											<ul class="personal-info" *ngIf="profileData.employeeSubDetails!=undefined">
 <!--												<li>-->
 <!--													<div class="title">Salutation:</div>-->
 <!--													<div class="text">Mr.</div>-->
@@ -122,7 +122,7 @@
 <!--													<div class="title">Location:</div>-->
 <!--													<div class="text">Demo</div>-->
 <!--												</li>-->
-												<li>
+												<li >
 													<div class="title">Physically Handicapped:</div>
                           <div class="text"> <span *ngIf="profileData.employeeSubDetails.isHandicap=='0'">No</span><span *ngIf="profileData.employeeSubDetails.isHandicap=='1'">Yes</span></div>
 												</li>
@@ -167,22 +167,22 @@
 												</li>
 													<li>
 													<div class="title">Marriage Date:</div>
-													<div class="text"> Demo</div>
+													<div class="text"> Abhi nahi hai</div>
 												</li>
 												<hr>
 													<li>
 													<div class="title">Blood Group:</div>
-													<div class="text"> Demo</div>
+													<div class="text"> {{profileData.employeeSubDetails.empBloodGroup.bloodGroupDesc}}</div>
 												</li>
-													<li>
-													<div class="title">Blood Group RH:</div>
-													<div class="text"> Demo</div>
-												</li>
+<!--													<li>-->
+<!--													<div class="title">Blood Group RH:</div>-->
+<!--													<div class="text"> {{profileData.employeeSubDetails.empBloodGroup}}</div>-->
+<!--												</li>-->
 											</ul>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6 d-flex">
+								<div class="col-md-6 d-flex" *ngIf="profileData.employeeSubDetails!=undefined">
 									<div class="card profile-box flex-fill">
 										<div class="card-body">
 											<h3 class="card-title">Office Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#emergency_contact_modal"><i class="fa fa-pencil"></i></a></h3>
@@ -194,7 +194,7 @@
 <!--												</li>-->
 												<li>
 													<div class="title">Deptartment:</div>
-													<div class="text">Demo</div>
+													<div class="text"> {{profileData.employeeSubDetails.department.empDepartmentName}}</div>
 												</li>
 <!--												<li>-->
 <!--													<div class="title">Designation:</div>-->
@@ -272,7 +272,7 @@
 								</div>
 							</div>
 
-							<div class="row">
+							<div class="row" *ngIf="profileData.employeeSubDetails!=undefined">
 								<div class="col-md-6 d-flex">
 									<div class="card profile-box flex-fill">
 										<div class="card-body">
@@ -293,7 +293,7 @@
 <!--												</li>-->
 												<li>
 													<div class="title">PF No.:</div>
-													<div class="text">Demo</div>
+													<div class="text">{{profileData.employeeSubDetails.pfAccNo}}</div>
 												</li>
 <!--												<li>-->
 <!--													<div class="title">GL Code.:</div>-->
@@ -331,7 +331,7 @@
                         <hr>
 												<li>
 													<div class="title">Bank Name:</div>
-													<div class="text"> Demo</div>
+													<div class="text"> {{profileData.employeeSubDetails.bankName}}</div>
 												</li>
 
 
@@ -341,11 +341,11 @@
 												</li>
 												<li>
 													<div class="title">Bank Account Number:</div>
-													<div class="text"> Demo</div>
+													<div class="text"> {{profileData.employeeSubDetails.bankAccountNo}}</div>
 												</li>
                         <li>
 													<div class="title">Uan Number:</div>
-													<div class="text"> Demo</div>
+													<div class="text"> {{profileData.employeeSubDetails.uanNo}}</div>
 												</li>
 
 											</ul>
@@ -427,7 +427,7 @@
 <!--												</li>-->
 													<li>
 													<div class="title">Preferd Email Lang.:</div>
-													<div class="text">Demo</div>
+													<div class="text">{{profileData.emailId}}</div>
 												</li>
 											</ul>
 										</div>
@@ -441,7 +441,7 @@
 
 
 						<!-- Bank Statutory Tab -->
-						<div class="tab-pane fade" id="bank_statutory">
+						<div class="tab-pane fade" id="bank_statutory" *ngIf="profileData.employeeSubDetails!=undefined">
 							<div class="card">
 								<div class="card-body">
 									<h3 class="card-title"> Basic Salary Information</h3>

@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
           debugger;
           localStorage.setItem('detail',result['details']);
           localStorage.setItem('empName',result['details'].empName);
+          localStorage.setItem('phone',result['details'].mobileNo);
           localStorage.setItem('role',result['details'].masterEmpRole.roleDescr);
           localStorage.setItem('photo',result['details'].photo);
           if(result['details'].masterEmpRole.empRoleId=='300')

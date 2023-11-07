@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ConstantsService {
   constructor() {}
 
-  serviceUrl = 'http://192.168.2.2:8080/'; //UAT server
+  serviceUrl = 'http://192.168.137.126:8080/'; //UAT server
   // serviceUrl = 'http://petregistration.mynoida.co.in/NaprWeb/'; //UAT server
   api = {
     login:
@@ -16,7 +16,8 @@ export class ConstantsService {
     getAllDesignation: this.serviceUrl+'api/designation/getAllDesignation',
     getMobileDashBoardData: this.serviceUrl+'api/dashboard/getMobileDashBoardData',
     getCalenderData: this.serviceUrl+'api/dashboard/getCalenderData',
-    getProfileComplete: this.serviceUrl+'api/UpdateInfoController/getProfileComplete',
+    // getProfileComplete: this.serviceUrl+'api/UpdateInfoController/getProfileComplete',
+    getProfileComplete: this.serviceUrl+'api/UpdateInfoController/getProfileData/',
     getAllGender: this.serviceUrl+'api/gender/getAllGender',
     getAllDependent: this.serviceUrl+'api/empDependent/getAllDependent',
     getAllDepartment: this.serviceUrl+'api/department/getAllDepartment',

@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit{
   designation: any;
   userDesignation: any;
   numbers: any[]=[];
+  phone: any=localStorage.getItem('phone');
   constructor(
     private apiService: ApiCallingServiceService,
     private cons: ConstantsService,
@@ -35,16 +36,18 @@ export class ProfileComponent implements OnInit{
     ngOnInit(): void {
     $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/select2.min.js');
-    this.getProfileData();
+    if(localStorage.getItem('redirect')=='profileEdit')
+      this.getProfileData(localStorage.getItem('phoneToEdit'));
+    else
+      this.getProfileData(this.phone);
     this.getGender();
     // this.getDepartment();
     this.getDesignation();
 
-
   }
 
-  private getProfileData() {
-      this.apiService.getApiWithToken(this.cons.api.getProfileComplete).subscribe({
+  private getProfileData(phone:any) {
+      this.apiService.getApiWithToken(this.cons.api.getProfileComplete+phone).subscribe({
           next: (v: object) => {
             this.SpinnerService.hide();
             let result: { [key: string]: any } = v;

@@ -130,51 +130,56 @@ export class AllEmployeesComponent implements OnInit{
       this.formData.get('pAddressL4')?.reset();
     }
   }
-
-  editDetails(emp: any) {
-    this.formData.get('email')?.setValue(emp.emailId);
-    this.formData.get('name')?.setValue(emp.empName);
-    this.formData.get('name')?.setValue(emp.empName);
-    this.formData.get('password')?.setValue(emp.empPassword);
-    this.formData.get('password1')?.setValue(emp.empPassword);
-    this.formData.get('accNo')?.setValue(emp.employeeSubDetails.bankAccountNo);
-    this.formData.get('joinDate')?.setValue((emp.employeeSubDetails.dateOfJoining));
-    this.formData.get('dob')?.setValue((emp.employeeSubDetails.empDob));
-
-    this.formData.get('phone')?.setValue(emp.mobileNo);
-    this.formData.get('pan')?.setValue(emp.employeeSubDetails.panNo);
-    this.formData.get('pfNo')?.setValue(emp.employeeSubDetails.pfAccNo);
-    this.formData.get('uanNo')?.setValue(emp.employeeSubDetails.uanNo);
-    this.formData.get('cAddressL1')?.setValue(emp.employeeSubDetails.empCurrentAddress.addressLine1);
-    this.formData.get('cAddressL2')?.setValue(emp.employeeSubDetails.empCurrentAddress.addressLine2);
-    this.formData.get('cAddressL3')?.setValue(emp.employeeSubDetails.empCurrentAddress.locality);
-    this.formData.get('cAddressL4')?.setValue(emp.employeeSubDetails.empCurrentAddress.pinCode);
-    this.formData.get('pAddressL1')?.setValue(emp.employeeSubDetails.empPermanentAddress.addressLine1);
-    this.formData.get('pAddressL2')?.setValue(emp.employeeSubDetails.empPermanentAddress.addressLine2);
-    this.formData.get('pAddressL3')?.setValue(emp.employeeSubDetails.empPermanentAddress.locality);
-    this.formData.get('pAddressL4')?.setValue(emp.employeeSubDetails.empPermanentAddress.pinCode);
-
-    for(let rol of this.common.role){
-      if (JSON.stringify(rol) === JSON.stringify(emp.masterEmpRole)) {
-        this.formData.get('role')?.setValue(rol);
-      }
-    }
-    for(let des of this.common.designations){
-      if (JSON.stringify(des) === JSON.stringify(emp.empDesignation)) {
-        this.formData.get('designation')?.setValue(des);
-      }
-    }
-    for(let gen of this.common.gender){
-      if (JSON.stringify(gen) === JSON.stringify(emp.employeeSubDetails.gender)) {
-        this.formData.get('gender')?.setValue(gen);
-      }
-    }
-    for(let dep of this.common.departments){
-      if (JSON.stringify(dep) === JSON.stringify(emp.employeeSubDetails.gender)) {
-        this.formData.get('gender')?.setValue(dep);
-      }
-    }
-
+  currentEmployeeMethod(emp: any) {
     debugger;
+    localStorage.setItem('phoneToEdit',emp.mobileNo);
+    localStorage.setItem('redirect','profileEdit');
+    this.router.navigate(['/profile']);
   }
+  // editDetails(emp: any) {
+  //   this.formData.get('email')?.setValue(emp.emailId);
+  //   this.formData.get('name')?.setValue(emp.empName);
+  //   this.formData.get('name')?.setValue(emp.empName);
+  //   this.formData.get('password')?.setValue(emp.empPassword);
+  //   this.formData.get('password1')?.setValue(emp.empPassword);
+  //   this.formData.get('accNo')?.setValue(emp.employeeSubDetails.bankAccountNo);
+  //   this.formData.get('joinDate')?.setValue((emp.employeeSubDetails.dateOfJoining));
+  //   this.formData.get('dob')?.setValue((emp.employeeSubDetails.empDob));
+  //
+  //   this.formData.get('phone')?.setValue(emp.mobileNo);
+  //   this.formData.get('pan')?.setValue(emp.employeeSubDetails.panNo);
+  //   this.formData.get('pfNo')?.setValue(emp.employeeSubDetails.pfAccNo);
+  //   this.formData.get('uanNo')?.setValue(emp.employeeSubDetails.uanNo);
+  //   this.formData.get('cAddressL1')?.setValue(emp.employeeSubDetails.empCurrentAddress.addressLine1);
+  //   this.formData.get('cAddressL2')?.setValue(emp.employeeSubDetails.empCurrentAddress.addressLine2);
+  //   this.formData.get('cAddressL3')?.setValue(emp.employeeSubDetails.empCurrentAddress.locality);
+  //   this.formData.get('cAddressL4')?.setValue(emp.employeeSubDetails.empCurrentAddress.pinCode);
+  //   this.formData.get('pAddressL1')?.setValue(emp.employeeSubDetails.empPermanentAddress.addressLine1);
+  //   this.formData.get('pAddressL2')?.setValue(emp.employeeSubDetails.empPermanentAddress.addressLine2);
+  //   this.formData.get('pAddressL3')?.setValue(emp.employeeSubDetails.empPermanentAddress.locality);
+  //   this.formData.get('pAddressL4')?.setValue(emp.employeeSubDetails.empPermanentAddress.pinCode);
+  //
+  //   for(let rol of this.common.role){
+  //     if (JSON.stringify(rol) === JSON.stringify(emp.masterEmpRole)) {
+  //       this.formData.get('role')?.setValue(rol);
+  //     }
+  //   }
+  //   for(let des of this.common.designations){
+  //     if (JSON.stringify(des) === JSON.stringify(emp.empDesignation)) {
+  //       this.formData.get('designation')?.setValue(des);
+  //     }
+  //   }
+  //   for(let gen of this.common.gender){
+  //     if (JSON.stringify(gen) === JSON.stringify(emp.employeeSubDetails.gender)) {
+  //       this.formData.get('gender')?.setValue(gen);
+  //     }
+  //   }
+  //   for(let dep of this.common.departments){
+  //     if (JSON.stringify(dep) === JSON.stringify(emp.employeeSubDetails.gender)) {
+  //       this.formData.get('gender')?.setValue(dep);
+  //     }
+  //   }
+  //
+  //   debugger;
+  // }
 }

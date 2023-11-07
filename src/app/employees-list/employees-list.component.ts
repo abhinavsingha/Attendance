@@ -82,6 +82,10 @@ export class EmployeesListComponent implements OnInit{
 
   currentEmployeeMethod(emp: any) {
     this.currentEmployee=emp;
+    debugger;
+    localStorage.setItem('phoneToEdit',emp.mobileNo);
+    localStorage.setItem('redirect','profileEdit');
+    this.router.navigate(['/profile']);
   }
 
   // private getAllDesignation() {
