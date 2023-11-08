@@ -5,6 +5,7 @@ $(document).ready(function() {
 	
 
 	$(".hamburger-menu").on("click", function(e) {
+		alert('nkdjfhd')
         e.preventDefault();
         $(".slide-bar").toggleClass("show");
         $("body").addClass("on-side");

@@ -69,11 +69,40 @@
               <th>Mobile</th>
               <th class="text-nowrap">Join Date</th>
               <th>Role</th>
+              <th>Status</th>
               <th class="text-right no-sort">Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let emp of allEmpList">
+            <tr *ngFor="let emp of allEmpListDeactive">
+              <td>
+                <h2 class="table-avatar">
+                  <a [routerLink]="['/profile']" class="avatar"><img alt="" [src]="emp['photo']"></a>
+                  <a [routerLink]="['/profile']">{{emp["empName"]}} <span>{{emp['designation']}}</span></a>
+                </h2>
+              </td>
+              <td>{{emp["empId"]}}</td>
+              <td>{{emp["emailId"]}}</td>
+              <td>{{emp["mobileNo"]}}</td>
+              <td *ngIf="emp['employeeSubDetails']!=undefined">{{emp['employeeSubDetails']['dateOfJoining']}}</td>
+              <td *ngIf="emp['employeeSubDetails']==undefined"></td>
+              <td>
+                {{emp['empDesignation']['empDesignationName']}}
+              </td><td>{{emp.status}}</td>
+              <td class="text-right">
+                <div class="dropdown dropdown-action">
+                  <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_employee" (click)="currentEmployeeMethod(emp)"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                    <a class="dropdown-item" (click)="activateUser(emp)" *ngIf="emp.status!='Active'"><i class="fa fa-trash-o m-r-5"></i> Activate</a>
+                    <a class="dropdown-item" (click)="deactivateUser(emp)" *ngIf="emp.status!='Inactive'"><i class="fa fa-trash-o m-r-5"></i> Deactivate</a>
+                    <a class="dropdown-item" (click)="deleteUser(emp)" *ngIf="emp.status!='Deleted'"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr *ngFor="let emp of allEmpListActive">
               <td>
                 <h2 class="table-avatar">
                   <a [routerLink]="['/profile']" class="avatar"><img alt="" [src]="emp['photo']"></a>
@@ -88,12 +117,42 @@
               <td>
                 {{emp['empDesignation']['empDesignationName']}}
               </td>
+              <td>{{emp.status}}</td>
+              <td class="text-right">
+                <div class="dropdown dropdown-action">
+                  <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" (click)="currentEmployeeMethod(emp)"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                    <a class="dropdown-item" (click)="activateUser(emp)" *ngIf="emp.status!='Active'"><i class="fa fa-trash-o m-r-5"></i> Activate</a>
+                    <a class="dropdown-item" (click)="deactivateUser(emp)" *ngIf="emp.status!='Inactive'"><i class="fa fa-trash-o m-r-5"></i> Deactivate</a>
+                    <a class="dropdown-item" (click)="deleteUser(emp)" *ngIf="emp.status!='Deleted'"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr *ngFor="let emp of allEmpListDelete">
+              <td>
+                <h2 class="table-avatar">
+                  <a [routerLink]="['/profile']" class="avatar"><img alt="" [src]="emp['photo']"></a>
+                  <a [routerLink]="['/profile']">{{emp["empName"]}} <span>{{emp['designation']}}</span></a>
+                </h2>
+              </td>
+              <td>{{emp["empId"]}}</td>
+              <td>{{emp["emailId"]}}</td>
+              <td>{{emp["mobileNo"]}}</td>
+              <td *ngIf="emp['employeeSubDetails']!=undefined">{{emp['employeeSubDetails']['dateOfJoining']}}</td>
+              <td *ngIf="emp['employeeSubDetails']==undefined"></td>
+              <td>
+                {{emp['empDesignation']['empDesignationName']}}
+              </td><td>{{emp.status}}</td>
               <td class="text-right">
                 <div class="dropdown dropdown-action">
                   <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                   <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_employee" (click)="currentEmployeeMethod(emp)"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                    <a class="dropdown-item" (click)="activateUser(emp)" *ngIf="emp.status!='Active'"><i class="fa fa-trash-o m-r-5"></i> Activate</a>
+                    <a class="dropdown-item" (click)="deactivateUser(emp)" *ngIf="emp.status!='Inactive'"><i class="fa fa-trash-o m-r-5"></i> Deactivate</a>
+                    <a class="dropdown-item" (click)="deleteUser(emp)" *ngIf="emp.status!='Deleted'"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
                   </div>
                 </div>
               </td>

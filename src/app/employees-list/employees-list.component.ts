@@ -15,6 +15,9 @@ export class EmployeesListComponent implements OnInit{
   allEmpList: any;
   currentEmployee: any;
   designations: any[]=[];
+  allEmpListDeactive: any[]=[];
+  allEmpListActive: any[]=[];
+  allEmpListDelete: any[]=[];
   constructor(
     private apiService: ApiCallingServiceService,
     private cons: ConstantsService,
@@ -31,7 +34,10 @@ export class EmployeesListComponent implements OnInit{
   }
 
   private getAllEmployee() {
-    this.SpinnerService.show();
+    this.allEmpList=[];
+    this.allEmpListDeactive=[];
+    this.allEmpListActive=[];
+    this.allEmpListDelete=[];
     this.apiService.getApiWithToken(this.cons.api.getAllEmpList).subscribe({
       next: (v: object) => {
         this.SpinnerService.hide();
@@ -40,9 +46,24 @@ export class EmployeesListComponent implements OnInit{
         if (result['message'] == 'Success') {
           this.allEmpList=result['response'];
           for(let emp of this.allEmpList){
+
             if(emp.employeeSubDetails!=undefined){
               emp.employeeSubDetails.dateOfJoining = this.datePipe.transform(new Date(Number(emp.employeeSubDetails.dateOfJoining)), 'MM/dd/yyyy');
             }
+            if(emp.isAccountDelete=='0'){
+              if(emp.isFlag=='0'){
+                emp['status']='Inactive';
+                this.allEmpListDeactive.push(emp);
+              }else if(emp.isFlag=='1'){
+                emp['status']='Active';
+                this.allEmpListActive.push(emp);
+              }
+            }else{
+              emp['status']='Deleted';
+              this.allEmpListDelete.push(emp);
+            }
+
+
           }
         } else {
           this.SpinnerService.hide();
@@ -61,6 +82,10 @@ export class EmployeesListComponent implements OnInit{
 
   currentEmployeeMethod(emp: any) {
     this.currentEmployee=emp;
+    debugger;
+    localStorage.setItem('phoneToEdit',emp.mobileNo);
+    localStorage.setItem('redirect','profileEdit');
+    this.router.navigate(['/profile']);
   }
 
   // private getAllDesignation() {
@@ -89,5 +114,71 @@ export class EmployeesListComponent implements OnInit{
       return new Date(dateString);
     }
     return new Date();
+  }
+
+  deleteUser(emp: any) {
+    this.apiService.getApiWithToken(this.cons.api.deleteAccount+emp.mobileNo).subscribe({
+          next: (v: object) => {
+            this.SpinnerService.hide();
+            let result: { [key: string]: any } = v;
+
+            if (result['httpStatus'] == 'OK') {
+              this.common.successAlert('Deleted', result['message'], '');
+              this.getAllEmployee();
+
+            } else {
+              this.common.faliureAlert('Please try later', result['message'], '');
+            }
+          },
+          error: (e) => {
+            this.SpinnerService.hide();
+            console.error(e);
+            this.common.faliureAlert('Error', e['error']['message'], 'error');
+          },
+          complete: () => console.info('complete'),
+        });
+  }
+
+  deactivateUser(emp: any) {
+    this.apiService.getApiWithToken(this.cons.api.deActiveAccount+emp.mobileNo).subscribe({
+      next: (v: object) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = v;
+        if (result['httpStatus'] == 'OK') {
+          this.common.successAlert('Deactivated', result['message'], '');
+          this.getAllEmployee();
+        } else {
+          this.common.faliureAlert('Please try later', result['message'], '');
+        }
+      },
+      error: (e) => {
+        this.SpinnerService.hide();
+        console.error(e);
+        this.common.faliureAlert('Error', e['error']['message'], 'error');
+      },
+      complete: () => console.info('complete'),
+    });
+  }
+  activateUser(emp:any){
+    this.apiService.getApiWithToken(this.cons.api.activeAccount+emp.mobileNo).subscribe({
+      next: (v: object) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = v;
+
+        if (result['httpStatus'] == 'OK') {
+          this.common.successAlert('Activated', result['message'], '');
+
+          this.getAllEmployee();
+        } else {
+          this.common.faliureAlert('Please try later', result['message'], '');
+        }
+      },
+      error: (e) => {
+        this.SpinnerService.hide();
+        console.error(e);
+        this.common.faliureAlert('Error', e['error']['message'], 'error');
+      },
+      complete: () => console.info('complete'),
+    });
   }
 }

@@ -11,6 +11,24 @@ export class AttendenceEmployeeComponent implements OnInit{
     $.getScript('../../assets/js/app.js');
     $.getScript('../../assets/js/select2.min.js');
 
-  }
+    this.getLocation()
 
+  }
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          console.log('Latitude:', latitude);
+          console.log('Longitude:', longitude);
+        },
+        (error) => {
+          console.error('Error getting location:', error);
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
+  }
 }

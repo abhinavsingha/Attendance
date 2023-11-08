@@ -44,11 +44,39 @@
 .slide-bar.show {
   right: 0;
 }
+.offset-sidebar h4{
+  color: #000;
+}
 .offset-sidebar {
   display: block;
-  margin-top: 30px;
+  margin-top: 15px;
+  border-radius: 8px;
+
 }
 .offset-widget.offset-logo {
   border-bottom: 1px solid #eeecec;
-  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+
 }
+.offset-widget.offset-logo img{
+  width: 100px;
+}
+.offset-widget{
+padding-top: 10px;
+padding-left: 10px;
+padding-right: 10px;
+}
+.edit-icon:hover{
+  color: #fff !important;
+}
+
+.ms-2{
+margin-left: 5px;
+}
+.me-2{
+  margin-right: 5px;
+  }
+  .close-mobile-menu svg{
+    color: #000;
+  }
