@@ -149,11 +149,52 @@
 					<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
 					<div class="dropdown-menu dropdown-menu-right">
 						<a class="dropdown-item" [routerLink]="['/profile']">My Profile</a>
-						<a class="dropdown-item" href="settings.html">Settings</a>
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<a class="dropdown-item hamburger-menu">Settings</a>
+						<a class="dropdown-item" [routerLink]="['/profile']">Logout</a>
 					</div>
 				</div>
 				<!-- /Mobile Menu -->
-
+				<aside class="slide-bar">
+					<div class="close-mobile-menu">
+						<a href="javascript:void(0);">
+							<i class="fas fa-times"></i>
+						</a>
+					</div>
+					<!-- offset-sidebar start -->
+					<div class="offset-sidebar">
+						<div class="offset-widget offset-logo mb-30">
+							<a href="index.html">
+								<img src="../../assets/img/logo.png" alt="logo">
+							</a>
+						</div>
+						<div class="offset-widget mb-40">
+							<div class="info-widget">
+								<h4 class="offset-title mb-20">About Us</h4>
+								<p class="mb-30">
+									AriGen Technology Established in 2014, AriGen has grown to its current position as one of the IT services providers in India based on its outstanding service record, collaborative partnerships, innovation and corporate responsibility.
+								</p>
+							</div>
+						</div>
+						<div class="offset-widget mb-30 pr-10">
+							<div class="info-widget info-widget2">
+								<h4 class="offset-title mb-20">Contact Info</h4>
+								<p>
+									<i class="fal fa-address-book"></i> C-1205, 4th Floor, Arunima Palace, Sector-4, Vasundhra, Ghaziabad, Uttar Pradesh - 201012
+								</p>
+								<p>
+									<i class="fal fa-phone"></i> +91-99710 09929
+								</p>
+								<p>
+									<i class="fal fa-envelope-open"></i> info@arigentechnology.com
+								</p>
+							</div>
+						</div>
+						<div class="login-btn text-center">
+							<a class="theme_btn w-100" href="login.html">Login</a>
+						</div>
+					</div>
+					<!-- offset-sidebar end -->
+					
+				</aside>
             </div>
 			<!-- /Header -->
