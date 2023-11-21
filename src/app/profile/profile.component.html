@@ -92,29 +92,29 @@
 						</a>
 					</div>
 					<!-- offset-sidebar start -->
-					<div class="offset-sidebar">
+					<div class="offset-sidebar" *ngIf="profileData!=undefined">
 						<div class="offset-widget offset-logo">
 							<a href="index.html" >
-								<img src="http://petregistration.mynoida.co.in/data/attendance/userProfile/user_icon.png" alt="logo" class="mb-3">
+								<img src="{{profileData.photo}}" alt="logo" class="mb-3">
 							</a>
-							<h4 class="offset-title mb-2">Deepak Kumar</h4>
+							<h4 class="offset-title mb-2">{{profileData.empName}}</h4>
 								<p class="mb-2">
-									Software Developer
+                  {{profileData.empDesignation.empDesignationName}}
  								</p>
 								 <p class="mb-2">
-									0000
+                   {{profileData.empId}}
  								</p>
 						</div>
 						<div class="offset-widget mb-20">
-							<div class="info-widget mt-2">
-								<p class="mb-2">
-									Department: <strong>EM</strong>
+							<div class="info-widget mt-2" >
+								<p class="mb-2" *ngIf="profileData.employeeSubDetails!=undefined">
+									Department: <strong>{{profileData.employeeSubDetails.department.empDepartmentName}}</strong>
 								</p>
 								<p class="mb-2">
-									Location: <strong>Noida, India</strong>
+									Location: <strong>{{profileData.officeAddress.location}}</strong>
 								</p>
-								<p class="mb-2">
-									Blood Group: <strong>O+</strong>
+								<p class="mb-2" *ngIf="profileData.employeeSubDetails!=undefined">
+									Blood Group: <strong>{{profileData.employeeSubDetails.empBloodGroup.bloodGroupDesc}}</strong>
 								</p>
 							</div>
 						</div>
@@ -123,7 +123,7 @@
 						</div>
 					</div>
 					<!-- offset-sidebar end -->
-					
+
 				</aside>
 					<div class="card tab-box"  *ngIf="profileData!=undefined">
 						<div class="row user-tabs">
