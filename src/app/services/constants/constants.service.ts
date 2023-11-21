@@ -44,7 +44,8 @@ export class ConstantsService {
     getAttendanceReport: this.serviceUrl+'api/report/attendanceReport',
     deleteAccount: this.serviceUrl+'api/empRegistration/deleteAccount/',
     activeAccount: this.serviceUrl+'api/empRegistration/activeAccount/',
-    deActiveAccount: this.serviceUrl+'api/empRegistration/deActiveAccount/',
+    deActiveAccount: this.serviceUrl+'api/empRegistration/deActiveAccount/', updateBankInfo: this.serviceUrl+'api/empRegistrationWeb/updateBankInfo'
+
 
   };
 }

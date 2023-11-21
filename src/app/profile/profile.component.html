@@ -33,12 +33,11 @@
 											<div class="row">
 												<div class="col-md-5">
 													<div class="profile-info-left">
-														<h3 class="user-name m-t-0 mb-0" *ngIf="profileData.empName!=undefined">{{profileData.empName}}</h3>
-<!--														<h6 class="text-muted">Information Technology</h6>-->
-														<small class="text-muted"  *ngIf="profileData.empDesignation!=undefined">{{profileData.empDesignation.empDesignationName}}</small>
-														<div class="staff-id" *ngIf="profileData.empId!=undefined">Employee ID : {{profileData.empId}}</div>
-														<div class="small doj text-muted" *ngIf="profileData.employeeSubDetails!=undefined">Date of Join : {{profileData.employeeSubDetails.dateOfJoining|date}}</div>
-														<div class="small doj text-muted" *ngIf="profileData.officeAddress!=undefined">Location : {{profileData.officeAddress.location}}</div>
+                            <h3 class="user-name m-t-0 mb-0" ><span *ngIf="profileData.empName!=undefined">{{profileData.empName}}</span></h3>
+														<small class="text-muted"  ><span *ngIf="profileData.empDesignation!=undefined">{{profileData.empDesignation.empDesignationName}}</span></small>
+														<div class="staff-id" >Employee ID :<span *ngIf="profileData.empId!=undefined"> {{profileData.empId}}</span></div>
+                            <div class="small doj text-muted" >Date of Join : <span *ngIf="profileData.employeeSubDetails!=undefined">{{profileData.employeeSubDetails.dateOfJoining|date}}</span></div>
+														<div class="small doj text-muted" >Location : <span *ngIf="profileData.officeAddress!=undefined">{{profileData.officeAddress.location}}</span></div>
 <!--														<div class="staff-msg"><a class="btn btn-custom" >Send Mail</a></div>-->
 													</div>
 												</div>
@@ -46,20 +45,20 @@
 													<ul class="personal-info">
 														<li>
 															<div class="title">Phone:</div>
-															<div class="text"><a href="tel:{{profileData.mobileNo}}">{{profileData.mobileNo}}</a></div>
+															<div class="text"> <a href="tel:{{profileData.mobileNo}}"><span *ngIf="profileData.mobileNo!=undefined">{{profileData.mobileNo}}</span></a></div>
 														</li>
 														<li>
 															<div class="title">Email:</div>
-															<div class="text"><a href="mailto:{{profileData.emailId}}">{{profileData.emailId}}</a></div>
+															<div class="text"> <a href="mailto:{{profileData.emailId}}"><span *ngIf="profileData.emailId!=undefined">{{profileData.emailId}}</span></a></div>
 														</li>
 														<li>
 															<div class="title">Birthday:</div>
-															<div class="text">{{profileData.employeeSubDetails.empDob|date}}</div>
+                              <div class="text"> <span *ngIf="profileData.employeeSubDetails.empDob!=undefined">{{profileData.employeeSubDetails.empDob|date}}</span></div>
 														</li>
 
 														<li>
 															<div class="title">Gender:</div>
-															<div class="text">{{profileData.employeeSubDetails.gender.genderDesc}}</div>
+                              <div class="text"> <span *ngIf="profileData.employeeSubDetails.gender!=undefined">{{profileData.employeeSubDetails.gender.genderDesc}}</span></div>
 														</li>
 														<li>
 															<div class="title">Reports to:</div>
@@ -108,13 +107,13 @@
 						<div class="offset-widget mb-20">
 							<div class="info-widget mt-2" >
 								<p class="mb-2" *ngIf="profileData.employeeSubDetails!=undefined">
-									Department: <strong>{{profileData.employeeSubDetails.department.empDepartmentName}}</strong>
+                  Department: <strong><span *ngIf="profileData.employeeSubDetails.department!=undefined">{{profileData.employeeSubDetails.department.empDepartmentName}}</span></strong>
 								</p>
 								<p class="mb-2">
 									Location: <strong>{{profileData.officeAddress.location}}</strong>
 								</p>
 								<p class="mb-2" *ngIf="profileData.employeeSubDetails!=undefined">
-									Blood Group: <strong>{{profileData.employeeSubDetails.empBloodGroup.bloodGroupDesc}}</strong>
+                  Blood Group: <strong><span *ngIf="profileData.employeeSubDetails.empBloodGroup!=undefined">{{profileData.employeeSubDetails.empBloodGroup.bloodGroupDesc}}</span></strong>
 								</p>
 							</div>
 						</div>
@@ -146,64 +145,15 @@
 										<div class="card-body">
 											<h3 class="card-title">Personal Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#personal_info_modal"><i class="fa fa-pencil"></i></a></h3>
 											<ul class="personal-info" *ngIf="profileData.employeeSubDetails!=undefined">
-<!--												<li>-->
-<!--													<div class="title">Salutation:</div>-->
-<!--													<div class="text">Mr.</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Full Name:</div>-->
-<!--													<div class="text">Soumyadip</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Birth-Date:</div>-->
-<!--													<div class="text">Soumyadip</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Location:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
+
 												<li >
 													<div class="title">Physically Handicapped:</div>
                           <div class="text"> <span *ngIf="profileData.employeeSubDetails.isHandicap=='0'">No</span><span *ngIf="profileData.employeeSubDetails.isHandicap=='1'">Yes</span></div>
 												</li>
 
-<!--										      	<li>-->
-<!--													<div class="title">Permanent Address:</div>-->
-<!--													<div class="text"> Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Home Address:</div>-->
-<!--													<div class="text"> Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Postal Code:</div>-->
-<!--													<div class="text"> Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Current Pincode:</div>-->
-<!--													<div class="text"> Demo</div>-->
-<!--												</li>-->
-
-<!--												<hr>-->
-<!--												<li>-->
-<!--													<div class="title">Birthday Celebration:</div>-->
-<!--													<div class="text"> Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Birth Place:</div>-->
-<!--													<div class="text"> Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Birth State:</div>-->
-<!--													<div class="text"> Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Birth Country:</div>-->
-<!--													<div class="text"> Demo</div>-->
-<!--												</li>-->
 													<li>
 													<div class="title">Marital status  :</div>
-													<div class="text"> {{profileData.employeeSubDetails.masterMaterialId.maritalDescription}}</div>
+													<div class="text"><span *ngIf="profileData.employeeSubDetails.masterMaterialId!=undefined"> {{profileData.employeeSubDetails.masterMaterialId.maritalDescription}}</span></div>
 												</li>
 													<li>
 													<div class="title">Marriage Date:</div>
@@ -212,12 +162,8 @@
 												<hr>
 													<li>
 													<div class="title">Blood Group:</div>
-													<div class="text"> {{profileData.employeeSubDetails.empBloodGroup.bloodGroupDesc}}</div>
+													<div class="text"> <span *ngIf="profileData.employeeSubDetails.empBloodGroup!=undefined"> {{profileData.employeeSubDetails.empBloodGroup.bloodGroupDesc}}</span></div>
 												</li>
-<!--													<li>-->
-<!--													<div class="title">Blood Group RH:</div>-->
-<!--													<div class="text"> {{profileData.employeeSubDetails.empBloodGroup}}</div>-->
-<!--												</li>-->
 											</ul>
 										</div>
 									</div>
@@ -234,48 +180,12 @@
 <!--												</li>-->
 												<li>
 													<div class="title">Deptartment:</div>
-													<div class="text"> {{profileData.employeeSubDetails.department.empDepartmentName}}</div>
+                          <div class="text"><span *ngIf="profileData.employeeSubDetails.department!=undefined"> {{profileData.employeeSubDetails.department.empDepartmentName}}</span></div>
 												</li>
-<!--												<li>-->
-<!--													<div class="title">Designation:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Reports to:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Category:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Grade:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Joining Date:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Confirmation Date:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Confirmation Date (Probitional):</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-
-<!--												<li>-->
-<!--													<div class="title">Shift:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
 												<li>
 													<div class="title">Attendence Type:</div>
-													<div class="text">Demo</div>
+													<div class="text">Online</div>
 												</li>
-
-
-
 											<hr>
 												<li>
 													<div class="title">Notice Period:</div>
@@ -285,27 +195,7 @@
 													<div class="title">Experience:</div>
 													<div class="text">Demo</div>
 												</li>
-<!--												<li>-->
-<!--													<div class="title">Working Number:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Working Fax:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-<!--												<hr>-->
-<!--													<li>-->
-<!--													<div class="title">Rejoin Status:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-<!--													<li>-->
-<!--													<div class="title">Previous Position:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
-<!--												<li>-->
-<!--													<div class="title">Previous ID:</div>-->
-<!--													<div class="text">Demo</div>-->
-<!--												</li>-->
+
 											</ul>
 										</div>
 									</div>
@@ -316,7 +206,7 @@
 								<div class="col-md-6 d-flex">
 									<div class="card profile-box flex-fill">
 										<div class="card-body">
-											<h3 class="card-title">Bank Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#personal_info_modal"><i class="fa fa-pencil"></i></a></h3>
+											<h3 class="card-title">Bank Informations <a href="#" class="edit-icon" data-toggle="modal" data-target="#bank_info_modal" (click)="populateBankDetails()"><i class="fa fa-pencil"></i></a></h3>
 											<ul class="personal-info">
 <!--												<li>-->
 <!--													<div class="title">Salary Hold:</div>-->
@@ -377,7 +267,7 @@
 
 												<li>
 													<div class="title">BANK IFSC Code:</div>
-													<div class="text"> Demo</div>
+													<div class="text"> {{profileData.employeeSubDetails.ifscCode}}</div>
 												</li>
 												<li>
 													<div class="title">Bank Account Number:</div>
@@ -994,82 +884,76 @@
 				</div>
 				<!-- /Family Info Modal -->
 
-				<!-- Emergency Contact Modal -->
-				<div id="emergency_contact_modal" class="modal custom-modal fade" role="dialog">
+				<!-- Bank Info Modal -->
+				<div id="bank_info_modal" class="modal custom-modal fade" role="dialog">
 					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title">Personal Information</h5>
+								<h5 class="modal-title">Bank Information</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
-							<div class="modal-body">
+							<div class="modal-body" [formGroup]="formDataBank">
 									<div class="card">
 										<div class="card-body">
-											<h3 class="card-title">Primary Contact</h3>
+											<h3 class="card-title">Information</h3>
 											<div class="row">
 												<div class="col-md-6">
 													<div class="form-group">
-														<label>Name <span class="text-danger">*</span></label>
-														<input type="text" class="form-control">
+														<label>PF No.<span class="text-danger">*</span></label>
+														<input type="text" formControlName="pfNo" class="form-control" [readonly]="true">
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="form-group">
-														<label>Relationship <span class="text-danger">*</span></label>
-														<input class="form-control" type="text">
+														<label>Salary Payment Mode <span class="text-danger">*</span></label>
+														<input class="form-control" value="Online" type="text" disabled>
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="form-group">
-														<label>Phone <span class="text-danger">*</span></label>
-														<input class="form-control" type="text">
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="form-group">
-														<label>Phone 2</label>
-														<input class="form-control" type="text">
+														<label>ESI Applicable <span class="text-danger">*</span></label>
+														<input class="form-control" value="No" type="text" disabled>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 
-									<div class="card">
+									<div class="card" >
 										<div class="card-body">
-											<h3 class="card-title">Primary Contact</h3>
+											<h3 class="card-title">Bank Details</h3>
 											<div class="row">
 												<div class="col-md-6">
 													<div class="form-group">
-														<label>Name <span class="text-danger">*</span></label>
-														<input type="text" class="form-control">
+														<label>Bank Name <span class="text-danger">*</span></label>
+														<input type="text" formControlName="bankName" class="form-control">
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="form-group">
-														<label>Relationship <span class="text-danger">*</span></label>
-														<input class="form-control" type="text">
+														<label>Bank IFSC Code <span class="text-danger">*</span></label>
+														<input class="form-control" formControlName="ifsc" type="text">
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="form-group">
-														<label>Phone <span class="text-danger">*</span></label>
-														<input class="form-control" type="text">
+														<label>Bank Account Number <span class="text-danger">*</span></label>
+														<input class="form-control" formControlName="accountNo" type="text">
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="form-group">
-														<label>Phone 2</label>
-														<input class="form-control" type="text">
+														<label>UAN Number</label>
+														<input class="form-control" formControlName="uan" type="text">
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="submit-section">
-										<button class="btn btn-primary submit-btn">Submit</button>
+										<button class="btn btn-primary submit-btn" (click)="updateBankDetail(formDataBank.value)" data-dismiss="modal">Submit</button>
 									</div>
 							</div>
 						</div>

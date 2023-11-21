@@ -19,6 +19,14 @@ export class ProfileComponent implements OnInit{
     phone: new FormControl(),
     designation: new FormControl(),
   });
+  formDataBank= new FormGroup({
+    pfNo: new FormControl(),
+    salMode: new FormControl(),
+    bankName: new FormControl(),
+    ifsc: new FormControl(),
+    accountNo: new FormControl(),
+    uan: new FormControl(),
+  });
   profileData: any;
   gender: any;
   department: any;
@@ -50,7 +58,7 @@ export class ProfileComponent implements OnInit{
           $("body").addClass("on-side");
           $('.body-overlay').addClass('active');
           $(this).addClass('active');
-  
+
   }
   private getProfileData(phone:any) {
       this.apiService.getApiWithToken(this.cons.api.getProfileComplete+phone).subscribe({
@@ -152,5 +160,51 @@ export class ProfileComponent implements OnInit{
         complete: () => console.info('complete'),
       }
     );
+  }
+
+  populateBankDetails() {
+    if(this.profileData.employeeSubDetails!=undefined){
+      if(this.profileData.employeeSubDetails.pfAccNo!=undefined)
+        this.formDataBank.get('pfNo')?.setValue(this.profileData.employeeSubDetails.pfAccNo);
+      if(this.profileData.employeeSubDetails.bankName!=undefined)
+        this.formDataBank.get('bankName')?.setValue(this.profileData.employeeSubDetails.bankName);
+      if(this.profileData.employeeSubDetails.ifscCode!=undefined)
+        this.formDataBank.get('ifsc')?.setValue(this.profileData.employeeSubDetails.ifscCode);
+      if(this.profileData.employeeSubDetails.bankAccountNo!=undefined)
+        this.formDataBank.get('accountNo')?.setValue(this.profileData.employeeSubDetails.bankAccountNo);
+      if(this.profileData.employeeSubDetails.uanNo!=undefined)
+        this.formDataBank.get('uan')?.setValue(this.profileData.employeeSubDetails.uanNo);
+    }
+  }
+
+  updateBankDetail(value: any) {
+    let json={
+      bankAccountNo: value.accountNo,
+      panNo: value.pan,
+      pfAccNo: value.pfNo,
+      uanNo: value.uan,
+      bankName:value.bankName,
+      ifscCode:value.ifsc
+    }
+    debugger;
+    this.apiService.postApiWithToken(this.cons.api.updateBankInfo,json).subscribe({
+      next: (v: object) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = v;
+
+        if (result['httpStatus'] == 'CREATED') {
+          this.common.successAlert('Success', result['message'], '');
+        } else {
+          this.common.faliureAlert('Please try later', result['message'], '');
+        }
+      },
+      error: (e) => {
+        // this.SpinnerService.hide();
+        console.error(e);
+        this.common.faliureAlert('Error', e['error']['message'], 'error');
+      },
+      complete: () => console.info('complete'),
+    });
+
   }
 }
