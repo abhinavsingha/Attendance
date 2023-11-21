@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+a{
+  cursor: pointer !important;
+}
 .timestamp{
     font-size: 13px;
     color: #777;
@@ -51,10 +54,11 @@
   display: block;
   margin-top: 15px;
   border-radius: 8px;
+  
 
 }
 .offset-widget.offset-logo {
-  border-bottom: 1px solid #eeecec;
+  border-bottom: 1px solid #474747;
   padding-top: 20px;
   text-align: center;
 

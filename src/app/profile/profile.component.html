@@ -93,6 +93,8 @@
 					</div>
 					<!-- offset-sidebar start -->
 					<div class="offset-sidebar" *ngIf="profileData!=undefined">
+						<div class="front">
+						<div class="inner">
 						<div class="offset-widget offset-logo">
 							<a href="index.html" >
 								<img src="{{profileData.photo}}" alt="logo" class="mb-3">
@@ -121,6 +123,40 @@
 						<div class="login-btn text-center mt-4">
 							<button class="btn btn-primary w-100" href="login.html"><i class="fas fa-download"></i> Download ID</button>
 						</div>
+					    </div>
+					    </div>
+						<div class="back">
+							<div class="inner">
+							<div class="offset-widget offset-logo">
+								<a href="index.html" >
+									<img src="../../assets/img/logo.png" alt="logo" class="mb-3">
+								</a>
+								<h4 class="offset-title mb-2">{{profileData.empName}}</h4>
+									<p class="mb-2">
+					  {{profileData.empDesignation.empDesignationName}}
+									 </p>
+									 <p class="mb-2">
+					   {{profileData.empId}}
+									 </p>
+							</div>
+							<div class="offset-widget mb-20">
+								<div class="info-widget mt-2" >
+									<p class="mb-2" *ngIf="profileData.employeeSubDetails!=undefined">
+										Department: <strong>{{profileData.employeeSubDetails.department.empDepartmentName}}</strong>
+									</p>
+									<p class="mb-2">
+										Location: <strong>{{profileData.officeAddress.location}}</strong>
+									</p>
+									<p class="mb-2" *ngIf="profileData.employeeSubDetails!=undefined">
+										Blood Group: <strong>{{profileData.employeeSubDetails.empBloodGroup.bloodGroupDesc}}</strong>
+									</p>
+								</div>
+							</div>
+							<div class="login-btn text-center mt-4">
+								<button class="btn btn-primary w-100" href="login.html"><i class="fas fa-download"></i> Download ID</button>
+							</div>
+						    </div>
+							</div>
 					</div>
 					<!-- offset-sidebar end -->
 
