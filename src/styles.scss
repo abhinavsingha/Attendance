@@ -58,10 +58,13 @@ a{
 
 }
 .offset-widget.offset-logo {
-  border-bottom: 1px solid #474747;
+  
   padding-top: 20px;
   text-align: center;
 
+}
+.bb{
+  border-bottom: 1px solid #474747;
 }
 .offset-widget.offset-logo img{
   width: 100px;
@@ -83,4 +86,5 @@ margin-left: 5px;
   }
   .close-mobile-menu svg{
     color: #000;
+    font-size: 22px;
   }

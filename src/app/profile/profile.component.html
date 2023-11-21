@@ -96,39 +96,21 @@
 						<div class="inner">
 						<div class="offset-widget offset-logo">
 							<a href="index.html" >
-								<img src="{{profileData.photo}}" alt="logo" class="mb-3">
+								<img src="../../assets/img/logo.png" alt="logo" class="mb-3">
 							</a>
-							<h4 class="offset-title mb-2">{{profileData.empName}}</h4>
+							<h4 class="offset-title mb-2">Intek Microsystem Pvt. Ltd.</h4>
 								<p class="mb-2">
-                  {{profileData.empDesignation.empDesignationName}}
+									E-131, 3rd Floor, Ganpathi Bhawan, Mohammadpur, opp. Bhikaji Cama Place, New Delhi, Delhi 110066
  								</p>
-								 <p class="mb-2">
-                   {{profileData.empId}}
- 								</p>
-						</div>
-						<div class="offset-widget mb-20">
-							<div class="info-widget mt-2" >
-								<p class="mb-2" *ngIf="profileData.employeeSubDetails!=undefined">
-                  Department: <strong><span *ngIf="profileData.employeeSubDetails.department!=undefined">{{profileData.employeeSubDetails.department.empDepartmentName}}</span></strong>
-								</p>
-								<p class="mb-2">
-									Location: <strong>{{profileData.officeAddress.location}}</strong>
-								</p>
-								<p class="mb-2" *ngIf="profileData.employeeSubDetails!=undefined">
-                  Blood Group: <strong><span *ngIf="profileData.employeeSubDetails.empBloodGroup!=undefined">{{profileData.employeeSubDetails.empBloodGroup.bloodGroupDesc}}</span></strong>
-								</p>
-							</div>
-						</div>
-						<div class="login-btn text-center mt-4">
-							<button class="btn btn-primary w-100" href="login.html"><i class="fas fa-download"></i> Download ID</button>
+								 
 						</div>
 					    </div>
 					    </div>
 						<div class="back">
 							<div class="inner">
-							<div class="offset-widget offset-logo">
+							<div class="offset-widget offset-logo bb">
 								<a href="index.html" >
-									<img src="../../assets/img/logo.png" alt="logo" class="mb-3">
+									<img src="{{profileData.photo}}" alt="logo" class="mb-3">
 								</a>
 								<h4 class="offset-title mb-2">{{profileData.empName}}</h4>
 									<p class="mb-2">
