@@ -34,7 +34,6 @@ a{
     top: 0;
     right: -370px;
     width: 350px;
-    padding: 25px 30px;
     height: 100%;
     display: block;
     background:linear-gradient(to right, #FF9B44 0%, #ee3133 100%);
@@ -46,6 +45,9 @@ a{
 }
 .slide-bar.show {
   right: 0;
+}
+.slide-wrap{
+  padding: 25px 30px;
 }
 .offset-sidebar h4{
   color: #000;
@@ -85,6 +87,17 @@ margin-left: 5px;
   margin-right: 5px;
   }
   .close-mobile-menu svg{
-    color: #000;
+    color: #ffffff;
     font-size: 22px;
+    
+  }
+  .close-mobile-menu{
+    padding: 15px;
+    background: #34444c;
+    color: #ffffff;
+    text-align: center;
+  }
+  .close-mobile-menu a{
+    position: absolute;
+    left: 10px;
   }
