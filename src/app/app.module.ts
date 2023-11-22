@@ -36,6 +36,8 @@ import { BloodGroupComponent } from './blood-group/blood-group.component';
 import {UploadAttendanceComponent} from "./upload-attendance/upload-attendance.component";
 import {SalaryComponent} from "./salary/salary.component";
 import { ReportComponent } from './report/report.component';
+import { ChatComponent } from './chat/chat.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import { ReportComponent } from './report/report.component';
     BloodGroupComponent,
     UploadAttendanceComponent,
     SalaryComponent,
-    ReportComponent
+    ReportComponent,
+    ChatComponent,
+    NotificationComponent
 
   ],
   imports: [

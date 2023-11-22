@@ -1,0 +1,835 @@
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+
+    <!-- Page Content -->
+    <div class="content container-fluid">
+  
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row align-items-center">
+          <div class="col">
+            <h3 class="page-title">Notification</h3>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a [routerLink]="['/admin-dashboard']">Dashboard</a></li>
+              <li class="breadcrumb-item active"> notification</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <!-- /Page Header -->
+
+      <!-- form -->
+      <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title mb-0">Send Notification</h4>
+                </div>
+                <div class="card-body">
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-group form-focus select-focus">
+                                    <label> Select User</label>
+                                    <select class="select floating">
+                                      <option>All Users</option>
+                                      <option>Avneesh</option>
+                                      <option>Deepak Tyagi</option>
+                                      <option>Abhinav singha</option>
+                                      <option>Deevan Singh</option>
+                                    </select>
+                                  </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>Message Title</label>
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Message</label>
+                                    <textarea class="form-control" rows="4"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary btn-custom"><i class="fas fas fa-paper-plane"></i> Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- /form -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table table-striped custom-table datatable" id="table1">
+              <thead>
+              <tr>
+                <th>SR.</th>
+                <th>User</th>
+                <th>Message Title</th>
+                <th>Message</th>
+                <th>Date & Time</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                 <td>1</td>
+                 <td>Deepak Tyagi</td>
+                 <td>What kind of fuckery is this</td>
+                 <td>Fuck this wondering. Fuck this trying and trying. Fuck this belief that two people can become one ideal. Fuck this helplessness. Fuck this waiting for something to happen that probably won't ever happen.</td>
+                 <td>23/11/2024 10:12 AM</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>All Users</td>
+                <td>What kind of fuckery is this</td>
+                <td>Fuck this wondering. Fuck this trying and trying. Fuck this belief that two people can become one ideal. Fuck this helplessness. Fuck this waiting for something to happen that probably won't ever happen.</td>
+                <td>23/11/2024 10:12 AM</td>
+             </tr>
+             <tr>
+              <td>3</td>
+              <td>Abhinav</td>
+              <td>What kind of fuckery is Deepak</td>
+              <td>Deepak se dur reh bhai</td>
+              <td>23/11/2024 10:12 AM</td>
+           </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Page Content -->
+  
+    <!-- Add Employee Modal -->
+    <div id="add_employee" class="modal custom-modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Employee</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">First Name <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Last Name</label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Username <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Email <span class="text-danger">*</span></label>
+                    <input class="form-control" type="email">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Password</label>
+                    <input class="form-control" type="password">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Confirm Password</label>
+                    <input class="form-control" type="password">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Employee ID <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Joining Date <span class="text-danger">*</span></label>
+                    <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Phone </label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group form-group form-focus select-focus">
+                    <label>Company <span class="text-danger">*</span></label>
+                    <select class="select floating">
+                      <option value="">Global Technologies</option>
+                      <option value="1">Delta Infotech</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-group form-focus select-focus">
+                    <label>Department <span class="text-danger">*</span></label>
+                    <select class="select floating">
+                      <option>Select Department</option>
+                      <option>Web Development</option>
+                      <option>IT Management</option>
+                      <option>Marketing</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-focus select-focus">
+                    <label>Designation <span class="text-danger">*</span></label>
+                    <select class="select floating">
+                      <option>Select Designation</option>
+                      <option>Web Designer</option>
+                      <option>Web Developer</option>
+                      <option>Android Developer</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Date of Birth<span class="text-danger">*</span></label>
+                    <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+                  </div>
+                </div>
+  
+  
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Address <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Gender <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-focus select-focus">
+                    <label>Status <span class="text-danger">*</span></label>
+                    <select class="select floating">
+                      <option>Select Status</option>
+                      <option>Verified</option>
+                      <option>Rejected</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Pan No. <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+  
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Bank Account No. <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">EPF Account No. <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">UAN No. <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="table-responsive m-t-15">
+                <table class="table table-striped custom-table">
+                  <thead>
+                  <tr>
+                    <th>Module Permission</th>
+                    <th class="text-center">Read</th>
+                    <th class="text-center">Write</th>
+                    <th class="text-center">Create</th>
+                    <th class="text-center">Delete</th>
+                    <th class="text-center">Import</th>
+                    <th class="text-center">Export</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Holidays</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Leaves</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Clients</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Projects</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tasks</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Chats</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Assets</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Timing Sheets</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="submit-section">
+                <button class="btn btn-primary submit-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Add Employee Modal -->
+  
+    <!-- Edit Employee Modal -->
+    <div id="edit_employee" class="modal custom-modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Employee</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">First Name <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Last Name</label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Username <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Email <span class="text-danger">*</span></label>
+                    <input class="form-control" type="email">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Password</label>
+                    <input class="form-control" type="password">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Confirm Password</label>
+                    <input class="form-control" type="password">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Employee ID <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Joining Date <span class="text-danger">*</span></label>
+                    <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Phone </label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group form-group form-focus select-focus">
+                    <label>Company <span class="text-danger">*</span></label>
+                    <select class="select floating">
+                      <option value="">Global Technologies</option>
+                      <option value="1">Delta Infotech</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-group form-focus select-focus">
+                    <label>Department <span class="text-danger">*</span></label>
+                    <select class="select floating">
+                      <option>Select Department</option>
+                      <option>Web Development</option>
+                      <option>IT Management</option>
+                      <option>Marketing</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-focus select-focus">
+                    <label>Designation <span class="text-danger">*</span></label>
+                    <select class="select floating">
+                      <option>Select Designation</option>
+                      <option>Web Designer</option>
+                      <option>Web Developer</option>
+                      <option>Android Developer</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Date of Birth<span class="text-danger">*</span></label>
+                    <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
+                  </div>
+                </div>
+  
+  
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Address <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Gender <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-focus select-focus">
+                    <label>Status <span class="text-danger">*</span></label>
+                    <select class="select floating">
+                      <option>Select Status</option>
+                      <option>Verified</option>
+                      <option>Rejected</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Pan No. <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+  
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Bank Account No. <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">EPF Account No. <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">UAN No. <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="table-responsive m-t-15">
+                <table class="table table-striped custom-table">
+                  <thead>
+                  <tr>
+                    <th>Module Permission</th>
+                    <th class="text-center">Read</th>
+                    <th class="text-center">Write</th>
+                    <th class="text-center">Create</th>
+                    <th class="text-center">Delete</th>
+                    <th class="text-center">Import</th>
+                    <th class="text-center">Export</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>Holidays</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Leaves</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Clients</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Projects</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tasks</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Chats</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Assets</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Timing Sheets</td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input checked="" type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                    <td class="text-center">
+                      <input type="checkbox">
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="submit-section">
+                <button class="btn btn-primary submit-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Edit Employee Modal -->
+  
+    <!-- Delete Employee Modal -->
+    <div class="modal custom-modal fade" id="delete_employee" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="form-header">
+              <h3>Delete Employee</h3>
+              <p>Are you sure want to delete?</p>
+            </div>
+            <div class="modal-btn delete-action">
+              <div class="row">
+                <div class="col-6">
+                  <a href="javascript:void(0);" class="btn btn-primary continue-btn">Delete</a>
+                </div>
+                <div class="col-6">
+                  <a href="javascript:void(0);" data-dismiss="modal" class="btn btn-primary cancel-btn">Cancel</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Delete Employee Modal -->
+  
+  </div>
+  <!-- /Page Wrapper -->
+  
