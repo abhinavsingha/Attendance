@@ -3,7 +3,7 @@
 
     <!-- Page Content -->
     <div class="content container-fluid">
-  
+
       <!-- Page Header -->
       <div class="page-header">
         <div class="row align-items-center">
@@ -27,35 +27,34 @@
                     <h4 class="card-title mb-0">Send Notification</h4>
                 </div>
                 <div class="card-body">
-                    <form action="#">
+                    <form [formGroup]="formData" >
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <div class="form-group form-focus select-focus">
                                     <label> Select User</label>
-                                    <select class="select floating">
-                                      <option>All Users</option>
-                                      <option>Avneesh</option>
-                                      <option>Deepak Tyagi</option>
-                                      <option>Abhinav singha</option>
-                                      <option>Deevan Singh</option>
+<!--                                    <select class="select form-control floating">-->
+                                    <select class="form-control" [(ngModel)]="mobileNumber" [ngModelOptions]="{standalone: true}">
+                                      <option [ngValue]="'all'">All Users</option>
+                                      <option *ngFor="let emp of empList" [ngValue]="emp.mobileNo">{{emp.empName}}</option>
                                     </select>
                                   </div>
+
                             </div>
                             <div class="col-md-6">
                               <div class="form-group">
                                   <label>Message Title</label>
-                                  <input type="text" class="form-control">
+                                  <input type="text" formControlName="title" class="form-control">
                               </div>
                           </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Message</label>
-                                    <textarea class="form-control" rows="4"></textarea>
+                                    <textarea class="form-control" formControlName="message" rows="4"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="text-right">
-                            <button type="submit" class="btn btn-primary btn-custom"><i class="fas fas fa-paper-plane"></i> Send</button>
+                            <button type="submit" class="btn btn-primary btn-custom" (click)="sendNotification(formData.value)"><i class="fas fas fa-paper-plane"></i> Send</button>
                         </div>
                     </form>
                 </div>
@@ -78,27 +77,13 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                 <td>1</td>
-                 <td>Deepak Tyagi</td>
-                 <td>What kind of fuckery is this</td>
-                 <td>Fuck this wondering. Fuck this trying and trying. Fuck this belief that two people can become one ideal. Fuck this helplessness. Fuck this waiting for something to happen that probably won't ever happen.</td>
-                 <td>23/11/2024 10:12 AM</td>
+              <tr *ngFor="let notification of notificationSent | keyValue; let i = index;">
+                 <td>{{i}}</td>
+                 <td>{{notification.value.isType}}</td>
+                 <td>{{notification.value.notificationTitle}}</td>
+                 <td>{{notification.value.notificationMsg}}</td>
+                 <td>{{common.epochtoDateTime(notification.value.createdOn)}}</td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>All Users</td>
-                <td>What kind of fuckery is this</td>
-                <td>Fuck this wondering. Fuck this trying and trying. Fuck this belief that two people can become one ideal. Fuck this helplessness. Fuck this waiting for something to happen that probably won't ever happen.</td>
-                <td>23/11/2024 10:12 AM</td>
-             </tr>
-             <tr>
-              <td>3</td>
-              <td>Abhinav</td>
-              <td>What kind of fuckery is Deepak</td>
-              <td>Deepak se dur reh bhai</td>
-              <td>23/11/2024 10:12 AM</td>
-           </tr>
               </tbody>
             </table>
           </div>
@@ -106,7 +91,7 @@
       </div>
     </div>
     <!-- /Page Content -->
-  
+
     <!-- Add Employee Modal -->
     <div id="add_employee" class="modal custom-modal fade" role="dialog">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -211,8 +196,8 @@
                     <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
                   </div>
                 </div>
-  
-  
+
+
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label class="col-form-label">Address <span class="text-danger">*</span></label>
@@ -241,7 +226,7 @@
                     <input class="form-control" type="text">
                   </div>
                 </div>
-  
+
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label class="col-form-label">Bank Account No. <span class="text-danger">*</span></label>
@@ -455,7 +440,7 @@
       </div>
     </div>
     <!-- /Add Employee Modal -->
-  
+
     <!-- Edit Employee Modal -->
     <div id="edit_employee" class="modal custom-modal fade" role="dialog">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -560,8 +545,8 @@
                     <div class="cal-icon"><input class="form-control datetimepicker" type="text"></div>
                   </div>
                 </div>
-  
-  
+
+
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label class="col-form-label">Address <span class="text-danger">*</span></label>
@@ -590,7 +575,7 @@
                     <input class="form-control" type="text">
                   </div>
                 </div>
-  
+
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label class="col-form-label">Bank Account No. <span class="text-danger">*</span></label>
@@ -804,7 +789,7 @@
       </div>
     </div>
     <!-- /Edit Employee Modal -->
-  
+
     <!-- Delete Employee Modal -->
     <div class="modal custom-modal fade" id="delete_employee" role="dialog">
       <div class="modal-dialog modal-dialog-centered">
@@ -829,7 +814,6 @@
       </div>
     </div>
     <!-- /Delete Employee Modal -->
-  
+
   </div>
   <!-- /Page Wrapper -->
-  

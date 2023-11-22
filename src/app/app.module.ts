@@ -38,10 +38,12 @@ import {SalaryComponent} from "./salary/salary.component";
 import { ReportComponent } from './report/report.component';
 import { ChatComponent } from './chat/chat.component';
 import { NotificationComponent } from './notification/notification.component';
+import {KeyValuePipe} from "./services/common/keyValue.pipe";
 
 @NgModule({
   declarations: [
     ChunkPipe,
+    KeyValuePipe,
     EpochToDatePipe,
     AppComponent,
     HeaderComponent,
