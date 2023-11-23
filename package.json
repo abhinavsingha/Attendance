@@ -23,10 +23,12 @@
     "file-saver": "^2.0.5",
     "jquery": "^3.6.4",
     "ngx-spinner": "^15.0.1",
+    "ngx-toastr": "^16.2.0",
     "parse-json": "^7.1.0",
+    "primeng": "^15.4.10-lts",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.6.13",
-    "tslib": "^2.3.0",
+    "tslib": "^2.6.2",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {

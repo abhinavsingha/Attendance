@@ -39,6 +39,9 @@ import { ReportComponent } from './report/report.component';
 import { ChatComponent } from './chat/chat.component';
 import { NotificationComponent } from './notification/notification.component';
 import {KeyValuePipe} from "./services/common/keyValue.pipe";
+import {ToastModule} from "primeng/toast";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -74,10 +77,17 @@ import {KeyValuePipe} from "./services/common/keyValue.pipe";
     SalaryComponent,
     ReportComponent,
     ChatComponent,
-    NotificationComponent
+    NotificationComponent,
+
 
   ],
   imports: [
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: false,
+    }),
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,

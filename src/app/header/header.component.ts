@@ -61,4 +61,24 @@ export class HeaderComponent implements OnInit{
       complete: () => console.info('complete'),
     });
   }
+
+  isAllSeen() {
+    this.apiService.getApiWithToken(this.cons.api.isAllSeen).subscribe({
+      next: (v: object) => {
+        this.SpinnerService.hide();
+        let result: { [key: string]: any } = v;
+
+        if (result['httpStatus'] == 'CREATED') {
+          this.notifications=undefined;
+        } else {
+          this.common.faliureAlert('Please reload', result['message'], '');
+        }
+      },
+      error: (e) => {
+        console.error(e);
+        this.common.faliureAlert('Error', e['error']['message'], 'error');
+      },
+      complete: () => console.info('complete'),
+    });
+  }
 }

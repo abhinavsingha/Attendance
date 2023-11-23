@@ -76,8 +76,8 @@
 														class="fc-day fc-widget-content fc-sun fc-past fc-day-number text-right" [ngStyle]="{'color': day.isColour}">
 														{{ day.day }}
 														<div class="timestamps" *ngIf="day.day!=undefined">
-															<div class="timestamp">In Time:{{day.punchIn}}</div>
-															<div class="timestamp">Out Time:{{day.punchOut}}</div>
+															<div class="timestamp">In : {{day.punchIn}}</div>
+															<div class="timestamp">Out : {{day.punchOut}}</div>
 														</div>
 													</td>
 												</tr>
@@ -149,11 +149,11 @@
 							<div class="card-body">
 								<div class="time-list">
 									<div class="dash-stats-list">
-										<h4>{{todayInTime}} Hours</h4>
+										<h5>{{todayInTime}} Hours</h5>
 										<p>In Time</p>
 									</div>
 									<div class="dash-stats-list">
-										<h4>{{todayOutTime}}</h4>
+										<h5>{{todayOutTime}}</h5>
 										<p>Out Time</p>
 									</div>
 								</div>
@@ -167,7 +167,7 @@
 						<h5 class="dash-title">Upcoming Holiday</h5>
 						<div class="card">
 							<div class="card-body text-center">
-								<h4 class="holiday-title mb-0">Mon 20 May 2019 - Ramzan</h4>
+								<h4 class="holiday-title mb-0">{{dashboardData.upcomingHolidays[0].empDesignationName}} - {{dashboardData.upcomingHolidays[0].holidayDate|epochToDate}}</h4>
 							</div>
 						</div>
 					</section>

@@ -78,7 +78,7 @@
               </thead>
               <tbody>
               <tr *ngFor="let notification of notificationSent | keyValue; let i = index;">
-                 <td>{{i}}</td>
+                 <td>{{i+1}}</td>
                  <td>{{notification.value.isType}}</td>
                  <td>{{notification.value.notificationTitle}}</td>
                  <td>{{notification.value.notificationMsg}}</td>

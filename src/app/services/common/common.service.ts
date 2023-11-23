@@ -5,6 +5,7 @@ import {ApiCallingServiceService} from "../api-calling/api-calling-service.servi
 import {ConstantsService} from "../constants/constants.service";
 import {NgxSpinnerService} from "ngx-spinner";
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Injectable({
   providedIn: 'root',
@@ -27,20 +28,23 @@ export class CommonService {
     private cons: ConstantsService,
     private SpinnerService: NgxSpinnerService,
     private router: Router,
-    private datePipe:DatePipe
+    private datePipe:DatePipe,
+    private toastr: ToastrService
   ) {}
 
   async successAlert(title: string, msg: string, icon: string) {
+    debugger;
+    this.toastr.success(title, msg);
     // Swal.fire('Thank you...', 'You submitted succesfully!', 'success')
-    Swal.fire(title, msg, 'success');
+    // Swal.fire(title, msg, 'success');
   }
 
   async faliureAlert(title: string, msg: string, icon: string) {
-    Swal.fire(title, msg, 'error');
+    this.toastr.error(title, msg);
   }
 
   async warningAlert(title: string, msg: string, icon: string) {
-    Swal.fire(title, msg, 'warning');
+    this.toastr.warning(title,msg);
   }
   convertEpochTo24HourFormat(epochTimestamp:string) {
     const date = new Date(epochTimestamp);
@@ -317,5 +321,9 @@ export class CommonService {
       const days = Math.floor(differenceInSeconds / 86400);
       return `${days} ${days === 1 ? 'day' : 'days'} ago`;
     }
+  }
+  showToast() {
+    this.toastr.success('Hello, this is a toast message!', 'Success');
+    debugger;
   }
 }

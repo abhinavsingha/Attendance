@@ -42,6 +42,7 @@ export class EmployeeDashboardComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
+    // this.common.showToast();
     const currentDate = new Date();
     this.currentDate=currentDate;
     this.formattedMonth = this.datePipe.transform(this.currentDate, 'MMMM');
@@ -105,15 +106,16 @@ debugger;
 //               }
 //
 // debugger;
-//               for(let attendance of this.timing){
-//                 if(Number(attendance.inTime)>this.epochStartTime){
-//                   this.todayInTime=this.common.convertEpochTo24HourFormat(attendance.inTime);
-//                   if(attendance.outTime!=undefined)
-//                     this.todayOutTime=this.common.convertEpochTo24HourFormat(attendance.outTime);
-//                   else
-//                     this.todayOutTime=' ';
-//                 }
-//               }
+              for(let attendance of this.timing){
+                if(Number(attendance.inTime)>this.epochStartTime){
+                  this.todayInTime=this.common.convertEpochTo24HourFormat(attendance.inTime);
+                  if(attendance.outTime!=undefined)
+                    this.todayOutTime=this.common.convertEpochTo24HourFormat(attendance.outTime);
+                  else
+                    this.todayOutTime=' ';
+                }
+              }
+            // this.common.faliureAlert('Please try later', result['message'], '');
           } else {
             this.common.faliureAlert('Please try later', result['message'], '');
           }

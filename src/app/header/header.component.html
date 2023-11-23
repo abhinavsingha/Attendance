@@ -50,10 +50,10 @@
 						<div class="dropdown-menu notifications">
 							<div class="topnav-dropdown-header">
 								<span class="notification-title">Notifications</span>
-								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+								<a href="javascript:void(0)" class="clear-noti" (click)="isAllSeen()"> Clear All </a>
 							</div>
-							<div class="noti-content">
-								<ul class="notification-list">
+							<div class="noti-content" >
+								<ul class="notification-list" *ngIf="notifications!=undefined">
 									<li *ngFor="let not of notifications.notificationDTO" class="notification-message">
 										<a [routerLink]="['activities']">
 											<div class="media">

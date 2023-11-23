@@ -47,8 +47,9 @@ export class ConstantsService {
     deActiveAccount: this.serviceUrl+'api/empRegistration/deActiveAccount/', updateBankInfo: this.serviceUrl+'api/empRegistrationWeb/updateBankInfo',
     createNotification: this.serviceUrl+'api/notification/createNotification',
     createNotificationForAll: this.serviceUrl+'api/notification/createNotificationForAll',
-    getNotification: this.serviceUrl+'api/notification/getNotification',
+    getNotification: this.serviceUrl+'api/notification/getDialogNotification',
     getAllBroadCastSelfNotification: this.serviceUrl+'api/notification/getAllBroadCastSelfNotification',
+    isAllSeen:this.serviceUrl+'api/notification/isAllSeen',
 
 
   };
