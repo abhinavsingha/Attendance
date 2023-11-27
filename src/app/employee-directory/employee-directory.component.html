@@ -1,0 +1,620 @@
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+
+    <!-- Page Content -->
+    <div class="content container-fluid">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="row align-items-center">
+          <div class="col">
+            <h3 class="page-title">Notification</h3>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a [routerLink]="['/admin-dashboard']">Dashboard</a></li>
+              <li class="breadcrumb-item active"> notification</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <!-- /Page Header -->
+
+      <div class="row">
+        <div class="col-sm-12">
+            <div class="file-wrap">
+                <div class="file-sidebar">
+                    <div class="file-header justify-content-center">
+                        <span>Documents</span>
+                        <a href="javascript:void(0);" class="file-side-close"><i class="fa fa-times"></i></a>
+                    </div>
+                    <div class="file-pro-list">
+                        <div class="file-scroll">
+                            <ul class="file-menu">
+                                <li class="active">
+                                    <a href="#" class="list-group-item px-0 d-flex align-items-center px-2">
+                                        <div class="mr-3">
+                                            <figure class="avatar">
+                                                <span class="avatar-title bg-primary-bright rounded">
+                                                    <i class="fas fa-file-image"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0">Images</p>
+                                            <span class="small text-muted">259 Files</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-primary">15.7 GB</h4>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="list-group-item px-0 d-flex align-items-center px-2">
+                                        <div class="mr-3">
+                                            <figure class="avatar">
+                                                <span class="avatar-title bg-primary-bright rounded">
+                                                    <i class="fas fa-copy"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0">Documents</p>
+                                            <span class="small text-muted">259 Files</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-primary">15.7 GB</h4>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="list-group-item px-0 d-flex align-items-center px-2">
+                                        <div class="mr-3">
+                                            <figure class="avatar">
+                                                <span class="avatar-title bg-primary-bright rounded">
+                                                    <i class="fas fa-file-video"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0">Audios & Videos</p>
+                                            <span class="small text-muted">259 Files</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-primary">15.7 GB</h4>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="list-group-item px-0 d-flex align-items-center px-2">
+                                        <div class="mr-3">
+                                            <figure class="avatar">
+                                                <span class="avatar-title bg-primary-bright rounded">
+                                                    <i class="fas fa-file-alt"></i>
+                                                </span>
+                                            </figure>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0">Others</p>
+                                            <span class="small text-muted">259 Files</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-primary">15.7 GB</h4>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                            </ul>
+                            <div class="show-more">
+                                <div class="file-options">
+                                    <button class="btn-file btn btn-custom w-100" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-upload"></i> Upload</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="file-cont-wrap">
+                    <div class="file-cont-inner">
+                        <div class="file-cont-header">
+                            <div class="file-options">
+                                <a href="javascript:void(0)" id="file_sidebar_toggle" class="file-sidebar-toggle">
+                                    <i class="fa fa-bars"></i>
+                                </a>
+                            </div>
+                            <span>File Manager</span>
+                            <div class="file-options">
+                                <span class="btn-file"><a href="#" class="upload" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-upload"></i> Upload</a></span>
+                            </div>
+                        </div>
+                        <div class="file-content">
+                            <form class="file-search">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                            </form>
+                            <div class="file-body">
+                                <div class="file-scroll">
+                                    <div class="file-content-inner">
+                                        <h4>Recent Files</h4>
+                                        <div class="row row-sm">
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-pdf"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Sample.pdf</a></h6>
+                                                        <span>10.45kb</span>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <span class="d-none d-sm-inline">Last Modified: </span>1 min ago
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-word"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Document.docx</a></h6>
+                                                        <span>22.67kb</span>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <span class="d-none d-sm-inline">Last Modified: </span>30 mins ago
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-image"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">icon.png</a></h6>
+                                                        <span>12.47kb</span>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <span class="d-none d-sm-inline">Last Modified: </span>1 hour ago
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-excel"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Users.xls</a></h6>
+                                                        <span>35.11kb</span>
+                                                    </div>
+                                                    <div class="card-footer">23 Jul 6:30 PM</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <h4>Files</h4>
+                                        <div class="row row-sm">
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-word"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Updates.docx</a></h6>
+                                                        <span>12mb</span>
+                                                    </div>
+                                                    <div class="card-footer">9 Aug 1:17 PM</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-powerpoint"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Vision.ppt</a></h6>
+                                                        <span>72.50kb</span>
+                                                    </div>
+                                                    <div class="card-footer">6 Aug 11:42 AM</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-audio"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Voice.mp3</a></h6>
+                                                        <span>2.17mb</span>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <span class="d-none d-sm-inline">Last Modified: </span>30 Jul 9:00 PM
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-pdf"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Tutorials.pdf</a></h6>
+                                                        <span>8.2mb</span>
+                                                    </div>
+                                                    <div class="card-footer">21 Jul 10:45 PM</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-excel"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Tasks.xls</a></h6>
+                                                        <span>92.82kb</span>
+                                                    </div>
+                                                    <div class="card-footer">16 Jun 4:59 PM</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-image"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Page.psd</a></h6>
+                                                        <span>118.71mb</span>
+                                                    </div>
+                                                    <div class="card-footer">14 Jun 9:00 AM</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-alt"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">License.txt</a></h6>
+                                                        <span>18.7kb</span>
+                                                    </div>
+                                                    <div class="card-footer">5 May 8:21 PM</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-word"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Expenses.docx</a></h6>
+                                                        <span>66.2kb</span>
+                                                    </div>
+                                                    <div class="card-footer">24 Apr 7:50 PM</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-audio"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Music.mp3</a></h6>
+                                                        <span>3.6mb</span>
+                                                    </div>
+                                                    <div class="card-footer">13 Mar 2:00 PM</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-alt"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Installation.txt</a></h6>
+                                                        <span>43.9kb</span>
+                                                    </div>
+                                                    <div class="card-footer">26 Feb 5:01 PM</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-video"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">Workflow.mp4</a></h6>
+                                                        <span>47.65mb</span>
+                                                    </div>
+                                                    <div class="card-footer">3 Jan 11:35 AM</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
+                                                <div class="card card-file">
+                                                    <div class="dropdown-file">
+                                                        <a href="" class="dropdown-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a href="#" class="dropdown-item">View Details</a>
+                                                            <a href="#" class="dropdown-item">Share</a>
+                                                            <a href="#" class="dropdown-item">Download</a>
+                                                            <a href="#" class="dropdown-item">Rename</a>
+                                                            <a href="#" class="dropdown-item">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-file-thumb">
+                                                        <i class="fas fa-file-code"></i>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h6><a href="">index.html</a></h6>
+                                                        <span>23.7kb</span>
+                                                    </div>
+                                                    <div class="card-footer">1 Jan 8:55 AM</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Content -->
+
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Upload Your Document</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="fas fa-window-close"></i>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" novalidate>
+                    <div class="form-row">
+                      <!-- <div class="col-md-12 mb-3">
+                        <label for="validationCustom01">Tile Of File</label>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Tile of File" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div> -->
+                      <div class="col-md-12 mb-3">
+                        <div class="image-upload">
+                        <label style="cursor: pointer;" for="file_upload">
+      
+                          <div class="h-100">
+                                 <div class="dplay-tbl">
+                                  <div class="dplay-tbl-cell">
+                                      <i class="fas fa-cloud-upload-alt"></i>
+                                      <h5><b>Choose Your File to Upload</b></h5>
+                                      <h6 class="mt-10 mb-70">Or Drop Your File Here</h6>
+                                  </div>
+                              </div>
+                          </div><!--upload-content-->
+                          <input data-required="image" type="file" name="file_name" id="file_upload" class="image-input" data-traget-resolution="image_resolution" value="">
+                          
+                           </label>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped custom-table datatable" id="table1">
+                              <thead>
+                              <tr>
+                                <th>SR.</th>
+                                <th>File Name</th>
+                                <th>Status</th>
+                                <th class="text-right">Remove</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                 <td>1</td>
+                                 <td>file://ghgjhfdfjfdafdjf.pdf</td>
+                                 <td>
+                                    <div class="progress progress-md">
+                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                 </td>
+                                 <td><button class="btn btn-danger float-right"><i class="fas fa-window-close"></i></button></td>
+                              </tr>
+                              <tr>
+                                <td>2</td>
+                                <td>file://ghgjhfdfn,nf,dnf,.pdf</td>
+                                <td>
+                                   <div class="progress progress-md">
+                                       <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                   </div>
+                                </td>
+                                <td><button class="btn btn-danger float-right"><i class="fas fa-window-close"></i></button></td>
+                             </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        
+                      </div>
+                    </div>
+                </form>
+                 
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+              </button>
+              <button type="button" class="btn btn-primary">Save File</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- /Page Wrapper -->

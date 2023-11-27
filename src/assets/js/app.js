@@ -318,5 +318,11 @@ $(document).ready(function() {
 $(window).on ('load', function (){
 	$('#loader').delay(100).fadeOut('slow');
 	$('#loader-wrapper').delay(500).fadeOut('slow');
-	
+	document.addEventListener('dragover', (e) => {
+		e.preventDefault()
+	});
+	document.addEventListener('drop', (e) => {
+		document.getElementById('file').files = e.dataTransfer.files;
+		e.preventDefault()
+	});
 });

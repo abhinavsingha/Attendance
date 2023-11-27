@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
 
   }
   login(){
+    this.router.navigate(['/employee-dashboard']);
     // [routerLink]="['admin-dashboard']"
     let json={
       username:this.formData.get('username')?.value,
@@ -56,6 +57,7 @@ export class LoginComponent implements OnInit {
         } else {
           this.common.faliureAlert('Please try later', result['message'], '');
           this.SpinnerService.hide();
+          
         }
       },
       error: (e) => {

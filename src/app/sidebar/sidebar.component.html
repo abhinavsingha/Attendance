@@ -79,7 +79,7 @@
 							<li class="submenu">
 								<a href="#" class="noti-dot"><i class="fas fa-address-book"></i> <span> Directory</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Employee Directory</a></li>
+									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['employee-directory']" [routerLinkActive]="['active']">Employee Directory</a></li>
 									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Organisation Directory</a></li>
 
 								</ul>

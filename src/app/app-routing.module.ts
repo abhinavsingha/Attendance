@@ -26,6 +26,7 @@ import {SalaryComponent} from "./salary/salary.component";
 import { ReportComponent } from './report/report.component';
 import { ChatComponent } from './chat/chat.component';
 import { NotificationComponent } from './notification/notification.component';
+import { EmployeeDirectoryComponent } from './employee-directory/employee-directory.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -54,6 +55,7 @@ const routes: Routes = [
   {path:'report', component:ReportComponent},
   {path:'chat', component:ChatComponent},
   {path: 'notification', component:NotificationComponent},
+  {path: 'employee-directory', component:EmployeeDirectoryComponent},
 ];
 
 @NgModule({

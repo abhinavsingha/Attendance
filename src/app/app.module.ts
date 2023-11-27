@@ -42,6 +42,7 @@ import {KeyValuePipe} from "./services/common/keyValue.pipe";
 import {ToastModule} from "primeng/toast";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
+import { EmployeeDirectoryComponent } from './employee-directory/employee-directory.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import {ToastrModule} from "ngx-toastr";
     ReportComponent,
     ChatComponent,
     NotificationComponent,
+    EmployeeDirectoryComponent,
 
 
   ],
