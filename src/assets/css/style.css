@@ -1601,7 +1601,7 @@ table.dataTable thead > tr > td.sorting {
 .account-subtitle {
     color: #4c4c4c;
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
 }
 .account-box {
@@ -1617,7 +1617,7 @@ table.dataTable thead > tr > td.sorting {
 	padding: 30px;
 }
 .account-logo {
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	text-align: center;
 }
 .account-box .form-group {
@@ -1654,7 +1654,7 @@ table.dataTable thead > tr > td.sorting {
     margin-bottom: 5px;
 }
 .account-logo img {
-	width: 100px;
+	width: 200px;
 }
 .account-footer {
     text-align: center;
