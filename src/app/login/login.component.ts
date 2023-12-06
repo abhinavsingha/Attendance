@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   }
   login(){
-    this.router.navigate(['/employee-dashboard']);
+    // this.router.navigate(['/employee-dashboard']);
     // [routerLink]="['admin-dashboard']"
     let json={
       username:this.formData.get('username')?.value,

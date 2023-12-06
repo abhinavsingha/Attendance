@@ -7,7 +7,7 @@ export class ConstantsService {
   constructor() {}
 
 //  serviceUrl = 'http://192.168.2.2:8080/'; //UAT server
-  serviceUrl = 'http://172.20.10.4:8081/';
+  serviceUrl = 'http://172.20.10.5:8081/';
   // serviceUrl = 'http://petregistration.mynoida.co.in/NaprWeb/'; //UAT server
   api = {
     login:
