@@ -68,18 +68,18 @@
 								<span>Org</span>
 							</li>
 							<li class="submenu">
-								<a href="#" class="noti-dot"><i class="fas fa-file-alt"></i> <span> Document</span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['personal-document']" [routerLinkActive]="['active']">Personal Document</a></li>
-									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['company-document']" [routerLinkActive]="['active']">Company Document</a></li>
+								<a href="#" class="noti-dot"><i class="fas fa-file-alt"></i> <span><a [routerLink]="['employee-directory']" [routerLinkActive]="['active']">Document</a></span> </a>
+<!--								<ul style="display: none;">-->
+<!--									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['personal-document']" [routerLinkActive]="['active']">Personal Document</a></li>-->
+<!--									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['company-document']" [routerLinkActive]="['active']">Company Document</a></li>-->
 
-								</ul>
+<!--								</ul>-->
 							</li>
 
 							<li class="submenu">
 								<a href="#" class="noti-dot"><i class="fas fa-address-book"></i> <span> Directory</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['employee-directory']" [routerLinkActive]="['active']">Employee Directory</a></li>
+<!--									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['employee-directory']" [routerLinkActive]="['active']">Employee Directory</a></li>-->
 									<li *ngIf="userRole=='Admin'||userRole=='Super Admin'||userRole=='Employee'"><a [routerLink]="['leaves-employee']" [routerLinkActive]="['active']">Organisation Directory</a></li>
 
 								</ul>
@@ -106,6 +106,7 @@
                   <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['marital-status']" [routerLinkActive]="['active']">Add/Update Marital Status</a></li>
                   <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['relation']" [routerLinkActive]="['active']">Add/Update Relation</a></li>
                   <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['blood-group']" [routerLinkActive]="['active']">Add/Update Blood Group</a></li>
+                  <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['document-type']" [routerLinkActive]="['active']">Add/Update Document Type</a></li>
                   <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['upload-attendance']" [routerLinkActive]="['active']">Add Attendance</a></li>
                   <li *ngIf="userRole=='Admin'||userRole=='Super Admin'"><a [routerLink]="['upload-salary']" [routerLinkActive]="['active']">Add Salary</a></li>
 

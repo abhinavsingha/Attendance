@@ -102,7 +102,7 @@
                                         </div>
                                     </a>
                                 </li>
-            
+
                             </ul>
                             <div class="show-more">
                                 <div class="file-options">
@@ -188,7 +188,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -213,7 +213,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -263,7 +263,7 @@
                                                     <div class="card-footer">9 Aug 1:17 PM</div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -286,7 +286,7 @@
                                                     <div class="card-footer">6 Aug 11:42 AM</div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -311,7 +311,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -334,7 +334,7 @@
                                                     <div class="card-footer">21 Jul 10:45 PM</div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -357,7 +357,7 @@
                                                     <div class="card-footer">16 Jun 4:59 PM</div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -380,7 +380,7 @@
                                                     <div class="card-footer">14 Jun 9:00 AM</div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -403,7 +403,7 @@
                                                     <div class="card-footer">5 May 8:21 PM</div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -426,7 +426,7 @@
                                                     <div class="card-footer">24 Apr 7:50 PM</div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -449,7 +449,7 @@
                                                     <div class="card-footer">13 Mar 2:00 PM</div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -472,7 +472,7 @@
                                                     <div class="card-footer">26 Feb 5:01 PM</div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -495,7 +495,7 @@
                                                     <div class="card-footer">3 Jan 11:35 AM</div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-6 col-sm-4 col-md-3 col-lg-4 col-xl-3">
                                                 <div class="card card-file">
                                                     <div class="dropdown-file">
@@ -542,13 +542,15 @@
               </button>
             </div>
             <div class="modal-body">
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation" novalidate [formGroup]="formdata">
                     <div class="form-row">
                       <div class="col-md-12 mb-3">
                         <label for="validationCustom01">File Type</label>
-                        <select class="select form-control floating" id="validationCustom01" required>
-                            <option>Select File Type</option>
-                            <option>Adhaar card</option>
+                        <select class="form-control floating" formControlName="docType" id="validationCustom01" required>
+
+                          <option>Select File Type</option>
+                          <option *ngFor="let docType of common.documentType" [ngValue]="docType">{{docType.documentName}}</option>
+<!--                            <option>Adhaar card</option>-->
                         </select>
                         <div class="valid-feedback">
                           Looks good!
@@ -557,7 +559,7 @@
                       <div class="col-md-12 mb-3">
                         <div class="image-upload">
                         <label style="cursor: pointer;" for="file_upload">
-      
+
                           <div class="h-100">
                                  <div class="dplay-tbl">
                                   <div class="dplay-tbl-cell">
@@ -567,54 +569,53 @@
                                   </div>
                               </div>
                           </div><!--upload-content-->
-                          <input data-required="image" type="file" name="file_name" id="file_upload" class="image-input" data-traget-resolution="image_resolution" value="">
-                          
+                          <input data-required="image" #uploadFileInput (change)="setFileNameSize()" type="file" name="file_name" id="file_upload" class="image-input" data-traget-resolution="image_resolution" value="">
+
                            </label>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped custom-table datatable" id="table1">
                               <thead>
                               <tr>
-                                <th>SR.</th>
-                                <th>File Name</th>
-                                <th>Status</th>
-                                <th class="text-right">Remove</th>
+                                <th>{{filename}}</th>
+                                <th>{{fileSize}}</th>
+                                <th class="text-right" (click)="uploadFile()">Upload</th>
                               </tr>
                               </thead>
                               <tbody>
-                              <tr>
-                                 <td>1</td>
-                                 <td>file://ghgjhfdfjfdafdjf.pdf</td>
-                                 <td>
-                                    <div class="progress progress-md">
-                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                 </td>
-                                 <td><button class="btn btn-danger float-right"><i class="fas fa-window-close"></i></button></td>
-                              </tr>
-                              <tr>
-                                <td>2</td>
-                                <td>file://ghgjhfdfn,nf,dnf,.pdf</td>
-                                <td>
-                                   <div class="progress progress-md">
-                                       <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                   </div>
-                                </td>
-                                <td><button class="btn btn-danger float-right"><i class="fas fa-window-close"></i></button></td>
-                             </tr>
+<!--                              <tr>-->
+<!--                                 <td>1</td>-->
+<!--                                 <td>{{uploadFileInput.nativeElement.files[0].name}}</td>-->
+<!--                                 <td>-->
+<!--                                    <div class="progress progress-md">-->
+<!--                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                                    </div>-->
+<!--                                 </td>-->
+<!--                                 <td><button class="btn btn-danger float-right"><i class="fas fa-window-close"></i></button></td>-->
+<!--                              </tr>-->
+<!--                              <tr>-->
+<!--                                <td>2</td>-->
+<!--                                <td>file://ghgjhfdfn,nf,dnf,.pdf</td>-->
+<!--                                <td>-->
+<!--                                   <div class="progress progress-md">-->
+<!--                                       <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>-->
+<!--                                   </div>-->
+<!--                                </td>-->
+<!--                                <td><button class="btn btn-danger float-right"><i class="fas fa-window-close"></i></button></td>-->
+<!--                             </tr>-->
                               </tbody>
                             </table>
                           </div>
-                        
+
                       </div>
                     </div>
                 </form>
-                 
+
               </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
               </button>
-              <button type="button" class="btn btn-primary">Save File</button>
+              <button type="button" class="btn btn-primary" (click)="saveDocument()">Save File</button>
             </div>
           </div>
         </div>

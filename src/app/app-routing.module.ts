@@ -27,6 +27,7 @@ import { ReportComponent } from './report/report.component';
 import { ChatComponent } from './chat/chat.component';
 import { NotificationComponent } from './notification/notification.component';
 import { EmployeeDirectoryComponent } from './employee-directory/employee-directory.component';
+import {DocumentTypeComponent} from "./document-type/document-type.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path:'designation', component:DesignationComponent},
   {path:'department', component:DepartmentComponent},
   {path:'blood-group', component:BloodGroupComponent},
+  {path:'document-type', component:DocumentTypeComponent},
   {path:'gender', component:GenderComponent},
   {path:'relation', component:RelationComponent},
   {path:'marital-status', component:MaritalStatusComponent},

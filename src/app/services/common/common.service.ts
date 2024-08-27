@@ -23,6 +23,7 @@ export class CommonService {
   public relation: any;
   public allLeaveStatus: any;
   public allLeaves1: any;
+  public documentType: any;
   constructor(
     private apiService: ApiCallingServiceService,
     private cons: ConstantsService,
@@ -197,6 +198,27 @@ export class CommonService {
           let result: { [key: string]: any } = v;
           if (result['message'] == 'CREATED') {
             this.bloodGroup=result['object'];
+          } else {
+            this.faliureAlert('Please try later', result['message'], '');
+          }
+        },
+        error: (e) => {
+          this.SpinnerService.hide();
+          console.error(e);
+          this.faliureAlert('Error', e['error']['message'], 'error');
+        },
+        complete: () => console.info('complete'),
+      }
+    );
+  }
+  getAllDocumentType(){
+
+    this.apiService.getApiWithToken(this.cons.api.getAllDocumentType).subscribe({
+        next: (v: object) => {
+          this.SpinnerService.hide();
+          let result: { [key: string]: any } = v;
+          if (result['message'] == 'CREATED') {
+            this.documentType=result['object'];
           } else {
             this.faliureAlert('Please try later', result['message'], '');
           }

@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class ConstantsService {
   constructor() {}
 
-//  serviceUrl = 'http://192.168.2.2:8080/'; //UAT server
-  serviceUrl = 'http://172.20.10.5:8081/';
+ serviceUrl = 'http://192.168.2.2:8081/'; //UAT server
+  // serviceUrl = 'http://172.20.10.5:8081/';
   // serviceUrl = 'http://petregistration.mynoida.co.in/NaprWeb/'; //UAT server
   api = {
     login:
@@ -24,6 +24,7 @@ export class ConstantsService {
     getAllDepartment: this.serviceUrl+'api/department/getAllDepartment',
     getAllLeaveType: this.serviceUrl+'api/leaveType/getAllLeaveType',
     createOrUpdate: this.serviceUrl+'api/empLeave/createOrUpdate',
+    createOrUpdateDoc: this.serviceUrl+'api/personalDocument/createOrUpdate',
     getAll: this.serviceUrl+'api/empLeave/getAll',
     createOrUpdateEmployee: this.serviceUrl+'/api/empRegistrationWeb/createOrUpdateEmployee',
     getAllRole: this.serviceUrl+'api/role/getAllRole',
@@ -50,6 +51,10 @@ export class ConstantsService {
     getNotification: this.serviceUrl+'api/notification/getDialogNotification',
     getAllBroadCastSelfNotification: this.serviceUrl+'api/notification/getAllBroadCastSelfNotification',
     isAllSeen:this.serviceUrl+'api/notification/isAllSeen',
+    getAllDocumentType: this.serviceUrl+'api/personalDocument/getAllDocumentType',
+    uploadFileTransactional: this.serviceUrl+'api/personalDocument/uploadFileTransactional',
+    uploadOfficialDocument: this.serviceUrl+'api/personalDocument/uploadOfficialDocument',
+    getAllUserDocument: this.serviceUrl+'api/personalDocument/getAllUserDocument',
 
 
   };

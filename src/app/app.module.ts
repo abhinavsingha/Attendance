@@ -43,6 +43,7 @@ import {ToastModule} from "primeng/toast";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
 import { EmployeeDirectoryComponent } from './employee-directory/employee-directory.component';
+import { DocumentTypeComponent } from './document-type/document-type.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { EmployeeDirectoryComponent } from './employee-directory/employee-direct
     ChatComponent,
     NotificationComponent,
     EmployeeDirectoryComponent,
+    DocumentTypeComponent,
 
 
   ],

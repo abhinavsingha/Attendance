@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
         } else {
           this.common.faliureAlert('Please try later', result['message'], '');
           this.SpinnerService.hide();
-          
+
         }
       },
       error: (e) => {
